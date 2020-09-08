@@ -3,13 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: drina <drina@marvin.42.fr>                 +#+  +:+       +#+         #
+#    By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/30 20:44:36 by drina             #+#    #+#              #
-#    Updated: 2020/07/23 15:07:49 by drina            ###   ########.fr        #
+#    Updated: 2020/09/08 22:13:14 by lmidori          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-.PHONY:  all clean fclean re
+
 
 NAME = libft.a
 SRC = 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c  ft_isalpha.c \

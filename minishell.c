@@ -29,23 +29,23 @@ int 	main(int argc, char **argv, char **envp)
 	all_envp(&env, envp);
 	tmp = env;
 
-	write(1, "shell > ", 8);
 	while (21)
 	{
+		write(1, "shell > ", 8);
 		if ((get_next_line(0, &str1)) > 0)
 		{
 			str2 = ft_split(str1, ' ');
 			free(str1);
 			str1 = NULL;
 		}
-		if (str2[0] && (ft_strncmp(str2[0], "cd", 2) == 0))
+		if (str2[0] && (ft_strncmp(str2[0], "cd", ft_strlen(str2[0])) == 0))
 		{
-			str_cwd = getcwd(NULL, 0);
 			if (chdir(str2[1]) == -1)
 			{
 				ft_putstr_fd("Error\n",2);
 				exit (0);
 			}
+			str_cwd = getcwd(NULL, 0);
 			while (tmp->next != NULL)
 			{
 				if ((ft_strncmp(tmp->key_value[0], "PWD", 3)) == 0)
@@ -56,7 +56,10 @@ int 	main(int argc, char **argv, char **envp)
 				}
 				tmp = tmp->next;
 			}
-
+			ft_putstr_fd(tmp->key_value[0], 1);
+			write(1, "=" , 1);
+			ft_putstr_fd(tmp->key_value[1], 1);
+			write(1, "\n" , 1);
 		}
 		else
 			exit (0);
