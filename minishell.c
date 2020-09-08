@@ -47,18 +47,45 @@ int 	main(int argc, char **argv, char **envp)
 	t_env *env, *tmp;
 	int num;
 	char **str;
+	char *str1;
+	char **str2;
 	num = argc;
 	str = argv;
 	env = NULL;
 
 	all_envp(&env, envp);
 	tmp = env;
-	while (tmp->next != NULL)
+
+	while (21)
 	{
-		printf("%s = ", tmp->key_value[0]);
-		printf("%s\n", tmp->key_value[1]);
-		tmp = tmp->next;
+		while (get_next_line(0, str1) == 0)
+		{
+			str2 = ft_split(str1,' ');
+		}
+		if (ft_strncmp( str2[0], "cd", 2) == 0)
+		{
+
+		}
+		if (ft_strncmp( str2[0], "pwd", 3))
+		{
+
+		}
+
+
+
+
+
 	}
+
+
+
+
+//	while (tmp->next != NULL)
+//	{
+//		printf("%s = ", tmp->key_value[0]);
+//		printf("%s\n", tmp->key_value[1]);
+//		tmp = tmp->next;
+//	}
 
 
 //	pid_t copy;
