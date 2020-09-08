@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.17)
-project(myminishell C)
+project(minishell C)
 
 set(CMAKE_C_STANDARD 11)
 
 include_directories(.)
 include_directories(libft)
 
-add_executable(myminishell
+add_executable(minishell
         libft/ft_atoi.c
         libft/ft_bzero.c
         libft/ft_calloc.c

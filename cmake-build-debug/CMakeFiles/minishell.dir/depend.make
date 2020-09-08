@@ -1,2 +1,2 @@
-# Empty dependencies file for myminishell.
+# Empty dependencies file for minishell.
 # This may be replaced when dependencies are built.

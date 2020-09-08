@@ -1,35 +1,7 @@
 
 #include "minishell.h"
 
-
-void	add_back(t_env **head, t_env *new)
-{
-	t_env	*save_head;
-
-	save_head = (*head);
-	if (save_head == NULL)
-		(*head) = new;
-	else
-	{
-		while (save_head->next != NULL)
-			save_head = save_head->next;
-		save_head->next = new;
-	}
-}
-
-t_env		*lstnew(char *str)
-{
-	t_env	*new_elem;
-
-	new_elem = (t_env*)malloc(sizeof(t_env));
-	if (!new_elem)
-		return (NULL);
-	new_elem->key_value = ft_split(str, '=');
-	new_elem->next = NULL;
-	return (new_elem);
-}
-
-void 	all_envp(t_env **env, char **envp)
+void		all_envp(t_env **env, char **envp)
 {
 	int i;
 
@@ -47,7 +19,8 @@ int 	main(int argc, char **argv, char **envp)
 	t_env *env, *tmp;
 	int num;
 	char **str;
-	char *str1;
+	char *str1 = NULL;
+	char *str_cwd;
 	char **str2;
 	num = argc;
 	str = argv;
@@ -56,29 +29,45 @@ int 	main(int argc, char **argv, char **envp)
 	all_envp(&env, envp);
 	tmp = env;
 
+	write(1, "shell > ", 8);
 	while (21)
 	{
-		while (get_next_line(0, str1) == 0)
+		if ((get_next_line(0, &str1)) > 0)
 		{
-			str2 = ft_split(str1,' ');
+			str2 = ft_split(str1, ' ');
+			free(str1);
+			str1 = NULL;
 		}
-		if (ft_strncmp( str2[0], "cd", 2) == 0)
+		if (str2[0] && (ft_strncmp(str2[0], "cd", 2) == 0))
 		{
+			str_cwd = getcwd(NULL, 0);
+			if (chdir(str2[1]) == -1)
+			{
+				ft_putstr_fd("Error\n",2);
+				exit (0);
+			}
+			while (tmp->next != NULL)
+			{
+				if ((ft_strncmp(tmp->key_value[0], "PWD", 3)) == 0)
+				{
+					free(tmp->key_value[1]);
+					tmp->key_value[1] = ft_strdup(str_cwd);
+					break ;
+				}
+				tmp = tmp->next;
+			}
 
 		}
-		if (ft_strncmp( str2[0], "pwd", 3))
-		{
-
-		}
-
-
+		else
+			exit (0);
+//		if (ft_strncmp(str2[0], "pwd", 3))
+//		{
+//
+//		}
 
 
 
 	}
-
-
-
 
 //	while (tmp->next != NULL)
 //	{
