@@ -14,13 +14,50 @@ void		all_envp(t_env **env, char **envp)
 
 }
 
+void		get_home_dir(t_env *env, char **str)
+{
+	while (env->next != NULL)
+	{
+		if ((ft_strncmp(env->key_value[0], "HOME", 4)) == 0)
+		{
+			*str = env->key_value[1];
+		}
+		env = env->next;
+	}
+}
+
+void		enter_cd(char **str, t_env *env)
+{
+	char *str_cwd;
+
+	if (chdir(str[1]) == -1)
+	{
+		ft_putstr_fd("Error\n",2);
+		exit (0);
+	}
+	str_cwd = getcwd(NULL, 0);
+	while (env->next != NULL)
+	{
+		if ((ft_strncmp(env->key_value[0], "PWD", 3)) == 0)
+		{
+			free(env->key_value[1]);
+			env->key_value[1] = ft_strdup(str_cwd);
+			break ;
+		}
+		env = env->next;
+	}
+	ft_putstr_fd(env->key_value[0], 1);
+	write(1, "=" , 1);
+	ft_putstr_fd(env->key_value[1], 1);
+	write(1, "\n" , 1);
+}
+
 int 	main(int argc, char **argv, char **envp)
 {
 	t_env *env, *tmp;
 	int num;
 	char **str;
 	char *str1 = NULL;
-	char *str_cwd;
 	char **str2;
 	num = argc;
 	str = argv;
@@ -28,6 +65,11 @@ int 	main(int argc, char **argv, char **envp)
 
 	all_envp(&env, envp);
 	tmp = env;
+	char *ptr;
+	ptr = NULL;
+	get_home_dir(tmp, &ptr);
+	ft_putstr_fd(ptr, 1);
+	write(1, "\n" , 1);
 
 	while (21)
 	{
@@ -38,37 +80,13 @@ int 	main(int argc, char **argv, char **envp)
 			free(str1);
 			str1 = NULL;
 		}
+		// opendir()
 		if (str2[0] && (ft_strncmp(str2[0], "cd", ft_strlen(str2[0])) == 0))
 		{
-			if (chdir(str2[1]) == -1)
-			{
-				ft_putstr_fd("Error\n",2);
-				exit (0);
-			}
-			str_cwd = getcwd(NULL, 0);
-			while (tmp->next != NULL)
-			{
-				if ((ft_strncmp(tmp->key_value[0], "PWD", 3)) == 0)
-				{
-					free(tmp->key_value[1]);
-					tmp->key_value[1] = ft_strdup(str_cwd);
-					break ;
-				}
-				tmp = tmp->next;
-			}
-			ft_putstr_fd(tmp->key_value[0], 1);
-			write(1, "=" , 1);
-			ft_putstr_fd(tmp->key_value[1], 1);
-			write(1, "\n" , 1);
+			enter_cd(str2, tmp);
 		}
 		else
 			exit (0);
-//		if (ft_strncmp(str2[0], "pwd", 3))
-//		{
-//
-//		}
-
-
 
 	}
 
