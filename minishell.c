@@ -26,6 +26,35 @@ void		get_home_dir(t_env *env, char **str)
 	}
 }
 
+void		cmd_env(t_env *head)
+{
+	t_env *tmp;
+
+	tmp = head;
+	while (tmp->next != NULL)
+	{
+		ft_putstr_fd( tmp->key_value[0], 1);
+		ft_putstr_fd( tmp->key_value[1], 1);
+		write(1, "\n" , 1);
+		tmp = tmp->next;
+	}
+}
+
+void 		add_equal(t_env **head)
+{
+	t_env	*tmp;
+	char	*str;
+
+	tmp = (*head);
+	while (tmp->next != NULL)
+	{
+		str = tmp->key_value[0];
+		tmp->key_value[0] = ft_strjoin(tmp->key_value[0], "=");
+		free(str);
+		tmp = tmp->next;
+	}
+}
+
 void		enter_cd(char **str, t_env *env)
 {
 	char *str_cwd;
@@ -47,9 +76,17 @@ void		enter_cd(char **str, t_env *env)
 		env = env->next;
 	}
 	ft_putstr_fd(env->key_value[0], 1);
-	write(1, "=" , 1);
 	ft_putstr_fd(env->key_value[1], 1);
 	write(1, "\n" , 1);
+}
+
+void 	print_env(t_env *root)
+{
+	while (root->next != NULL)
+	{
+		printf("%s%s\n", root->key_value[0], root->key_value[1]);
+		root = root->next;
+	}
 }
 
 int 	main(int argc, char **argv, char **envp)
@@ -64,10 +101,13 @@ int 	main(int argc, char **argv, char **envp)
 	env = NULL;
 
 	all_envp(&env, envp);
+	add_equal(&env);
+
 	tmp = env;
 	char *ptr;
 	ptr = NULL;
 	get_home_dir(tmp, &ptr);
+	//print_env(tmp);
 	ft_putstr_fd(ptr, 1);
 	write(1, "\n" , 1);
 
