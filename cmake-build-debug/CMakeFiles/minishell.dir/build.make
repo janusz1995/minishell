@@ -662,9 +662,74 @@ CMakeFiles/minishell.dir/libft/get_next_line_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/libft/get_next_line_utils.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bocal/drina/minishell/libft/get_next_line_utils.c -o CMakeFiles/minishell.dir/libft/get_next_line_utils.c.s
 
+CMakeFiles/minishell.dir/add_back.c.o: CMakeFiles/minishell.dir/flags.make
+CMakeFiles/minishell.dir/add_back.c.o: ../add_back.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/minishell.dir/add_back.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/add_back.c.o   -c /Users/bocal/drina/minishell/add_back.c
+
+CMakeFiles/minishell.dir/add_back.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/add_back.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bocal/drina/minishell/add_back.c > CMakeFiles/minishell.dir/add_back.c.i
+
+CMakeFiles/minishell.dir/add_back.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/add_back.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bocal/drina/minishell/add_back.c -o CMakeFiles/minishell.dir/add_back.c.s
+
+CMakeFiles/minishell.dir/add_equal.c.o: CMakeFiles/minishell.dir/flags.make
+CMakeFiles/minishell.dir/add_equal.c.o: ../add_equal.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/minishell.dir/add_equal.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/add_equal.c.o   -c /Users/bocal/drina/minishell/add_equal.c
+
+CMakeFiles/minishell.dir/add_equal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/add_equal.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bocal/drina/minishell/add_equal.c > CMakeFiles/minishell.dir/add_equal.c.i
+
+CMakeFiles/minishell.dir/add_equal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/add_equal.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bocal/drina/minishell/add_equal.c -o CMakeFiles/minishell.dir/add_equal.c.s
+
+CMakeFiles/minishell.dir/all_envp.c.o: CMakeFiles/minishell.dir/flags.make
+CMakeFiles/minishell.dir/all_envp.c.o: ../all_envp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/minishell.dir/all_envp.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/all_envp.c.o   -c /Users/bocal/drina/minishell/all_envp.c
+
+CMakeFiles/minishell.dir/all_envp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/all_envp.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bocal/drina/minishell/all_envp.c > CMakeFiles/minishell.dir/all_envp.c.i
+
+CMakeFiles/minishell.dir/all_envp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/all_envp.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bocal/drina/minishell/all_envp.c -o CMakeFiles/minishell.dir/all_envp.c.s
+
+CMakeFiles/minishell.dir/get_home_dir.c.o: CMakeFiles/minishell.dir/flags.make
+CMakeFiles/minishell.dir/get_home_dir.c.o: ../get_home_dir.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/minishell.dir/get_home_dir.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/get_home_dir.c.o   -c /Users/bocal/drina/minishell/get_home_dir.c
+
+CMakeFiles/minishell.dir/get_home_dir.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/get_home_dir.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bocal/drina/minishell/get_home_dir.c > CMakeFiles/minishell.dir/get_home_dir.c.i
+
+CMakeFiles/minishell.dir/get_home_dir.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/get_home_dir.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bocal/drina/minishell/get_home_dir.c -o CMakeFiles/minishell.dir/get_home_dir.c.s
+
+CMakeFiles/minishell.dir/lstnew.c.o: CMakeFiles/minishell.dir/flags.make
+CMakeFiles/minishell.dir/lstnew.c.o: ../lstnew.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/minishell.dir/lstnew.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/lstnew.c.o   -c /Users/bocal/drina/minishell/lstnew.c
+
+CMakeFiles/minishell.dir/lstnew.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/lstnew.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bocal/drina/minishell/lstnew.c > CMakeFiles/minishell.dir/lstnew.c.i
+
+CMakeFiles/minishell.dir/lstnew.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/lstnew.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bocal/drina/minishell/lstnew.c -o CMakeFiles/minishell.dir/lstnew.c.s
+
 CMakeFiles/minishell.dir/minishell.c.o: CMakeFiles/minishell.dir/flags.make
 CMakeFiles/minishell.dir/minishell.c.o: ../minishell.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/minishell.dir/minishell.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/minishell.dir/minishell.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/minishell.c.o   -c /Users/bocal/drina/minishell/minishell.c
 
 CMakeFiles/minishell.dir/minishell.c.i: cmake_force
@@ -674,6 +739,19 @@ CMakeFiles/minishell.dir/minishell.c.i: cmake_force
 CMakeFiles/minishell.dir/minishell.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/minishell.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bocal/drina/minishell/minishell.c -o CMakeFiles/minishell.dir/minishell.c.s
+
+CMakeFiles/minishell.dir/sort_list.c.o: CMakeFiles/minishell.dir/flags.make
+CMakeFiles/minishell.dir/sort_list.c.o: ../sort_list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/minishell.dir/sort_list.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minishell.dir/sort_list.c.o   -c /Users/bocal/drina/minishell/sort_list.c
+
+CMakeFiles/minishell.dir/sort_list.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minishell.dir/sort_list.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bocal/drina/minishell/sort_list.c > CMakeFiles/minishell.dir/sort_list.c.i
+
+CMakeFiles/minishell.dir/sort_list.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minishell.dir/sort_list.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bocal/drina/minishell/sort_list.c -o CMakeFiles/minishell.dir/sort_list.c.s
 
 # Object files for target minishell
 minishell_OBJECTS = \
@@ -722,7 +800,13 @@ minishell_OBJECTS = \
 "CMakeFiles/minishell.dir/libft/ft_toupper.c.o" \
 "CMakeFiles/minishell.dir/libft/get_next_line.c.o" \
 "CMakeFiles/minishell.dir/libft/get_next_line_utils.c.o" \
-"CMakeFiles/minishell.dir/minishell.c.o"
+"CMakeFiles/minishell.dir/add_back.c.o" \
+"CMakeFiles/minishell.dir/add_equal.c.o" \
+"CMakeFiles/minishell.dir/all_envp.c.o" \
+"CMakeFiles/minishell.dir/get_home_dir.c.o" \
+"CMakeFiles/minishell.dir/lstnew.c.o" \
+"CMakeFiles/minishell.dir/minishell.c.o" \
+"CMakeFiles/minishell.dir/sort_list.c.o"
 
 # External object files for target minishell
 minishell_EXTERNAL_OBJECTS =
@@ -772,10 +856,16 @@ minishell: CMakeFiles/minishell.dir/libft/ft_tolower.c.o
 minishell: CMakeFiles/minishell.dir/libft/ft_toupper.c.o
 minishell: CMakeFiles/minishell.dir/libft/get_next_line.c.o
 minishell: CMakeFiles/minishell.dir/libft/get_next_line_utils.c.o
+minishell: CMakeFiles/minishell.dir/add_back.c.o
+minishell: CMakeFiles/minishell.dir/add_equal.c.o
+minishell: CMakeFiles/minishell.dir/all_envp.c.o
+minishell: CMakeFiles/minishell.dir/get_home_dir.c.o
+minishell: CMakeFiles/minishell.dir/lstnew.c.o
 minishell: CMakeFiles/minishell.dir/minishell.c.o
+minishell: CMakeFiles/minishell.dir/sort_list.c.o
 minishell: CMakeFiles/minishell.dir/build.make
 minishell: CMakeFiles/minishell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Linking C executable minishell"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Linking C executable minishell"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/minishell.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/minishell.dir/add_back.c.o"
+  "CMakeFiles/minishell.dir/add_equal.c.o"
+  "CMakeFiles/minishell.dir/all_envp.c.o"
+  "CMakeFiles/minishell.dir/get_home_dir.c.o"
   "CMakeFiles/minishell.dir/libft/ft_atoi.c.o"
   "CMakeFiles/minishell.dir/libft/ft_bzero.c.o"
   "CMakeFiles/minishell.dir/libft/ft_calloc.c.o"
@@ -44,7 +48,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/minishell.dir/libft/ft_toupper.c.o"
   "CMakeFiles/minishell.dir/libft/get_next_line.c.o"
   "CMakeFiles/minishell.dir/libft/get_next_line_utils.c.o"
+  "CMakeFiles/minishell.dir/lstnew.c.o"
   "CMakeFiles/minishell.dir/minishell.c.o"
+  "CMakeFiles/minishell.dir/sort_list.c.o"
   "minishell"
   "minishell.pdb"
 )

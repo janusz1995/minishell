@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/bocal/drina/minishell/add_back.c">
+			<Option target="minishell"/>
+		</Unit>
+		<Unit filename="/Users/bocal/drina/minishell/add_equal.c">
+			<Option target="minishell"/>
+		</Unit>
+		<Unit filename="/Users/bocal/drina/minishell/all_envp.c">
+			<Option target="minishell"/>
+		</Unit>
+		<Unit filename="/Users/bocal/drina/minishell/get_home_dir.c">
+			<Option target="minishell"/>
+		</Unit>
 		<Unit filename="/Users/bocal/drina/minishell/libft/ft_atoi.c">
 			<Option target="minishell"/>
 		</Unit>
@@ -223,10 +235,16 @@
 		<Unit filename="/Users/bocal/drina/minishell/libft/libft.h">
 			<Option target="minishell"/>
 		</Unit>
+		<Unit filename="/Users/bocal/drina/minishell/lstnew.c">
+			<Option target="minishell"/>
+		</Unit>
 		<Unit filename="/Users/bocal/drina/minishell/minishell.c">
 			<Option target="minishell"/>
 		</Unit>
 		<Unit filename="/Users/bocal/drina/minishell/minishell.h">
+			<Option target="minishell"/>
+		</Unit>
+		<Unit filename="/Users/bocal/drina/minishell/sort_list.c">
 			<Option target="minishell"/>
 		</Unit>
 		<Unit filename="/Users/bocal/drina/minishell/CMakeLists.txt">

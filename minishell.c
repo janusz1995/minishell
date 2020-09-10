@@ -2,8 +2,11 @@
 #include "minishell.h"
 
 
-void 	print_env(t_env *root)
+void 	print_env(t_env *head)
 {
+	t_env	*root;
+
+	root = head;
 	while (root->next != NULL)
 	{
 		printf("%s%s\n", root->key_value[0], root->key_value[1]);
@@ -22,6 +25,23 @@ void		cmd_env(t_env *head)
 		ft_putstr_fd( tmp->key_value[0], 1);
 		ft_putstr_fd( tmp->key_value[1], 1);
 		write(1, "\n" , 1);
+		tmp = tmp->next;
+	}
+}
+
+void 		cmd_pwd(t_env *head)
+{
+	t_env *tmp;
+
+	tmp = head;
+	while (tmp->next != NULL)
+	{
+		if ((ft_strncmp(tmp->key_value[0], "PWD=", ft_strlen(tmp->key_value[0])) == 0))
+		{
+			ft_putstr_fd(tmp->key_value[1], 1);
+			write(1, "\n" , 1);
+			break ;
+		}
 		tmp = tmp->next;
 	}
 }
@@ -46,9 +66,9 @@ void		enter_cd(char **str, t_env *env)
 		}
 		env = env->next;
 	}
-	ft_putstr_fd(env->key_value[0], 1);
-	ft_putstr_fd(env->key_value[1], 1);
-	write(1, "\n" , 1);
+//	ft_putstr_fd(env->key_value[0], 1);
+//	ft_putstr_fd(env->key_value[1], 1);
+//	write(1, "\n" , 1);
 }
 
 int 	main(int argc, char **argv, char **envp)
@@ -70,12 +90,7 @@ int 	main(int argc, char **argv, char **envp)
 	get_home_dir(&env, &ptr);
 
 	tmp = env;
-	print_env(tmp);
-	sort_list(env);
-	tmp = env;
-	print_env(tmp);
-	ft_putstr_fd(ptr, 1);
-	write(1, "\n" , 1);
+	//ft_putstr_fd(ptr, 1);
 
 	while (21)
 	{
@@ -86,11 +101,22 @@ int 	main(int argc, char **argv, char **envp)
 			free(str1);
 			str1 = NULL;
 		}
-		// opendir()
 		if (str2[0] && (ft_strncmp(str2[0], "cd", ft_strlen(str2[0])) == 0))
 		{
 			enter_cd(str2, tmp);
 		}
+		else if (str2[0] && (ft_strncmp(str2[0], "pwd", ft_strlen(str2[0]))) == 0)
+		{
+			cmd_pwd(env);
+		}
+		else if (str2[0] && (ft_strncmp(str2[0] , "env", ft_strlen(str[0])) == 0))
+		{
+			cmd_env(env);
+		}
+//		else if (str[0] && (ft_strncmp(str2[0], "export", ft_strlen(str2[0])) == 0))
+//		{
+//
+//		}
 		else
 			exit (0);
 

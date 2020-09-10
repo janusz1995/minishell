@@ -54,5 +54,11 @@ add_executable(minishell
         libft/get_next_line.h
         libft/get_next_line_utils.c
         libft/libft.h
+        add_back.c
+        add_equal.c
+        all_envp.c
+        get_home_dir.c
+        lstnew.c
         minishell.c
-        minishell.h)
+        minishell.h
+        sort_list.c)

@@ -25,7 +25,7 @@ static	void		swap_two_elem(t_env **head, t_env *one, t_env *two)
 	}
 }
 
-void				sort_list(t_env *head)
+void				sort_list(t_env **head)
 {
 	t_env	*tmp;
 	int		flag;
@@ -34,16 +34,17 @@ void				sort_list(t_env *head)
 	while (flag)
 	{
 		flag = 0;
-		tmp = head;
+		tmp = (*head);
 		while (tmp->next != NULL)
 		{
 			if ((ft_strncmp(tmp->key_value[0], tmp->next->key_value[0], ft_strlen(tmp->key_value[0]))) > 0)
 			{
-				swap_two_elem(&head, tmp, tmp->next);
+				swap_two_elem(head, tmp, tmp->next);
 				flag = 1;
 			}
 			else
 				tmp = tmp->next;
 		}
 	}
+
 }

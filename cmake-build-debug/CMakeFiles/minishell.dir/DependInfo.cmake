@@ -4,6 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/bocal/drina/minishell/add_back.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/add_back.c.o"
+  "/Users/bocal/drina/minishell/add_equal.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/add_equal.c.o"
+  "/Users/bocal/drina/minishell/all_envp.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/all_envp.c.o"
+  "/Users/bocal/drina/minishell/get_home_dir.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/get_home_dir.c.o"
   "/Users/bocal/drina/minishell/libft/ft_atoi.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/libft/ft_atoi.c.o"
   "/Users/bocal/drina/minishell/libft/ft_bzero.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/libft/ft_bzero.c.o"
   "/Users/bocal/drina/minishell/libft/ft_calloc.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/libft/ft_calloc.c.o"
@@ -49,7 +53,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/bocal/drina/minishell/libft/ft_toupper.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/libft/ft_toupper.c.o"
   "/Users/bocal/drina/minishell/libft/get_next_line.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/libft/get_next_line.c.o"
   "/Users/bocal/drina/minishell/libft/get_next_line_utils.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/libft/get_next_line_utils.c.o"
+  "/Users/bocal/drina/minishell/lstnew.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/lstnew.c.o"
   "/Users/bocal/drina/minishell/minishell.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/minishell.c.o"
+  "/Users/bocal/drina/minishell/sort_list.c" "/Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/minishell.dir/sort_list.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
