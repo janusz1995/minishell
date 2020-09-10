@@ -7,6 +7,8 @@
 # include <stdio.h>
 # include "libft/libft.h"
 # include "libft/get_next_line.h"
+# include <sys/types.h>
+#include <dirent.h>
 
 typedef struct 			s_env
 {

@@ -15,12 +15,12 @@ LIBFTDIR = ./libft/
 
 HEADER = minishell.h
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -g -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(SRCO) $(LIBFT)
-	$(CC) -L$(LIBFTDIR) -lft $(SRCO) -o $(NAME)
+	$(CC) -g -L$(LIBFTDIR) -lft $(SRCO) -o $(NAME)
 
 $(LIBFT):
 	make -C $(LIBFTDIR)
