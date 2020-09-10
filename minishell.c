@@ -58,7 +58,7 @@ void		enter_cd(char **str, t_env *env)
 	str_cwd = getcwd(NULL, 0);
 	while (env->next != NULL)
 	{
-		if ((ft_strncmp(env->key_value[0], "PWD", 3)) == 0)
+		if ((ft_strncmp(env->key_value[0], "PWD=", ft_strlen(env->key_value[0]))) == 0)
 		{
 			free(env->key_value[1]);
 			env->key_value[1] = ft_strdup(str_cwd);
@@ -117,9 +117,8 @@ int 	main(int argc, char **argv, char **envp)
 //		{
 //
 //		}
-		else
+		else if (str2[0] && (ft_strncmp(str2[0], "exit", ft_strlen(str2[0])) == 0))
 			exit (0);
-
 	}
 
 //	while (tmp->next != NULL)
