@@ -20,6 +20,8 @@ void					all_envp(t_env **env, char **envp);
 void 					add_equal(t_env **head);
 void					get_home_dir(t_env **head, char **str);
 void					sort_list(t_env **head);
+void 					cmd_pwd(t_env *head);
+void					cmd_env(t_env *head);
 
 t_env					*lstnew(char *str);
 

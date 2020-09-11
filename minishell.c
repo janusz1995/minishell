@@ -14,39 +14,23 @@ void 	print_env(t_env *head)
 	}
 }
 
-
-void		cmd_env(t_env *head)
+char		**path_bin(t_env **head)
 {
-	t_env *tmp;
+	t_env	*tmp;
+	char	**str;
 
-	tmp = head;
+	tmp = (*head);
 	while (tmp->next != NULL)
 	{
-		ft_putstr_fd( tmp->key_value[0], 1);
-		ft_putstr_fd( tmp->key_value[1], 1);
-		write(1, "\n" , 1);
+		if ((ft_strncmp(tmp->key_value[0], "PATH=", ft_strlen(tmp->key_value[0]))) == 0)
+			str = ft_split(tmp->key_value[1], ':');
 		tmp = tmp->next;
 	}
+	return (str);
 }
 
-void 		cmd_pwd(t_env *head)
-{
-	t_env *tmp;
 
-	tmp = head;
-	while (tmp->next != NULL)
-	{
-		if ((ft_strncmp(tmp->key_value[0], "PWD=", ft_strlen(tmp->key_value[0])) == 0))
-		{
-			ft_putstr_fd(tmp->key_value[1], 1);
-			write(1, "\n" , 1);
-			break ;
-		}
-		tmp = tmp->next;
-	}
-}
-
-void		enter_cd(char **str, t_env *env)
+void		cmd_cd(char **str, t_env *env)
 {
 	char *str_cwd;
 
@@ -78,12 +62,14 @@ int 	main(int argc, char **argv, char **envp)
 	char **str;
 	char *str1 = NULL;
 	char **str2;
+	char **bin;
 	num = argc;
 	str = argv;
 	env = NULL;
 
 	all_envp(&env, envp);
 	add_equal(&env);
+	bin = path_bin(&env);
 
 	char *ptr;
 	ptr = NULL;
@@ -103,7 +89,7 @@ int 	main(int argc, char **argv, char **envp)
 		}
 		if (str2[0] && (ft_strncmp(str2[0], "cd", ft_strlen(str2[0])) == 0))
 		{
-			enter_cd(str2, tmp);
+			cmd_cd(str2, tmp);
 		}
 		else if (str2[0] && (ft_strncmp(str2[0], "pwd", ft_strlen(str2[0]))) == 0)
 		{
