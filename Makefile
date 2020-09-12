@@ -3,7 +3,7 @@
 
 NAME = minishell
 
-SRC = minishell.c add_back.c lstnew.c
+SRC = minishell.c add_back.c lstnew.c lst_args.c parser.c read_arg.c enter_cd.c
 
 SRCO = $(SRC:.c=.o)
 
