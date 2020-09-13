@@ -31,9 +31,10 @@ char		**path_bin(t_env **head)
 
 void 		start_programm()
 {
+	pid_t pid;
+	pid_t wait_pid;
 
-
-
+	pid = fork();
 
 
 }
