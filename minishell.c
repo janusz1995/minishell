@@ -1,6 +1,6 @@
 
 #include "minishell.h"
-
+#include <dirent.h>
 
 void 	print_env(t_env *head)
 {
@@ -29,6 +29,37 @@ char		**path_bin(t_env **head)
 	return (str);
 }
 
+void 		start_programm()
+{
+
+
+
+
+
+}
+
+void		diff_cmd(char *str, char **path_bin)
+{
+	DIR				*dir;
+	struct dirent	*entry;
+	int				i;
+
+	i = 0;
+	while (path_bin[i])
+	{
+		dir = opendir(path_bin[i]);
+		while ((entry = readdir(dir)) != NULL)
+		{
+			if ((ft_strncmp(str, entry->d_name, ft_strlen(str))) == 0)
+			{
+				start_programm();
+			}
+		}
+		closedir(dir);
+		i++;
+	}
+
+}
 
 void		cmd_cd(char **str, t_env *env)
 {
