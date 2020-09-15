@@ -6,11 +6,11 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:49:35 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/12 22:50:56 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/15 21:42:23 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "parser.h"
 
 char		*skip_spaces(char *ptr)
 {
@@ -28,7 +28,7 @@ int			len_marks(char *ptr, char ch, int *len)
 	{
 		if (ptr[i] == '\\' && ch != '\'' && 
 			(ptr[i + 1] == '\\' || ptr[i + 1] == '$'
-			|| ptr[i + 1] == '`' || ptr[i + 1] == '\'' || ptr[i] == '\"'))
+			|| ptr[i + 1] == '`' || ptr[i + 1] == '\"'))
 		{
 			i += 2;
 			*len += 1;
@@ -74,27 +74,4 @@ int			len_arg(char *ptr)
 		i += tmp;
 	}
 	return (len);
-}
-
-int			parse(char *str, t_list_args **list)
-{
-	int		tmp;
-
-	tmp = 0;
-	while (*str)
-	{
-		str = skip_spaces(str);
-		while (*str == '>' || *str == '<' || *str == ';' || *str == '|')
-		{
-			if ((tmp = read_special_char(str, list)) == -1)
-				return (-1);
-			str += tmp;
-		}
-		str = skip_spaces(str);
-		if ((tmp = read_args(str, len_arg(str), list)) == -1)
-			return (-1);
-		str += tmp;
-
-	}
-	return (1);
 }

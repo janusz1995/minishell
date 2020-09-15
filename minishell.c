@@ -25,7 +25,27 @@ void		get_home_dir(t_env *env, char **str)
 	}
 }
 
+// int		ft_push_args(t_all *all, t_list_args **list)
+// {
+// 	t_list_args *tmp;
 
+// 	tmp = *list;
+// 	if (tmp)
+// 	{
+// 		all->cmd = tmp->content;
+// 		tmp = tmp->next;
+// 		while (tmp != NULL && tmp->spec_flag != 1)
+// 		{
+// 			ft_lstadd_back_arg(&(all->args), tmp->content);
+// 			tmp = tmp->next;
+// 		}
+// 		if (tmp)
+// 		{
+
+// 		}
+// 	}
+	
+// }
 int 	main(int argc, char **argv, char **envp)
 {
 	t_env *env;
@@ -34,7 +54,8 @@ int 	main(int argc, char **argv, char **envp)
 	char **arr;
 	int num;
 	char *home;
-
+	t_arg arg;
+	
 	arr = argv;
 	num = argc;
 
@@ -42,6 +63,12 @@ int 	main(int argc, char **argv, char **envp)
 	env = NULL;
 	list = NULL;
 	home = NULL;
+
+	t_all all;
+
+	all.args = NULL;
+	all.next = NULL;
+	all.spec = NULL;
 
 	all_envp(&env, envp);
 	// get_home_dir(tmp, &home);
@@ -53,7 +80,7 @@ int 	main(int argc, char **argv, char **envp)
 		write(1, "shell > ", 8);
 		if ((get_next_line(0, &str1)) > 0)
 		{
-			if (parse(str1, &list) != -1)
+			if (parser(str1, &arg, &list, env) != -1)
 			{
 				ft_lst_print(list);
 				free(str1);
@@ -62,6 +89,7 @@ int 	main(int argc, char **argv, char **envp)
 			else
 				ft_putstr_fd("ERROR\n", 2);
 		}
+		ft_push_args(&all, &list);
 		ft_lstclear_args(&list, free);
 		list = NULL;
 	}
