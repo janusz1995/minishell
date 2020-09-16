@@ -1,6 +1,9 @@
 
 #include "minishell.h"
+//#include <sys/types.h>
+//#include <sys/wait.h>
 #include <dirent.h>
+#include <signal.h>
 
 void 	print_env(t_env *head)
 {
@@ -29,17 +32,31 @@ char		**path_bin(t_env **head)
 	return (str);
 }
 
-void 		start_programm()
+void 		start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg)
 {
-	pid_t pid;
-	pid_t wait_pid;
+	pid_t	pid;
+	pid_t	wait_pid;
+	int		status;
 
 	pid = fork();
-
-
+	char *tmp = ft_strjoin(path_bin, "/");
+	tmp = ft_strjoin(tmp, cmd);
+	if (pid == 0)
+	{
+		if (execve(tmp, cmd_arg, env) == -1)
+		{
+			exit (WEXITSTATUS(status));
+		}
+	}
+	else if (pid < 0)
+	{
+		perror("lsh");
+	}
+	else
+		wait_pid = waitpid(pid, &status, WUNTRACED);
 }
 
-void		diff_cmd(char *str, char **path_bin)
+void		diff_cmd(char *str, char **path_bin, char **env, char **str2)
 {
 	DIR				*dir;
 	struct dirent	*entry;
@@ -53,13 +70,12 @@ void		diff_cmd(char *str, char **path_bin)
 		{
 			if ((ft_strncmp(str, entry->d_name, ft_strlen(str))) == 0)
 			{
-				start_programm();
+				start_programm(str, path_bin[i], env, str2);
 			}
 		}
 		closedir(dir);
 		i++;
 	}
-
 }
 
 void		cmd_cd(char **str, t_env *env)
@@ -137,6 +153,8 @@ int 	main(int argc, char **argv, char **envp)
 //		}
 		else if (str2[0] && (ft_strncmp(str2[0], "exit", ft_strlen(str2[0])) == 0))
 			exit (0);
+		else
+			diff_cmd(str2[0], bin, envp, str2);
 	}
 
 //	while (tmp->next != NULL)
