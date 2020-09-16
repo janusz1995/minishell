@@ -45,6 +45,7 @@ void 		start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg)
 	{
 		if (execve(tmp, cmd_arg, env) == -1)
 		{
+			ft_putstr_fd( "Error\n",2);
 			exit (WEXITSTATUS(status));
 		}
 	}
@@ -56,7 +57,7 @@ void 		start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg)
 		wait_pid = waitpid(pid, &status, WUNTRACED);
 }
 
-void		diff_cmd(char *str, char **path_bin, char **env, char **str2)
+void		diff_cmd(char *str, char **path_bin, char **envp, char **str2)
 {
 	DIR				*dir;
 	struct dirent	*entry;
@@ -68,14 +69,16 @@ void		diff_cmd(char *str, char **path_bin, char **env, char **str2)
 		dir = opendir(path_bin[i]);
 		while ((entry = readdir(dir)) != NULL)
 		{
-			if ((ft_strncmp(str, entry->d_name, ft_strlen(str))) == 0)
+			if ((ft_strncmp(str, entry->d_name, ft_strlen(str) + 1)) == 0)
 			{
-				start_programm(str, path_bin[i], env, str2);
+				start_programm(str, path_bin[i], envp, str2);
+				break ;
 			}
 		}
 		closedir(dir);
 		i++;
 	}
+	start_programm();
 }
 
 void		cmd_cd(char **str, t_env *env)
@@ -151,7 +154,7 @@ int 	main(int argc, char **argv, char **envp)
 //		{
 //
 //		}
-		else if (str2[0] && (ft_strncmp(str2[0], "exit", ft_strlen(str2[0])) == 0))
+		else if (str2[0] && (ft_strncmp(str2[0], "exit", ft_strlen(str2[0]) + 1) == 0))
 			exit (0);
 		else
 			diff_cmd(str2[0], bin, envp, str2);
