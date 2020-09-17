@@ -3,8 +3,12 @@
 
 NAME = minishell
 
+<<<<<<< HEAD:drina/Makefile
 SRC = minishell.c add_back.c lstnew.c all_envp.c add_equal.c get_home_dir.c sort_list.c \
 		cmd_pwd.c cmd_env.c
+=======
+SRC = minishell.c add_back.c lstnew.c lst_args.c parser.c read_arg.c enter_cd.c
+>>>>>>> lmidori:Makefile
 
 SRCO = $(SRC:.c=.o)
 
@@ -16,12 +20,12 @@ LIBFTDIR = ../libft/
 
 HEADER = minishell.h
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -g -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(SRCO) $(LIBFT)
-	$(CC) -L$(LIBFTDIR) -lft $(SRCO) -o $(NAME)
+	$(CC) -g -L$(LIBFTDIR) -lft $(SRCO) -o $(NAME)
 
 $(LIBFT):
 	make -C $(LIBFTDIR)
