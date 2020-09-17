@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:54:58 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/12 22:55:11 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/14 19:13:24 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void		enter_cd(t_list_args *list, t_env *env, char *home)
 		return ;
 	}
 	str_cwd = getcwd(NULL, 0);
-	while (env->next != NULL)
+	while (env != NULL)
 	{
 		if ((ft_strncmp(env->key_value[0], "PWD", 3)) == 0)
 		{

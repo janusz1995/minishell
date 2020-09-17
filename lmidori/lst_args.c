@@ -6,11 +6,11 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 21:10:38 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/12 22:46:06 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/14 11:43:59 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "parser.h"
 
 t_list_args	*ft_lstnew_arg(void *content, int flag)
 {
