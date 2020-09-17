@@ -1,4 +1,4 @@
-#include "minishell.h"
+#include "parser.h"
 
 void		all_envp(t_env **env, char **envp)
 {
