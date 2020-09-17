@@ -36,10 +36,12 @@ void 		start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg)
 {
 	pid_t	pid;
 	pid_t	wait_pid;
+	char	*tmp;
 	int		status;
 
 	pid = fork();
-	char *tmp = ft_strjoin(path_bin, "/");
+	if (path_bin != NULL)
+		tmp = ft_strjoin(path_bin, "/");
 	tmp = ft_strjoin(tmp, cmd);
 	if (pid == 0)
 	{
@@ -62,8 +64,10 @@ void		diff_cmd(char *str, char **path_bin, char **envp, char **str2)
 	DIR				*dir;
 	struct dirent	*entry;
 	int				i;
+	int				flag;
 
 	i = 0;
+	flag = 0;
 	while (path_bin[i])
 	{
 		dir = opendir(path_bin[i]);
@@ -72,13 +76,17 @@ void		diff_cmd(char *str, char **path_bin, char **envp, char **str2)
 			if ((ft_strncmp(str, entry->d_name, ft_strlen(str) + 1)) == 0)
 			{
 				start_programm(str, path_bin[i], envp, str2);
+				flag = 1;
 				break ;
 			}
 		}
 		closedir(dir);
 		i++;
+		if (flag)
+			break ;
 	}
-	start_programm();
+	if (flag == 0)
+		start_programm(str, path_bin[i], envp, str2);
 }
 
 void		cmd_cd(char **str, t_env *env)
@@ -119,7 +127,8 @@ int 	main(int argc, char **argv, char **envp)
 	env = NULL;
 
 	all_envp(&env, envp);
-	add_equal(&env);
+	add_equal(&env);cd ..
+
 	bin = path_bin(&env);
 
 	char *ptr;

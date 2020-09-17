@@ -12,7 +12,7 @@ CC = gcc
 
 LIBFT = $(LIBFTDIR)libft.a
 
-LIBFTDIR = ./libft/
+LIBFTDIR = ../libft/
 
 HEADER = minishell.h
 
