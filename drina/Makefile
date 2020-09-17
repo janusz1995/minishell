@@ -3,16 +3,8 @@
 
 NAME = minishell
 
-<<<<<<< HEAD:drina/Makefile1
-<<<<<<< HEAD:drina/Makefile
 SRC = minishell.c add_back.c lstnew.c all_envp.c add_equal.c get_home_dir.c sort_list.c \
 		cmd_pwd.c cmd_env.c
-=======
-SRC = minishell.c add_back.c lstnew.c lst_args.c parser.c read_arg.c enter_cd.c
->>>>>>> lmidori:Makefile
-=======
-SRC = minishell.c add_back.c lstnew.c lst_args.c parser.c read_arg.c enter_cd.c parser4.c
->>>>>>> lmidori:lmidori/Makefile
 
 SRCO = $(SRC:.c=.o)
 

@@ -127,7 +127,7 @@ int 	main(int argc, char **argv, char **envp)
 	env = NULL;
 
 	all_envp(&env, envp);
-	add_equal(&env);cd ..
+	add_equal(&env);
 
 	bin = path_bin(&env);
 
