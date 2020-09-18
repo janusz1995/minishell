@@ -47,6 +47,13 @@ typedef struct			s_env
 	struct s_env		*next;
 }						t_env;
 
+typedef struct 			s_head_struct
+{
+	t_env 				*env;
+	t_all				all;
+	t_list_args			*list;
+	char 				**bin;
+}						t_head_struct;
 
 
 t_list_args				*ft_lstnew_arg(void *content, int flag);
@@ -54,13 +61,14 @@ t_list_args				*ft_lstlast_arg(t_list_args *lst);
 void					ft_lstadd_back_arg(t_list_args **lst, t_list_args *new);
 void					ft_lstclear_args(t_list_args **lst, void (*del)(void*));
 void					ft_lst_print(t_list_args *list);
+void 					add_equal(t_env **head);
 int						parse(char *str, t_list_args **list, t_env *env);
 int						len_arg(char *ptr);
 int						len_marks(char *ptr, char ch, int *len);
 char					*skip_spaces(char *ptr);
 int						read_special_char(char *str, t_list_args **list);
 
-int			parser(char *str, t_arg *arg, t_list_args **list, t_env *env);
+int			parser(char *str, t_arg *arg, t_list_args **list, t_env *env, t_head_struct *head_struct);
 int			read_arg(char *str, t_arg *arg, t_env *env, t_list_args **list);
 int			init_arg_quotes(char *str, t_arg *arg, t_env *env);
 int			init_arg_env(char *str, t_arg *arg, t_env *env);

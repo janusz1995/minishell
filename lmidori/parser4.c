@@ -199,11 +199,10 @@ void		ft_clear_strcut(t_all *all)
 	// free(all);
 }
 
-int			parser(char *str, t_arg *arg, t_list_args **list, t_env *env)
+int			parser(char *str, t_arg *arg, t_head_struct *head_struct)
 {
 	int		tmp;
 	int		len;
-	t_all	all;
 
 	while (*str)
 	{
@@ -211,29 +210,29 @@ int			parser(char *str, t_arg *arg, t_list_args **list, t_env *env)
 			break;
 		while (*str == '>' || *str == '<' || *str == ';' || *str == '|')
 		{
-			if ((tmp = read_special_char(str, list)) == -1)
+			if ((tmp = read_special_char(str, &head_struct->list)) == -1)
 				return (-1);
 			str += tmp;
-			fool_strcut(&all, list);
-			ft_lst_print(all.args);
+			fool_strcut(&head_struct->all, &head_struct->list);
+			//ft_lst_print(all.args);
 			//DRINA_FUNC_GO(&all); // GGOOG!
 			//ft_clear_strcut(&all);
-			ft_lst_print(all.args);
+			ft_lst_print(head_struct->all.args);
 		}
 		if (*(str = skip_spaces(str)) == '\0')
 			break;
 		len = len_arg(str);
 		if (!init_struct(arg, len))
 			return (-1);
-		if ((tmp = read_arg(str, arg, env, list)) == -1)
+		if ((tmp = read_arg(str, arg, head_struct->env, &head_struct->list)) == -1)
 			return (-1);
 		str += tmp;
 	}
-	fool_strcut(&all, list);
-	ft_lst_print(all.args);
+	fool_strcut(&head_struct->all, &head_struct->list);
+	//ft_lst_print(all.args);
 	//DRINA_FUNC_GO(&all); //GOGOGOG
-	ft_clear_strcut(&all);
-	ft_lst_print(all.args);
+	ft_clear_strcut(&head_struct->all);
+	ft_lst_print(head_struct->all.args);
 
 	return (1);
 }
