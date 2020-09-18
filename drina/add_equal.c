@@ -1,5 +1,5 @@
 
-#include "minishell.h"
+#include "minishelldrina.h"
 
 void 		add_equal(t_env **head)
 {

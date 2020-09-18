@@ -4,7 +4,8 @@
 NAME = minishell
 
 SRC = minishell.c add_back.c lstnew.c lst_args.c read_arg.c enter_cd.c init_arg_env.c \
-find_len_arg.c struct_funcs.c get_env_args.c parser.c
+        find_len_arg.c struct_funcs.c get_env_args.c parser.c path_bin.c cmd_cd.c \
+        start_programm.c
 
 SRCO = $(SRC:.c=.o)
 

@@ -1,5 +1,5 @@
 
-#include "minishell.h"
+#include "minishelldrina.h"
 
 void		get_home_dir(t_env **head, char **str)
 {

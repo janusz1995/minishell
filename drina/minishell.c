@@ -1,5 +1,6 @@
 
-#include "minishell.h"
+#include "minishelldrina.h"
+#include "../lmidori/parser.h"
 //#include <sys/types.h>
 //#include <sys/wait.h>
 #include <dirent.h>
@@ -17,47 +18,6 @@ void 	print_env(t_env *head)
 	}
 }
 
-char		**path_bin(t_env **head)
-{
-	t_env	*tmp;
-	char	**str;
-
-	tmp = (*head);
-	while (tmp->next != NULL)
-	{
-		if ((ft_strncmp(tmp->key_value[0], "PATH=", ft_strlen(tmp->key_value[0]))) == 0)
-			str = ft_split(tmp->key_value[1], ':');
-		tmp = tmp->next;
-	}
-	return (str);
-}
-
-void 		start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg)
-{
-	pid_t	pid;
-	pid_t	wait_pid;
-	char	*tmp;
-	int		status;
-
-	pid = fork();
-	if (path_bin != NULL)
-		tmp = ft_strjoin(path_bin, "/");
-	tmp = ft_strjoin(tmp, cmd);
-	if (pid == 0)
-	{
-		if (execve(tmp, cmd_arg, env) == -1)
-		{
-			ft_putstr_fd( "Error\n",2);
-			exit (WEXITSTATUS(status));
-		}
-	}
-	else if (pid < 0)
-	{
-		perror("lsh");
-	}
-	else
-		wait_pid = waitpid(pid, &status, WUNTRACED);
-}
 
 void		diff_cmd(char *str, char **path_bin, char **envp, char **str2)
 {
@@ -87,31 +47,6 @@ void		diff_cmd(char *str, char **path_bin, char **envp, char **str2)
 	}
 	if (flag == 0)
 		start_programm(str, path_bin[i], envp, str2);
-}
-
-void		cmd_cd(char **str, t_env *env)
-{
-	char *str_cwd;
-
-	if (chdir(str[1]) == -1)
-	{
-		ft_putstr_fd("Error\n",2);
-		exit (0);
-	}
-	str_cwd = getcwd(NULL, 0);
-	while (env->next != NULL)
-	{
-		if ((ft_strncmp(env->key_value[0], "PWD=", ft_strlen(env->key_value[0]))) == 0)
-		{
-			free(env->key_value[1]);
-			env->key_value[1] = ft_strdup(str_cwd);
-			break ;
-		}
-		env = env->next;
-	}
-//	ft_putstr_fd(env->key_value[0], 1);
-//	ft_putstr_fd(env->key_value[1], 1);
-//	write(1, "\n" , 1);
 }
 
 int 	main(int argc, char **argv, char **envp)

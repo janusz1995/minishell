@@ -1,4 +1,5 @@
 #include "minishell.h"
+#include "../drina/minishelldrina.h"
 
 void		all_envp(t_env **env, char **envp)
 {
@@ -17,27 +18,29 @@ void		all_envp(t_env **env, char **envp)
 
 int		main(int argc, char **argv, char **envp)
 {
-	t_env *env;
 	char *str1;
-	t_list_args *list;
 	char **arr;
 	int num;
-	char *home;
 	t_arg arg;
 	
 	arr = argv;
 	num = argc;
 
+
+	t_head_struct	head_struct;
 	str1 = NULL;
-	env = NULL;
-	list = NULL;
-	home = NULL;
+	head_struct.env = NULL;
+	head_struct.list = NULL;
+	//home = NULL;
 
 	// t_all all;
 
 	// all = NULL;
 
-	all_envp(&env, envp);
+	all_envp(&head_struct.env, envp);
+	head_struct.bin = path_bin(&head_struct.env);
+	add_equal(&head_struct.env);
+
 	// get_home_dir(tmp, &home);
 	// ft_putstr_fd(home, 1);
 	// write(1, "\n" , 1);
@@ -47,7 +50,7 @@ int		main(int argc, char **argv, char **envp)
 		write(1, "shell > ", 8);
 		if ((get_next_line(0, &str1)) > 0)
 		{
-			if (parser(str1, &arg, &list, env) != -1)
+			if (parser(str1, &arg, &head_struct) != -1)
 			{
 				// ft_lst_print(list);
 				free(str1);
@@ -57,8 +60,8 @@ int		main(int argc, char **argv, char **envp)
 				ft_putstr_fd("ERROR\n", 2);
 		}
 		//ft_push_args(&all, &list);
-		ft_lstclear_args(&list, free);
-		list = NULL;
+		ft_lstclear_args(&head_struct.list, free);
+		head_struct.list = NULL;
 	}
 	return (1);
 }

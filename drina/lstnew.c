@@ -1,5 +1,5 @@
 
-#include "minishell.h"
+#include "minishelldrina.h"
 
 t_env		*lstnew(char *str)
 {
