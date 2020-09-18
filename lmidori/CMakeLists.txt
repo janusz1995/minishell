@@ -5,7 +5,6 @@ set(CMAKE_C_STANDARD 11)
 
 include_directories(.)
 include_directories(libft)
-include_directories(drina)
 
 add_executable(minishell
         libft/ft_atoi.c
@@ -55,11 +54,5 @@ add_executable(minishell
         libft/get_next_line.h
         libft/get_next_line_utils.c
         libft/libft.h
-        drina/add_back.c
-        drina/add_equal.c
-        drina/all_envp.c
-        drina/get_home_dir.c
-        drina/lstnew.c
-        drina/minishell.c
-        drina/minishell.h
-        drina/sort_list.c)
+        minishell.c
+        minishell.h)

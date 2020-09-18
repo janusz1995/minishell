@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/drina/drina/myminishell
+CMAKE_SOURCE_DIR = /Users/bocal/drina/minishell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/drina/drina/myminishell/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/bocal/drina/minishell/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/drina/drina/myminishell/cmake-build-debug/CMakeFiles /Users/drina/drina/myminishell/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles /Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/drina/drina/myminishell/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bocal/drina/minishell/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,114 +142,6 @@ minishell: cmake_check_build_system
 minishell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/build
 .PHONY : minishell/fast
-
-add_back.o: add_back.c.o
-
-.PHONY : add_back.o
-
-# target to build an object file
-add_back.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/add_back.c.o
-.PHONY : add_back.c.o
-
-add_back.i: add_back.c.i
-
-.PHONY : add_back.i
-
-# target to preprocess a source file
-add_back.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/add_back.c.i
-.PHONY : add_back.c.i
-
-add_back.s: add_back.c.s
-
-.PHONY : add_back.s
-
-# target to generate assembly for a file
-add_back.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/add_back.c.s
-.PHONY : add_back.c.s
-
-add_equal.o: add_equal.c.o
-
-.PHONY : add_equal.o
-
-# target to build an object file
-add_equal.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/add_equal.c.o
-.PHONY : add_equal.c.o
-
-add_equal.i: add_equal.c.i
-
-.PHONY : add_equal.i
-
-# target to preprocess a source file
-add_equal.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/add_equal.c.i
-.PHONY : add_equal.c.i
-
-add_equal.s: add_equal.c.s
-
-.PHONY : add_equal.s
-
-# target to generate assembly for a file
-add_equal.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/add_equal.c.s
-.PHONY : add_equal.c.s
-
-all_envp.o: all_envp.c.o
-
-.PHONY : all_envp.o
-
-# target to build an object file
-all_envp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/all_envp.c.o
-.PHONY : all_envp.c.o
-
-all_envp.i: all_envp.c.i
-
-.PHONY : all_envp.i
-
-# target to preprocess a source file
-all_envp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/all_envp.c.i
-.PHONY : all_envp.c.i
-
-all_envp.s: all_envp.c.s
-
-.PHONY : all_envp.s
-
-# target to generate assembly for a file
-all_envp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/all_envp.c.s
-.PHONY : all_envp.c.s
-
-get_home_dir.o: get_home_dir.c.o
-
-.PHONY : get_home_dir.o
-
-# target to build an object file
-get_home_dir.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/get_home_dir.c.o
-.PHONY : get_home_dir.c.o
-
-get_home_dir.i: get_home_dir.c.i
-
-.PHONY : get_home_dir.i
-
-# target to preprocess a source file
-get_home_dir.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/get_home_dir.c.i
-.PHONY : get_home_dir.c.i
-
-get_home_dir.s: get_home_dir.c.s
-
-.PHONY : get_home_dir.s
-
-# target to generate assembly for a file
-get_home_dir.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/get_home_dir.c.s
-.PHONY : get_home_dir.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -1466,33 +1358,6 @@ libft/get_next_line_utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/get_next_line_utils.c.s
 .PHONY : libft/get_next_line_utils.c.s
 
-lstnew.o: lstnew.c.o
-
-.PHONY : lstnew.o
-
-# target to build an object file
-lstnew.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lstnew.c.o
-.PHONY : lstnew.c.o
-
-lstnew.i: lstnew.c.i
-
-.PHONY : lstnew.i
-
-# target to preprocess a source file
-lstnew.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lstnew.c.i
-.PHONY : lstnew.c.i
-
-lstnew.s: lstnew.c.s
-
-.PHONY : lstnew.s
-
-# target to generate assembly for a file
-lstnew.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lstnew.c.s
-.PHONY : lstnew.c.s
-
 minishell.o: minishell.c.o
 
 .PHONY : minishell.o
@@ -1520,33 +1385,6 @@ minishell.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/minishell.c.s
 .PHONY : minishell.c.s
 
-sort_list.o: sort_list.c.o
-
-.PHONY : sort_list.o
-
-# target to build an object file
-sort_list.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/sort_list.c.o
-.PHONY : sort_list.c.o
-
-sort_list.i: sort_list.c.i
-
-.PHONY : sort_list.i
-
-# target to preprocess a source file
-sort_list.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/sort_list.c.i
-.PHONY : sort_list.c.i
-
-sort_list.s: sort_list.c.s
-
-.PHONY : sort_list.s
-
-# target to generate assembly for a file
-sort_list.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/sort_list.c.s
-.PHONY : sort_list.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1556,18 +1394,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... minishell"
-	@echo "... add_back.o"
-	@echo "... add_back.i"
-	@echo "... add_back.s"
-	@echo "... add_equal.o"
-	@echo "... add_equal.i"
-	@echo "... add_equal.s"
-	@echo "... all_envp.o"
-	@echo "... all_envp.i"
-	@echo "... all_envp.s"
-	@echo "... get_home_dir.o"
-	@echo "... get_home_dir.i"
-	@echo "... get_home_dir.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
@@ -1703,15 +1529,9 @@ help:
 	@echo "... libft/get_next_line_utils.o"
 	@echo "... libft/get_next_line_utils.i"
 	@echo "... libft/get_next_line_utils.s"
-	@echo "... lstnew.o"
-	@echo "... lstnew.i"
-	@echo "... lstnew.s"
 	@echo "... minishell.o"
 	@echo "... minishell.i"
 	@echo "... minishell.s"
-	@echo "... sort_list.o"
-	@echo "... sort_list.i"
-	@echo "... sort_list.s"
 .PHONY : help
 
 
