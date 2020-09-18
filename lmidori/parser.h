@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/17 18:11:34 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/18 21:55:39 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <unistd.h>
 # include <stdio.h>
-# include "libft/libft.h"
-# include "libft/get_next_line.h"
+# include "../libft/libft.h"
+# include "../libft/get_next_line.h"
 # include <sys/types.h>
 # include <dirent.h>
 
@@ -69,6 +69,19 @@ int			init_arg_env(char *str, t_arg *arg, t_env *env);
 int			str_concatenated(t_arg *arg, char *tmp1, char *tmp2);
 char		*get_arg_env(char *tmp, t_env *env);
 int			init_struct(t_arg *arg, int len);
+
+int			init_struct(t_arg *arg, int len);
+int			fool_strcut(t_all *all, t_list_args **list);
+void		ft_init_struct(t_all *all);
+void		ft_clear_strcut(t_all *all);
+char		*get_home_dir(t_env *env);
+char		*get_arg_env(char *tmp, t_env *env);
+int			init_tilde(char *str, t_arg *arg, t_env *env);
+int			init_quotes_slash(char *str, int *i, t_arg *arg, t_env *env);
+int			init_arg_env(char *str, t_arg *arg, t_env *env);
+int			str_concatenated(t_arg *arg, char *tmp1, char *tmp2);
+
+
 
 
 #endif

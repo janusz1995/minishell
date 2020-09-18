@@ -13,40 +13,9 @@ void		all_envp(t_env **env, char **envp)
 
 }
 
-void		get_home_dir(t_env *env, char **str)
-{
-	while (env->next != NULL)
-	{
-		if ((ft_strncmp(env->key_value[0], "HOME", 4)) == 0)
-		{
-			*str = env->key_value[1];
-		}
-		env = env->next;
-	}
-}
 
-// int		ft_push_args(t_all *all, t_list_args **list)
-// {
-// 	t_list_args *tmp;
 
-// 	tmp = *list;
-// 	if (tmp)
-// 	{
-// 		all->cmd = tmp->content;
-// 		tmp = tmp->next;
-// 		while (tmp != NULL && tmp->spec_flag != 1)
-// 		{
-// 			ft_lstadd_back_arg(&(all->args), tmp->content);
-// 			tmp = tmp->next;
-// 		}
-// 		if (tmp)
-// 		{
-
-// 		}
-// 	}
-// }
-
-int 	main(int argc, char **argv, char **envp)
+int		main(int argc, char **argv, char **envp)
 {
 	t_env *env;
 	char *str1;

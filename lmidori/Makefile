@@ -3,7 +3,8 @@
 
 NAME = minishell
 
-SRC = minishell.c add_back.c lstnew.c lst_args.c parser.c read_arg.c enter_cd.c parser4.c
+SRC = minishell.c add_back.c lstnew.c lst_args.c read_arg.c enter_cd.c init_arg_env.c \
+find_len_arg.c struct_funcs.c get_env_args.c parser.c
 
 SRCO = $(SRC:.c=.o)
 
@@ -11,7 +12,7 @@ CC = gcc
 
 LIBFT = $(LIBFTDIR)libft.a
 
-LIBFTDIR = ./libft/
+LIBFTDIR = ../libft/
 
 HEADER = minishell.h
 
