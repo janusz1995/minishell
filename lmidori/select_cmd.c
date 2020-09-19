@@ -44,9 +44,11 @@ void 		select_cmd(t_all *all, t_head_struct *head_struct, char **envp)
 {
 	char	**str;
 
+	str = get_arg(all->args);
+
 	if (all->cmd && (ft_strncmp(all->cmd, "cd", ft_strlen(all->cmd) + 1) == 0))
 	{
-		cmd_cd(all->args, head_struct->env);
+		cmd_cd(str, head_struct->env);
 	}
 	else if (all->cmd && (ft_strncmp(all->cmd, "pwd", ft_strlen(all->cmd) + 1)) == 0)
 	{
@@ -64,7 +66,6 @@ void 		select_cmd(t_all *all, t_head_struct *head_struct, char **envp)
 		exit(0);
 	else
 	{
-		str = get_arg(head_struct->list);
 		diff_cmd(head_struct->all.cmd, head_struct->bin, envp, str);
 
 	}

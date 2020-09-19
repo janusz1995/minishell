@@ -1,13 +1,13 @@
 
 #include "parser.h"
 
-void		cmd_cd(t_list_args *args,t_env *env)
+void		cmd_cd(char **args,t_env *env)
 {
 	char	*str_cwd;
 	t_env	*tmp;
 
 	tmp = env;
-	if (chdir(args->content) == -1)
+	if (chdir(args[0]) == -1)
 	{
 		ft_putstr_fd("Error\n",2);
 		exit (0);
