@@ -61,14 +61,14 @@ int 	main(int argc, char **argv, char **envp)
 	str = argv;
 	env = NULL;
 
-	all_envp(&env, envp);
+	//all_envp(&env, envp);
 	add_equal(&env);
 
 	bin = path_bin(&env);
 
 	char *ptr;
 	ptr = NULL;
-	get_home_dir(&env, &ptr);
+	//get_home_dir(&env, &ptr);
 
 	tmp = env;
 	//ft_putstr_fd(ptr, 1);
@@ -90,7 +90,7 @@ int 	main(int argc, char **argv, char **envp)
 		{
 			cmd_pwd(env);
 		}
-		else if (str2[0] && (ft_strncmp(str2[0] , "env", ft_strlen(str[0])) == 0))
+		else if (str2[0] && (ft_strncmp(str2[0], "env", ft_strlen(str[0])) == 0))
 		{
 			cmd_env(env);
 		}
@@ -99,11 +99,13 @@ int 	main(int argc, char **argv, char **envp)
 //
 //		}
 		else if (str2[0] && (ft_strncmp(str2[0], "exit", ft_strlen(str2[0]) + 1) == 0))
-			exit (0);
+			exit(0);
 		else
+		{
 			diff_cmd(str2[0], bin, envp, str2);
-	}
 
+		}
+	}
 //	while (tmp->next != NULL)
 //	{
 //		printf("%s = ", tmp->key_value[0]);

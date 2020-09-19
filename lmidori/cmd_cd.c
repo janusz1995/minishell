@@ -1,25 +1,27 @@
 
 #include "parser.h"
 
-void		cmd_cd(char **str, t_env *env)
+void		cmd_cd(t_list_args *args,t_env *env)
 {
-	char *str_cwd;
+	char	*str_cwd;
+	t_env	*tmp;
 
-	if (chdir(str[1]) == -1)
+	tmp = env;
+	if (chdir(args->content) == -1)
 	{
 		ft_putstr_fd("Error\n",2);
 		exit (0);
 	}
 	str_cwd = getcwd(NULL, 0);
-	while (env->next != NULL)
+	while (tmp->next != NULL)
 	{
-		if ((ft_strncmp(env->key_value[0], "PWD=", ft_strlen(env->key_value[0]))) == 0)
+		if ((ft_strncmp(tmp->key_value[0], "PWD=", ft_strlen(tmp->key_value[0]))) == 0)
 		{
-			free(env->key_value[1]);
-			env->key_value[1] = ft_strdup(str_cwd);
+			free(tmp->key_value[1]);
+			tmp->key_value[1] = ft_strdup(str_cwd);
 			break ;
 		}
-		env = env->next;
+		tmp = tmp->next;
 	}
 //	ft_putstr_fd(env->key_value[0], 1);
 //	ft_putstr_fd(env->key_value[1], 1);

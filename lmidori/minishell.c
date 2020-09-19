@@ -50,7 +50,7 @@ int		main(int argc, char **argv, char **envp)
 		write(1, "shell > ", 8);
 		if ((get_next_line(0, &str1)) > 0)
 		{
-			if (parser(str1, &arg, &head_struct) != -1)
+			if (parser(str1, &arg, &head_struct, envp) != -1)
 			{
 				// ft_lst_print(list);
 				free(str1);

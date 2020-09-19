@@ -1,27 +1,71 @@
 
 #include "parser.h"
 
-void 	select_cmd(t_all *all)
+int		ft_lstsize_arg(t_list_args *lst)
 {
-	/// Need change str
-	if (str2[0] && (ft_strncmp(str2[0], "cd", ft_strlen(str2[0])) == 0))
+	int	count;
+
+	count = 0;
+	while (lst != NULL)
 	{
-		cmd_cd(str2, tmp);
+		count++;
+		lst = lst->next;
 	}
-	else if (str2[0] && (ft_strncmp(str2[0], "pwd", ft_strlen(str2[0]))) == 0)
+	return (count);
+}
+
+char		**get_arg(t_list_args *list)
+{
+	char	**str;
+	int 	len_list;
+	int		i;
+
+	len_list = ft_lstsize_arg(list);
+	if (list)
 	{
-		cmd_pwd(env);
+		if (!(str = (char**)malloc(sizeof(char*) * (len_list + 1))))
+			return (NULL);
+		str[len_list] = NULL;
+
+		i = 0;
+		while (list)
+		{
+			str[i] = list->content;
+			list = list->next;
+			i++;
+		}
 	}
-	else if (str2[0] && (ft_strncmp(str2[0], "env", ft_strlen(str[0])) == 0))
+	else
+		return (NULL);
+	return (str);
+}
+
+void 		select_cmd(t_all *all, t_head_struct *head_struct, char **envp)
+{
+	char	**str;
+
+	if (all->cmd && (ft_strncmp(all->cmd, "cd", ft_strlen(all->cmd) + 1) == 0))
 	{
-		cmd_env(env);
+		cmd_cd(all->args, head_struct->env);
+	}
+	else if (all->cmd && (ft_strncmp(all->cmd, "pwd", ft_strlen(all->cmd) + 1)) == 0)
+	{
+		cmd_pwd(head_struct->env);
+	}
+	else if (all->cmd && (ft_strncmp(all->cmd, "env", ft_strlen(all->cmd) + 1) == 0))
+	{
+		cmd_env(head_struct->env);
 	}
 //		else if (str[0] && (ft_strncmp(str2[0], "export", ft_strlen(str2[0])) == 0))
 //		{
 //
 //		}
-	else if (str2[0] && (ft_strncmp(str2[0], "exit", ft_strlen(str2[0]) + 1) == 0))
+	else if (all->cmd && (ft_strncmp(all->cmd, "exit", ft_strlen(all->cmd) + 1) == 0))
 		exit(0);
 	else
-		diff_cmd(str2[0], bin, envp, str2);
+	{
+		str = get_arg(head_struct->list);
+		diff_cmd(head_struct->all.cmd, head_struct->bin, envp, str);
+
+	}
 }

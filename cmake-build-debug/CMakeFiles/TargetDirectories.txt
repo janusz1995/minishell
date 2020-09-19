@@ -1,0 +1,3 @@
+/Users/drina/drina/myminishell/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/drina/drina/myminishell/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/drina/drina/myminishell/cmake-build-debug/CMakeFiles/myminishell.dir

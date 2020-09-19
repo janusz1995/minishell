@@ -39,7 +39,7 @@ int			read_special_char(char *str, t_list_args **list)
 	return (ft_strlen(out));
 }
 
-int			parser(char *str, t_arg *arg, t_head_struct	*head_struct)
+int			parser(char *str, t_arg *arg, t_head_struct	*head_struct, char **envp)
 {
 	int		tmp;
 	int		len;
@@ -53,9 +53,10 @@ int			parser(char *str, t_arg *arg, t_head_struct	*head_struct)
 			if ((tmp = read_special_char(str, &head_struct->list)) == -1)
 				return (-1);
 			str += tmp;
-			fool_strcut(&head_struct->all, &head_struct->list);
-			//DRINA_FUNC_GO(&all); // GGOOG!
-			ft_clear_strcut(&head_struct->all);
+			fool_strcut(&(head_struct->all), &(head_struct->list));
+			ft_lst_print(head_struct->list);
+			select_cmd(&(head_struct->all), head_struct, envp);
+			ft_clear_strcut(&(head_struct->all));
 		}
 		if (*(str = skip_spaces(str)) == '\0')
 			break;
@@ -66,9 +67,10 @@ int			parser(char *str, t_arg *arg, t_head_struct	*head_struct)
 			return (-1);
 		str += tmp;
 	}
-	fool_strcut(&head_struct->all, &head_struct->list);
-	//DRINA_FUNC_GO(&all); //GOGOGOG
-	ft_clear_strcut(&head_struct->all);
+	fool_strcut(&(head_struct->all), &(head_struct->list));
+	ft_lst_print(head_struct->all.args);
+	select_cmd(&(head_struct->all), head_struct, envp);
+	ft_clear_strcut(&(head_struct->all));
 
 	return (1);
 }

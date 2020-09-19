@@ -60,6 +60,11 @@ void					ft_lstclear_args(t_list_args **lst, void (*del)(void*));
 void					ft_lst_print(t_list_args *list);
 
 void 					start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg);
+void					diff_cmd(char *str, char **path_bin, char **envp, char **str2);
+void					cmd_cd(t_list_args *args,t_env *env);
+void					cmd_env(t_env *head);
+void 					cmd_pwd(t_env *head);
+void 					select_cmd(t_all *all, t_head_struct *head_struct, char **envp);
 
 void					ft_init_struct(t_all *all);
 void					ft_clear_strcut(t_all *all);
@@ -70,7 +75,7 @@ int						len_marks(char *ptr, char ch, int *len);
 int						read_args(char *ptr, int len, t_list_args **list, t_env *env);
 int						init_arg_marks(char *ptr, char *arg, int *j, t_env *env);
 int						read_special_char(char *str, t_list_args **list);
-int						parser(char *str, t_arg *arg, t_head_struct *head_struct);
+int						parser(char *str, t_arg *arg, t_head_struct	*head_struct, char **envp);
 int						read_arg(char *str, t_arg *arg, t_env *env, t_list_args **list);
 int						init_arg_quotes(char *str, t_arg *arg, t_env *env);
 int						init_arg_env(char *str, t_arg *arg, t_env *env);
