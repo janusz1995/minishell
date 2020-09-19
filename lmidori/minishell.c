@@ -39,7 +39,7 @@ int		main(int argc, char **argv, char **envp)
 
 	all_envp(&head_struct.env, envp);
 	head_struct.bin = path_bin(&head_struct.env);
-	add_equal(&head_struct.env);
+//	add_equal(&head_struct.env);
 
 	// get_home_dir(tmp, &home);
 	// ft_putstr_fd(home, 1);

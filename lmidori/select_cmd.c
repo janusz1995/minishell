@@ -21,23 +21,41 @@ char		**get_arg(t_list_args *list)
 	int		i;
 
 	len_list = ft_lstsize_arg(list);
-	if (list)
-	{
-		if (!(str = (char**)malloc(sizeof(char*) * (len_list + 1))))
-			return (NULL);
-		str[len_list] = NULL;
 
-		i = 0;
-		while (list)
-		{
-			str[i] = list->content;
-			list = list->next;
-			i++;
-		}
-	}
-	else
+	if (!(str = (char**)malloc(sizeof(char*) * (len_list + 1))))
 		return (NULL);
+	if (len_list == 0)
+		str[len_list] = "";
+	else
+		str[len_list] = NULL;
+	i = 0;
+	while (list)
+	{
+		str[i] = list->content;
+		list = list->next;
+		i++;
+	}
 	return (str);
+}
+
+void 		cmd_unset(t_env **head, char	*del_str)
+{
+	t_env	*tmp;
+	t_env 	*next_elem;
+
+	tmp = *head;
+	next_elem = *head;
+
+	while (next_elem && ft_strncmp(next_elem->key_value[0], del_str, ft_strlen(next_elem->key_value[0] + 1)) != 0)
+		next_elem = next_elem->next;
+	if (next_elem == NULL)
+		return ;
+	while (tmp && ft_strncmp(tmp->next->key_value[0], del_str, ft_strlen(tmp->next->key_value[0] + 1)) != 0)
+		tmp = tmp->next;
+	tmp->next = next_elem->next;
+	free(next_elem->key_value[0]);
+	free(next_elem->key_value[1]);
+	free(next_elem);
 }
 
 void 		select_cmd(t_all *all, t_head_struct *head_struct, char **envp)
@@ -58,6 +76,10 @@ void 		select_cmd(t_all *all, t_head_struct *head_struct, char **envp)
 	{
 		cmd_env(head_struct->env);
 	}
+	else if (all->cmd && (ft_strncmp(all->cmd, "unset", ft_strlen(all->cmd) + 1) == 0))
+	{
+		cmd_unset(&(head_struct->env), str[0]);
+	}
 //		else if (str[0] && (ft_strncmp(str2[0], "export", ft_strlen(str2[0])) == 0))
 //		{
 //
@@ -67,6 +89,6 @@ void 		select_cmd(t_all *all, t_head_struct *head_struct, char **envp)
 	else
 	{
 		diff_cmd(head_struct->all.cmd, head_struct->bin, envp, str);
-
 	}
+//	free (???)
 }

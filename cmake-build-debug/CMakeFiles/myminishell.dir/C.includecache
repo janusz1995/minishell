@@ -6,3 +6,33 @@
 
 #IncludeRegexTransform: 
 
+/Users/drina/drina/myminishell/libft/get_next_line.h
+stdlib.h
+-
+unistd.h
+-
+
+/Users/drina/drina/myminishell/libft/libft.h
+stdlib.h
+-
+unistd.h
+-
+
+/Users/drina/drina/myminishell/lmidori/parser.h
+unistd.h
+-
+stdio.h
+-
+../libft/libft.h
+/Users/drina/drina/myminishell/libft/libft.h
+../libft/get_next_line.h
+/Users/drina/drina/myminishell/libft/get_next_line.h
+sys/types.h
+-
+dirent.h
+-
+
+/Users/drina/drina/myminishell/lmidori/select_cmd.c
+parser.h
+/Users/drina/drina/myminishell/lmidori/parser.h
+

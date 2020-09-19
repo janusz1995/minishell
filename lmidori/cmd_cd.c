@@ -1,12 +1,12 @@
 
 #include "parser.h"
 
-void		cmd_cd(char **args,t_env *env)
+void		cmd_cd(char **args,t_env *head)
 {
 	char	*str_cwd;
 	t_env	*tmp;
 
-	tmp = env;
+	tmp = head;
 	if (chdir(args[0]) == -1)
 	{
 		ft_putstr_fd("Error\n",2);

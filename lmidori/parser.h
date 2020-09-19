@@ -61,7 +61,7 @@ void					ft_lst_print(t_list_args *list);
 
 void 					start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg);
 void					diff_cmd(char *str, char **path_bin, char **envp, char **str2);
-void					cmd_cd(char **args,t_env *env);
+void					cmd_cd(char **args, t_env *head);
 void					cmd_env(t_env *head);
 void 					cmd_pwd(t_env *head);
 void 					select_cmd(t_all *all, t_head_struct *head_struct, char **envp);
