@@ -25,7 +25,7 @@ char		**get_arg(t_list_args *list, char* cmd)
 
 	if (!(str = (char**)malloc(sizeof(char*) * (len_list + 2))))
 		return (NULL);
-	str[len_list + 2] = NULL;
+	str[len_list + 1] = NULL;
 	str[i++] = cmd;
 	while (list)
 	{
@@ -36,7 +36,21 @@ char		**get_arg(t_list_args *list, char* cmd)
 	return (str);
 }
 
-void 		cmd_unset(t_env **head, char	*del_str)
+void 		cmd_echo(t_list_args *list)
+{
+	t_list_args *tmp;
+
+	tmp = list;
+	while (tmp)
+	{
+		write(1,tmp->content , ft_strlen(tmp->content));
+		write(1, " ",1);
+		tmp = tmp->next;
+	}
+	write(1, "\n",1);
+}
+
+void 		cmd_unset(t_env **head, char *del_str)
 {
 	t_env	*tmp;
 	t_env 	*next_elem;
@@ -81,6 +95,10 @@ void 		select_cmd(t_all *all, t_head_struct *head_struct, char **envp)
 //		{
 //
 //		}
+	else if (all->cmd && (ft_strncmp(all->cmd, "echo", ft_strlen(all->cmd) + 1) == 0))
+	{
+		cmd_echo(head_struct->all.args);
+	}
 	else if (all->cmd && (ft_strncmp(all->cmd, "exit", ft_strlen(all->cmd) + 1) == 0))
 		exit(0);
 	else
