@@ -22,7 +22,7 @@
 
 typedef struct			s_list_args
 {
-	void				*content;
+	char				*content;
 	int					spec_flag;
 	struct s_list_args	*next;
 }						t_list_args;
