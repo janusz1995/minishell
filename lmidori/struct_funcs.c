@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:46:25 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/18 21:48:20 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/21 20:05:54 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int			fool_strcut(t_all *all, t_list_args **list)
 	if (tmp)
 	{
 		ft_init_struct(all);
-		all->cmd = tmp->content;
-		tmp = tmp->next;
+		if (tmp->spec_flag == 2)
+			all->equal = 1;
 		while (tmp && tmp->spec_flag != 1)
 		{
 			ft_lstadd_back_arg(&(all->args), ft_lstnew_arg(tmp->content, tmp->spec_flag));
@@ -41,6 +41,7 @@ int			fool_strcut(t_all *all, t_list_args **list)
 				return (-1);
 			tmp = tmp->next;
 		}
+
 		if (tmp && tmp->spec_flag)
 		{
 			all->spec = tmp->content;
@@ -53,16 +54,13 @@ int			fool_strcut(t_all *all, t_list_args **list)
 
 void		ft_init_struct(t_all *all)
 {
-	all->cmd = NULL;
 	all->args = NULL;
 	all->spec = NULL;
+	all->equal = 0;
 }
 
 void		ft_clear_strcut(t_all *all)
 {
-	if (all->cmd != NULL)
-		free(all->cmd);
-	all->cmd = NULL;
 	if (all->spec != NULL)
 		free(all->spec);
 	all->spec = NULL;

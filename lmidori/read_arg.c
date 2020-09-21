@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:52:29 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/18 21:55:41 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/21 18:22:22 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int			init_quotes_slash(char *str, int *i, t_arg *arg, t_env *env)
 	int		tmp;
 	int		flag;
 
+	flag = 0;
 	if (str[*i] == '\\')
 		arg->arg[arg->j++] = str[++(*i)];
 	else if (str[*i] == '\"' || str[*i] == '\'')
@@ -93,7 +94,7 @@ int			init_quotes_slash(char *str, int *i, t_arg *arg, t_env *env)
 			flag = 2;
 		arg->arg[arg->j++] = str[*i];
 	}
-	return (0);
+	return (flag);
 }
 
 int			read_arg(char *str, t_arg *arg, t_env *env, t_list_args **list)
@@ -101,6 +102,7 @@ int			read_arg(char *str, t_arg *arg, t_env *env, t_list_args **list)
 	int		i;
 	int		tmp;
 	int		flag;
+	int		tmp2;
 
 	if (arg->len == -1 || !str)
 		return (-1);
@@ -114,8 +116,10 @@ int			read_arg(char *str, t_arg *arg, t_env *env, t_list_args **list)
 	}
 	while (ft_strchr(" ><;|\0", str[++i]) == NULL)
 	{
-		if ((flag = init_quotes_slash(str, &i, arg, env)) == -1)
+		if ((tmp2 = init_quotes_slash(str, &i, arg, env)) == -1)
 			return (-1);
+		if (tmp2 == 2)
+			flag = tmp2;
 	}
 	ft_lstadd_back_arg(list, ft_lstnew_arg(arg->arg, flag));
 	if (!list)

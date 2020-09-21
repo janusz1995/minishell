@@ -1,5 +1,6 @@
 
 #include "parser.h"
+#include "minishell.h"
 
 int		ft_lstsize_arg(t_list_args *lst)
 {
@@ -14,23 +15,31 @@ int		ft_lstsize_arg(t_list_args *lst)
 	return (count);
 }
 
-char		**get_arg(t_list_args *list, char* cmd)
+char		**get_arg(t_list_args **list)
 {
 	char	**str;
 	int 	len_list;
 	int		i;
-
+	t_list_args *tmp;
+	tmp = *list;
 	i = 0;
-	len_list = ft_lstsize_arg(list);
 
-	if (!(str = (char**)malloc(sizeof(char*) * (len_list + 2))))
+	if ((len_list = ft_lstsize_arg(tmp)) == 0)
+		i++;
+	if (!(str = (char**)malloc(sizeof(char*) * (len_list + i + 1))))
 		return (NULL);
-	str[len_list + 1] = NULL;
-	str[i++] = cmd;
-	while (list)
+	if (len_list == 0)
 	{
-		str[i] = list->content;
-		list = list->next;
+		str[len_list] = "";
+		str[i] = NULL;
+	}
+	else
+		str[len_list] = NULL;
+	i = 0;
+	while (tmp)
+	{
+		str[i] = tmp->content;
+		tmp = tmp->next;
 		i++;
 	}
 	return (str);
@@ -40,7 +49,7 @@ void 		cmd_echo(t_list_args *list)
 {
 	t_list_args *tmp;
 
-	tmp = list;
+	tmp = list->next;
 	while (tmp)
 	{
 		write(1,tmp->content , ft_strlen(tmp->content));
@@ -82,39 +91,161 @@ void 		cmd_unset(t_env **head, char *del_str)
 	free(next_elem);
 }
 
-void 		start_shell(t_all *all, t_head_struct *head_struct, char **envp)
+void 		start_shell(t_all *all, t_head_struct *head_struct)
 {
 	char	**str;
 
-	str = get_arg(all->args, head_struct->all.cmd);
-
-	select_cmd(head_struct, envp, str[0], str);
-
+	str = get_arg(&(all->args));
+	// int i = -1;
+	// while (str[++i])
+	// 	printf("%s\n", str[i]);
+	// if (head_struct)
+	// 	i++;
+	select_cmd(head_struct, str, head_struct->all.args);
 }
 
-int
-
-void 		select_cmd(t_head_struct *head_struct, char **envp, char *cmd, char **str)
+char		*get_value_env(char *var)
 {
+	char	*out;
+	int		i;
+	int		len;
 
-	if (all->cmd && all->spec == '=')
+	len = ft_strlen(var);
+	if (!(out = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	i = -1;
+	out[len] = '\0';
+	while (var[++i] != '\0')
+		out[i] = var[i];
+	return (out);
+}
+
+int			check_name(char *var)
+{
+	int		i;
+
+	if (!ft_isalpha(var[0]) && var[0] != '_')
+		return (0);
+	i = -1;
+	while (var[++i] != '=')
 	{
-
+		if (!ft_isdigit(var[i]) && !ft_isalpha(var[i]) && var[i] != '_')
+			return (0);
 	}
+	return (i);
+}
 
-	if (cmd && (ft_strncmp(cmd, "cd", ft_strlen(cmd) + 1) == 0))
+char		*get_name_env(char *var)
+{
+	char	*name;
+	int		i;
+
+	if (!(i = check_name(var)))
+		return (NULL);
+	if (!(name = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	name[i] = '\0';
+	i = 0;
+	while (var[i] != '=')
+	{
+		name[i] = var[i];
+		i++;
+	}
+	return (name);
+}
+
+t_env		*lst_new_env(char *name, char *value, int visable)
+{
+	t_env	*tmp;
+
+	if (!(tmp = (t_env *)malloc(sizeof(t_env))))
+		return (NULL);
+	if (!(tmp->key_value = (char **)malloc(sizeof(char *) * 3)))
+		return (NULL);
+	tmp->key_value[0] = name;
+	tmp->key_value[1] = value;
+	tmp->key_value[2] = NULL;
+	tmp->visible = visable;
+	return (tmp);
+}
+
+int			init_env(char *var, t_env **env)
+{
+	char	*name;
+	char	*value;
+
+	if (!(name = get_name_env(var)))
+		return (0);
+	if (!(value = get_value_env(&var[ft_strlen(name) + 1])))
+		return (0);
+	
+	add_back(env, lst_new_env(name, value, 0));
+	return (1);
+}
+
+int			add_new_env(t_head_struct *head_struct, char **str)
+{
+	t_list_args *arg;
+	// char		*tmp;
+	int			flag;
+	int			i;
+
+	i = 0;
+	flag = 1;
+	arg = head_struct->all.args;
+	while (arg && arg->spec_flag == 2)
+	{
+		if (!(flag = check_name(arg->content)))
+			break;
+		arg = arg->next;
+		i++;
+	}
+	if (!flag)
+	{
+		select_cmd(head_struct, &str[i], arg);
+	}
+	if (!arg)
+	{
+		arg = head_struct->all.args;
+		while (arg != NULL)
+		{
+			if (!(init_env(arg->content, &(head_struct->env))))
+				return (-1);
+			arg = arg->next;
+		}
+	}
+	// if (!(init_env(arg->content, &(head_struct->env))))
+	// 		return (-1);
+	// arg = arg->next;
+	// while (arg && arg->spec_flag == 2)
+	// {
+	// 	if (!(init_env(arg->content, &(head_struct->env))))
+	// 		return (-1);
+	// 	arg = arg->next;
+	// }
+	// if (!arg)
+	return (1);
+}
+
+void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
+{
+	if (head_struct->all.equal == 1)
+	{
+		add_new_env(head_struct, str);
+	}
+	else if (str[0] && (ft_strncmp(str[0], "cd", ft_strlen(str[0]) + 1) == 0))
 	{
 		cmd_cd(str, head_struct->env);
 	}
-	else if (cmd && (ft_strncmp(cmd, "pwd", ft_strlen(cmd) + 1)) == 0)
+	else if (str[0] && (ft_strncmp(str[0], "pwd", ft_strlen(str[0]) + 1)) == 0)
 	{
 		cmd_pwd(head_struct->env);
 	}
-	else if (cmd && (ft_strncmp(cmd, "env", ft_strlen(cmd) + 1) == 0))
+	else if (str[0] && (ft_strncmp(str[0], "env", ft_strlen(str[0]) + 1) == 0))
 	{
 		cmd_env(head_struct->env);
 	}
-	else if (cmd && (ft_strncmp(cmd, "unset", ft_strlen(cmd) + 1) == 0))
+	else if (str[0] && (ft_strncmp(str[0], "unset", ft_strlen(str[0]) + 1) == 0))
 	{
 		cmd_unset(&(head_struct->env), str[1]);
 	}
@@ -122,15 +253,15 @@ void 		select_cmd(t_head_struct *head_struct, char **envp, char *cmd, char **str
 //	{
 //		cmd_export();
 //	}
-	else if (cmd && (ft_strncmp(cmd, "echo", ft_strlen(cmd) + 1) == 0))
+	else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
 	{
-		cmd_echo(head_struct->all.args);
+		cmd_echo(args);
 	}
-	else if (cmd && (ft_strncmp(cmd, "exit", ft_strlen(cmd) + 1) == 0))
+	else if (str[0] && (ft_strncmp(str[0], "exit", ft_strlen(str[0]) + 1) == 0))
 		exit(0);
 	else
 	{
-		diff_cmd(cmd, head_struct->bin, envp, str);
+		diff_cmd(head_struct, str);
 	}
 	free(str);
 }

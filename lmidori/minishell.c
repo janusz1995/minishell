@@ -8,10 +8,9 @@ void		all_envp(t_env **env, char **envp)
 	i = 0;
 	while (envp[i] != NULL)
 	{
-		add_back(env, lstnew(envp[i]));
+		add_back(env, lstnew(envp[i], 1));
 		i++;
 	}
-
 }
 
 
@@ -31,14 +30,17 @@ int		main(int argc, char **argv, char **envp)
 	str1 = NULL;
 	head_struct.env = NULL;
 	head_struct.list = NULL;
+	// head_struct.list->next = NULL;
+	// head_struct.list->content = NULL;
+
 	//home = NULL;
 
 	// t_all all;
 
 	// all = NULL;
 
-	all_envp(&head_struct.env, envp);
-	head_struct.bin = path_bin(&head_struct.env);
+	all_envp(&(head_struct.env), envp);
+	head_struct.bin = path_bin(&(head_struct.env));
 //	add_equal(&head_struct.env);
 
 	// get_home_dir(tmp, &home);
@@ -50,7 +52,7 @@ int		main(int argc, char **argv, char **envp)
 		write(1, "shell > ", 8);
 		if ((get_next_line(0, &str1)) > 0)
 		{
-			if (parser(str1, &arg, &head_struct, envp) != -1)
+			if (parser(str1, &arg, &head_struct) != -1)
 			{
 				// ft_lst_print(list);
 				free(str1);

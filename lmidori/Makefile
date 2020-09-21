@@ -5,7 +5,7 @@ NAME = minishell
 
 SRC = minishell.c add_back.c lstnew.c lst_args.c read_arg.c enter_cd.c init_arg_env.c \
         find_len_arg.c struct_funcs.c get_env_args.c parser.c path_bin.c cmd_cd.c \
-        start_programm.c select_cmd.c diff_cmd.c
+        start_programm.c select_cmd.c diff_cmd.c lst_env.c
 
 SRCDRINA = ../drina/add_equal.c ../drina/sort_list.c ../drina/cmd_pwd.c ../drina/cmd_env.c
 

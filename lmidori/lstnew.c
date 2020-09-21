@@ -1,7 +1,7 @@
 
 #include "minishell.h"
 
-t_env		*lstnew(char *str)
+t_env		*lstnew(char *str, int visuble)
 {
 	t_env	*new_elem;
 
@@ -9,6 +9,7 @@ t_env		*lstnew(char *str)
 	if (!new_elem)
 		return (NULL);
 	new_elem->key_value = ft_split(str, '=');
+	new_elem->visible = visuble;
 	new_elem->next = NULL;
 	return (new_elem);
 }
