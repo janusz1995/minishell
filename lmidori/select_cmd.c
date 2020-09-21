@@ -50,6 +50,18 @@ void 		cmd_echo(t_list_args *list)
 	write(1, "\n",1);
 }
 
+void		cmd_export()
+{
+
+
+
+
+
+
+
+
+}
+
 void 		cmd_unset(t_env **head, char *del_str)
 {
 	t_env	*tmp;
@@ -70,40 +82,55 @@ void 		cmd_unset(t_env **head, char *del_str)
 	free(next_elem);
 }
 
-void 		select_cmd(t_all *all, t_head_struct *head_struct, char **envp)
+void 		start_shell(t_all *all, t_head_struct *head_struct, char **envp)
 {
 	char	**str;
 
 	str = get_arg(all->args, head_struct->all.cmd);
-	if (all->cmd && (ft_strncmp(all->cmd, "cd", ft_strlen(all->cmd) + 1) == 0))
+
+	select_cmd(head_struct, envp, str[0], str);
+
+}
+
+int
+
+void 		select_cmd(t_head_struct *head_struct, char **envp, char *cmd, char **str)
+{
+
+	if (all->cmd && all->spec == '=')
+	{
+
+	}
+
+	if (cmd && (ft_strncmp(cmd, "cd", ft_strlen(cmd) + 1) == 0))
 	{
 		cmd_cd(str, head_struct->env);
 	}
-	else if (all->cmd && (ft_strncmp(all->cmd, "pwd", ft_strlen(all->cmd) + 1)) == 0)
+	else if (cmd && (ft_strncmp(cmd, "pwd", ft_strlen(cmd) + 1)) == 0)
 	{
 		cmd_pwd(head_struct->env);
 	}
-	else if (all->cmd && (ft_strncmp(all->cmd, "env", ft_strlen(all->cmd) + 1) == 0))
+	else if (cmd && (ft_strncmp(cmd, "env", ft_strlen(cmd) + 1) == 0))
 	{
 		cmd_env(head_struct->env);
 	}
-	else if (all->cmd && (ft_strncmp(all->cmd, "unset", ft_strlen(all->cmd) + 1) == 0))
+	else if (cmd && (ft_strncmp(cmd, "unset", ft_strlen(cmd) + 1) == 0))
 	{
 		cmd_unset(&(head_struct->env), str[1]);
 	}
-//		else if (str[0] && (ft_strncmp(str2[0], "export", ft_strlen(str2[0])) == 0))
-//		{
-//
-//		}
-	else if (all->cmd && (ft_strncmp(all->cmd, "echo", ft_strlen(all->cmd) + 1) == 0))
+//	else if (all->cmd && (ft_strncmp(all->cmd, "export", ft_strlen(all->cmd)) == 0))
+//	{
+//		cmd_export();
+//	}
+	else if (cmd && (ft_strncmp(cmd, "echo", ft_strlen(cmd) + 1) == 0))
 	{
 		cmd_echo(head_struct->all.args);
 	}
-	else if (all->cmd && (ft_strncmp(all->cmd, "exit", ft_strlen(all->cmd) + 1) == 0))
+	else if (cmd && (ft_strncmp(cmd, "exit", ft_strlen(cmd) + 1) == 0))
 		exit(0);
 	else
 	{
-		diff_cmd(head_struct->all.cmd, head_struct->bin, envp, str);
+		diff_cmd(cmd, head_struct->bin, envp, str);
 	}
-	//free (str);
+	free(str);
 }

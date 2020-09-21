@@ -44,6 +44,7 @@ typedef struct			s_arg
 typedef struct			s_env
 {
 	char				**key_value;
+	int 				visible;
 	struct s_env		*next;
 }						t_env;
 
@@ -51,6 +52,7 @@ typedef struct			s_head_struct
 {
 	char				**bin;
 	t_env				*env;
+	t_env				*export;
 	t_all				all;
 	t_list_args			*list;
 }						t_head_struct;
@@ -64,7 +66,7 @@ void					diff_cmd(char *str, char **path_bin, char **envp, char **str2);
 void					cmd_cd(char **args, t_env *head);
 void					cmd_env(t_env *head);
 void 					cmd_pwd(t_env *head);
-void 					select_cmd(t_all *all, t_head_struct *head_struct, char **envp);
+void 					select_cmd(t_head_struct *head_struct, char **envp, char *cmd, char **str);
 
 void					ft_init_struct(t_all *all);
 void					ft_clear_strcut(t_all *all);

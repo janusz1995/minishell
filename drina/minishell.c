@@ -1,5 +1,5 @@
 
-#include "minishelldrina.h"
+//include "minishelldrina.h"
 #include "../lmidori/parser.h"
 //#include <sys/types.h>
 //#include <sys/wait.h>

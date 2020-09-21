@@ -16,7 +16,7 @@ void 		start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg)
 	{
 		if (execve(tmp, cmd_arg, env) == -1)
 		{
-			ft_putstr_fd( "Error\n",2);
+			ft_putstr_fd( "Error start programm\n",2);
 			exit (WEXITSTATUS(status));
 		}
 	}
