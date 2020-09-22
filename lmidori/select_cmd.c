@@ -60,7 +60,7 @@ void 		cmd_echo(t_list_args *list)
 	write(1, "\n",1);
 }
 
-int			find_in_env(t_env **env, char *name, char *value)
+int			find_in_env(t_env **env, char *name)
 {
 	t_env	*tmp;
 
@@ -69,8 +69,6 @@ int			find_in_env(t_env **env, char *name, char *value)
 	{
 		if (ft_strncmp(tmp->key_value[0], name, ft_strlen(tmp->key_value[0]) + 1) == 0)
 		{
-			tmp->key_value[1] = ft_strdup(value);
-			tmp->visible = 1;
 			return (1);
 		}
 		tmp = tmp->next;
@@ -82,55 +80,6 @@ int			find_in_env(t_env **env, char *name, char *value)
 // {
 
 // }
-
-void		cmd_export(t_env **envp, t_list_args *args)
-{
-	t_env	*tmp;
-	char	*name;
-	char	*value;
-	char	*str;
-
-	tmp = *envp;
-	if (!args->next)
-	{
-		ft_putstr_fd("HELLO", 1);
-	}
-	else
-	{
-		str = args->next->content;
-		if (args->next->spec_flag == 2)
-		{
-			if (!(name = get_name_env(str)))
-				return ;
-			if (!(value = get_value_env(str[ft_strlen(name) + 1])))
-				return ;
-			if (find_in_env(envp, name, value))
-			{
-				free(name);
-				free(value);
-				return ;
-			}
-			else
-			{
-				add_back(envp, lst_new_env(name, value, 1));
-				free(name);
-				free(value);
-			}
-		}
-		else
-		{
-			if (!(name = check_name(str, '\0')))
-				return ;
-			add_back(envp, lst_new_env(name, "", 1));
-		}
-		
-		if (find_in_export(tmp, name))
-		{
-			
-		}
-	}
-	
-}
 
 int			check_name(char *var, char ch)
 {
@@ -204,18 +153,18 @@ char		*get_value_env(char *var)
 
 
 
-char		*get_name_env(char *var)
+char		*get_name_env(char *var, char ch)
 {
 	char	*name;
 	int		i;
 
-	if (!(i = check_name(var, '=')))
+	if (!(i = check_name(var, ch)))
 		return (NULL);
 	if (!(name = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	name[i] = '\0';
 	i = 0;
-	while (var[i] != '=')
+	while (var[i] != ch)
 	{
 		name[i] = var[i];
 		i++;
@@ -232,7 +181,10 @@ t_env		*lst_new_env(char *name, char *value, int visable)
 	if (!(tmp->key_value = (char **)malloc(sizeof(char *) * 3)))
 		return (NULL);
 	tmp->key_value[0] = ft_strdup(name);
-	tmp->key_value[1] = ft_strdup(value);
+	if (value == NULL)
+		tmp->key_value[1] = NULL;
+	else
+		tmp->key_value[1] = ft_strdup(value);
 	tmp->key_value[2] = NULL;
 	tmp->visible = visable;
 	tmp->next = NULL;
@@ -246,7 +198,7 @@ int			init_env(char *var, t_env **env)
 	t_env	*tmp;
 
 	tmp = *env;
-	if (!(name = get_name_env(var)))
+	if (!(name = get_name_env(var, '=')))
 		return (0);
 	if (!(value = get_value_env(&var[ft_strlen(name) + 1])))
 		return (0);
@@ -312,6 +264,79 @@ int			add_new_env(t_head_struct *head_struct, char **str)
 	return (1);
 }
 
+int			redact_env(t_env **envp, char *name, char *value)
+{
+	t_env	*tmp;
+
+	tmp = *envp;
+	while (tmp)
+	{
+		if (ft_strncmp(tmp->key_value[0], name, ft_strlen(tmp->key_value[0]) + 1) == 0)
+		{
+			tmp->visible = 1;		//наверное нужно флаг 2 или что-то такое тк в env его не будет
+			if (value != NULL)
+				tmp->key_value[1] = ft_strdup(value);
+			return (1);
+		}
+	}
+	return (0);
+}
+
+void		cmd_export(t_env **envp, t_list_args *args)
+{
+	t_list_args *tmp;
+	char	*name;
+	char	*value;
+
+	if (!args->next)
+	{
+		ft_putstr_fd("HELLO\n", 1);
+	}
+	else
+	{
+		tmp = args->next;
+		while (tmp)
+		{
+			if (!(name = get_name_env(tmp->content, '=')))
+				return ;
+			if (find_in_env(envp, name)) // если параметр уже есть в списке env
+			{
+				if (ft_strchr(tmp->content, '=') != NULL) // если это пример по типу a=123sd
+				{
+					if (!(value = get_value_env(&(tmp->content[ft_strlen(name) + 1]))))
+						return ;
+					redact_env(envp, name, value);
+					free(name);
+					free(value);
+				}
+				else		// если это параметр по типу afrwg_weg без =
+				{
+					redact_env(envp, name, NULL);
+					free (name);
+				}
+			}
+			else			// если такого нет в списке
+			{
+				if (ft_strchr(tmp->content, '=') != NULL) // если это пример по типу a=123sd
+				{
+					if (!(value = get_value_env(&(tmp->content[ft_strlen(name) + 1]))))
+						return ;
+					add_back(envp, lst_new_env(name, value, 0));
+					free(name);
+					free(value);
+				}
+				else		// если это параметр по типу afrwg_weg без =
+				{
+					add_back(envp, lst_new_env(name, NULL, 0));
+					free(name);
+				}
+			}
+			tmp = tmp->next;
+		}
+	}
+	return ;
+}
+
 void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 {
 	if (head_struct->all.equal == 1)
@@ -332,7 +357,9 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 	}
 	else if (str[0] && (ft_strncmp(str[0], "unset", ft_strlen(str[0]) + 1) == 0))
 	{
-		cmd_unset(&(head_struct->env), str[1]);
+		int i = 0;
+		while (str[++i])
+			cmd_unset(&(head_struct->env), str[i]);
 	}
 	else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
 	{
