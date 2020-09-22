@@ -45,7 +45,7 @@ void				diff_cmd(t_head_struct *head_struct, char **str2)
 		{
 			if ((ft_strncmp(str2[0], entry->d_name, ft_strlen(str2[0]) + 1)) == 0)
 			{
-				start_programm(str2[0], head_struct->bin[i], envp, str2);
+				start_programm(head_struct, head_struct->bin[i], envp, str2);
 				flag = 1;
 				break ;
 			}
@@ -56,5 +56,5 @@ void				diff_cmd(t_head_struct *head_struct, char **str2)
 			break ;
 	}
 	if (flag == 0)
-		start_programm(str2[0], head_struct->bin[i], envp, str2);
+		start_programm(head_struct, head_struct->bin[i], envp, str2);
 }

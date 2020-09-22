@@ -1,5 +1,5 @@
 #include "minishell.h"
-#include "../drina/minishelldrina.h"
+#include "../Drina/minishelldrina.h"
 
 t_env		*new_key_value(char *str, int visible)
 {
@@ -76,6 +76,11 @@ int		main(int argc, char **argv, char **envp)
 	// ft_putstr_fd(home, 1);
 	// write(1, "\n" , 1);
 
+	int 	saveinput;
+	int 	saveoutput;
+
+	saveinput = dup(0);
+	saveoutput = dup(1);
 	while (21)
 	{
 		write(1, "shell > ", 8);
@@ -94,5 +99,7 @@ int		main(int argc, char **argv, char **envp)
 		ft_lstclear_args(&head_struct.list, free);
 		head_struct.list = NULL;
 	}
+	close(saveinput);
+	close(saveoutput);
 	return (1);
 }

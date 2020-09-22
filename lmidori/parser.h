@@ -60,7 +60,7 @@ void					ft_lstadd_back_arg(t_list_args **lst, t_list_args *new);
 void					ft_lstclear_args(t_list_args **lst, void (*del)(void*));
 void					ft_lst_print(t_list_args *list);
 
-void 					start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg);
+void 					start_programm(t_head_struct *head_struct, char *path_bin, char **env, char **cmd_arg);
 void					diff_cmd(t_head_struct *head_struct, char **str2);
 void					cmd_cd(char **args, t_env *head);
 void					cmd_env(t_env *head);

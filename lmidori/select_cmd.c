@@ -83,54 +83,54 @@ int			find_in_env(t_env **env, char *name, char *value)
 
 // }
 
-void		cmd_export(t_env **envp, t_list_args *args)
-{
-	t_env	*tmp;
-	char	*name;
-	char	*value;
-	char	*str;
-
-	tmp = *envp;
-	if (!args->next)
-	{
-		ft_putstr_fd("HELLO", 1);
-	}
-	else
-	{
-		str = args->next->content;
-		if (args->next->spec_flag == 2)
-		{
-			if (!(name = get_name_env(str)))
-				return ;
-			if (!(value = get_value_env(str[ft_strlen(name) + 1])))
-				return ;
-			if (find_in_env(envp, name, value))
-			{
-				free(name);
-				free(value);
-				return ;
-			}
-			else
-			{
-				add_back(envp, lst_new_env(name, value, 1));
-				free(name);
-				free(value);
-			}
-		}
-		else
-		{
-			if (!(name = check_name(str, '\0')))
-				return ;
-			add_back(envp, lst_new_env(name, "", 1));
-		}
-		
-		if (find_in_export(tmp, name))
-		{
-			
-		}
-	}
-	
-}
+//void		cmd_export(t_env **envp, t_list_args *args)
+//{
+//	t_env	*tmp;
+//	char	*name;
+//	char	*value;
+//	char	*str;
+//
+//	tmp = *envp;
+//	if (!args->next)
+//	{
+//		ft_putstr_fd("HELLO", 1);
+//	}
+//	else
+//	{
+//		str = args->next->content;
+//		if (args->next->spec_flag == 2)
+//		{
+//			if (!(name = get_name_env(str)))
+//				return ;
+//			if (!(value = get_value_env(str[ft_strlen(name) + 1])))
+//				return ;
+//			if (find_in_env(envp, name, value))
+//			{
+//				free(name);
+//				free(value);
+//				return ;
+//			}
+//			else
+//			{
+//				add_back(envp, lst_new_env(name, value, 1));
+//				free(name);
+//				free(value);
+//			}
+//		}
+//		else
+//		{
+//			if (!(name = check_name(str, '\0')))
+//				return ;
+//			add_back(envp, lst_new_env(name, "", 1));
+//		}
+//
+//		if (find_in_export(tmp, name))
+//		{
+//
+//		}
+//	}
+//
+//}
 
 int			check_name(char *var, char ch)
 {
@@ -334,10 +334,10 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 	{
 		cmd_unset(&(head_struct->env), str[1]);
 	}
-	else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
-	{
-		cmd_export(&(head_struct->env), args);
-	}
+//	else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
+//	{
+//		cmd_export(&(head_struct->env), args);
+//	}
 	else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
 	{
 		cmd_echo(args);
