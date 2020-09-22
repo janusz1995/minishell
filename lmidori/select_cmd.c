@@ -60,16 +60,91 @@ void 		cmd_echo(t_list_args *list)
 	write(1, "\n",1);
 }
 
-void		cmd_export()
+int			find_in_env(t_env **env, char *name, char *value)
 {
+	t_env	*tmp;
 
+	tmp = *env;
+	while (tmp)
+	{
+		if (ft_strncmp(tmp->key_value[0], name, ft_strlen(tmp->key_value[0]) + 1) == 0)
+		{
+			tmp->key_value[1] = ft_strdup(value);
+			tmp->visible = 1;
+			return (1);
+		}
+		tmp = tmp->next;
+	}
+	return (0);
+}
 
+// int			find_in_env(t_env *env, char *name)
+// {
 
+// }
 
+void		cmd_export(t_env **envp, t_list_args *args)
+{
+	t_env	*tmp;
+	char	*name;
+	char	*value;
+	char	*str;
 
+	tmp = *envp;
+	if (!args->next)
+	{
+		ft_putstr_fd("HELLO", 1);
+	}
+	else
+	{
+		str = args->next->content;
+		if (args->next->spec_flag == 2)
+		{
+			if (!(name = get_name_env(str)))
+				return ;
+			if (!(value = get_value_env(str[ft_strlen(name) + 1])))
+				return ;
+			if (find_in_env(envp, name, value))
+			{
+				free(name);
+				free(value);
+				return ;
+			}
+			else
+			{
+				add_back(envp, lst_new_env(name, value, 1));
+				free(name);
+				free(value);
+			}
+		}
+		else
+		{
+			if (!(name = check_name(str, '\0')))
+				return ;
+			add_back(envp, lst_new_env(name, "", 1));
+		}
+		
+		if (find_in_export(tmp, name))
+		{
+			
+		}
+	}
+	
+}
 
+int			check_name(char *var, char ch)
+{
+	int		i;
 
-
+	if (!ft_isalpha(var[0]) && var[0] != '_')
+		return (0);
+	i = -1;
+	while (var[++i] != ch && var[i] != '\0')
+	{
+		if (!ft_isdigit(var[i]) && !ft_isalpha(var[i]) && var[i] != '_')
+			return (0);
+	}
+	return (i);
 }
 
 void 		cmd_unset(t_env **head, char *del_str)
@@ -80,16 +155,19 @@ void 		cmd_unset(t_env **head, char *del_str)
 	tmp = *head;
 	next_elem = *head;
 
-	while (next_elem && ft_strncmp(next_elem->key_value[0], del_str, ft_strlen(next_elem->key_value[0] + 1)) != 0)
+	if (!check_name(del_str, '='))
+		return ;
+	while (next_elem && ft_strncmp(next_elem->key_value[0], del_str, ft_strlen(next_elem->key_value[0]) + 1) != 0)
 		next_elem = next_elem->next;
 	if (next_elem == NULL)
 		return ;
-	while (tmp && ft_strncmp(tmp->next->key_value[0], del_str, ft_strlen(tmp->next->key_value[0] + 1)) != 0)
+	while (tmp && ft_strncmp(tmp->next->key_value[0], del_str, ft_strlen(tmp->next->key_value[0]) + 1) != 0)
 		tmp = tmp->next;
 	tmp->next = next_elem->next;
 	free(next_elem->key_value[0]);
 	free(next_elem->key_value[1]);
 	free(next_elem);
+	next_elem = NULL;
 }
 
 void 		start_shell(t_all *all, t_head_struct *head_struct)
@@ -124,27 +202,14 @@ char		*get_value_env(char *var)
 	return (out);
 }
 
-int			check_name(char *var)
-{
-	int		i;
 
-	if (!ft_isalpha(var[0]) && var[0] != '_')
-		return (0);
-	i = -1;
-	while (var[++i] != '=')
-	{
-		if (!ft_isdigit(var[i]) && !ft_isalpha(var[i]) && var[i] != '_')
-			return (0);
-	}
-	return (i);
-}
 
 char		*get_name_env(char *var)
 {
 	char	*name;
 	int		i;
 
-	if (!(i = check_name(var)))
+	if (!(i = check_name(var, '=')))
 		return (NULL);
 	if (!(name = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
@@ -166,8 +231,8 @@ t_env		*lst_new_env(char *name, char *value, int visable)
 		return (NULL);
 	if (!(tmp->key_value = (char **)malloc(sizeof(char *) * 3)))
 		return (NULL);
-	tmp->key_value[0] = name;
-	tmp->key_value[1] = value;
+	tmp->key_value[0] = ft_strdup(name);
+	tmp->key_value[1] = ft_strdup(value);
 	tmp->key_value[2] = NULL;
 	tmp->visible = visable;
 	tmp->next = NULL;
@@ -194,9 +259,10 @@ int			init_env(char *var, t_env **env)
 	else
 	{
 		free(tmp->key_value[1]);
-		free(name);
-		tmp->key_value[1] = value;
+		tmp->key_value[1] = ft_strdup(value);
 	}
+	free(value);
+	free(name);
 	return (1);
 }
 
@@ -212,7 +278,7 @@ int			add_new_env(t_head_struct *head_struct, char **str)
 	arg = head_struct->all.args;
 	while (arg && arg->spec_flag == 2)
 	{
-		if (!(flag = check_name(arg->content)))
+		if (!(flag = check_name(arg->content, '=')))
 			break;
 		arg = arg->next;
 		i++;
@@ -268,10 +334,10 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 	{
 		cmd_unset(&(head_struct->env), str[1]);
 	}
-//	else if (all->cmd && (ft_strncmp(all->cmd, "export", ft_strlen(all->cmd)) == 0))
-//	{
-//		cmd_export();
-//	}
+	else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
+	{
+		cmd_export(&(head_struct->env), args);
+	}
 	else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
 	{
 		cmd_echo(args);

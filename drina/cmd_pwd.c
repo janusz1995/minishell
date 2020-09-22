@@ -1,19 +1,12 @@
 
 #include "minishelldrina.h"
 
-void 		cmd_pwd(t_env *head)
+void 		cmd_pwd()
 {
-	t_env *tmp;
+	char	*pwd;
 
-	tmp = head;
-	while (tmp->next != NULL)
-	{
-		if ((ft_strncmp(tmp->key_value[0], "PWD=", ft_strlen(tmp->key_value[0])) == 0))
-		{
-			ft_putstr_fd(tmp->key_value[1], 1);
-			write(1, "\n" , 1);
-			break ;
-		}
-		tmp = tmp->next;
-	}
+	pwd = getcwd(NULL, 0);
+	ft_putstr_fd(pwd, 1);
+	write(1, "\n", 1);
+	free(pwd);
 }

@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:55:02 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/18 21:55:39 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/22 17:13:07 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ int			init_arg_env(char *str, t_arg *arg, t_env *env)
 	char	*tmp2;
 
 	i = 1;
-	while (ft_isdigit(str[i]) || ft_isalpha(str[i]))
+	if (!ft_isalpha(str[i]) && str[i] != '_')
+		return (1);
+	while (ft_isdigit(str[i]) || ft_isalpha(str[i]) || str[i] == '_')
 		i++;
 	len = i - 1;
 	if (!(tmp1 = ft_substr(str, 1, len)))

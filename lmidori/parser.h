@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/21 22:19:28 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/22 17:48:50 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ typedef struct			s_head_struct
 {
 	char				**bin;
 	t_env				*env;
-	// t_env				*export;
 	t_all				all;
 	t_list_args			*list;
 }						t_head_struct;
@@ -65,7 +64,7 @@ void 					start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg);
 void					diff_cmd(t_head_struct *head_struct, char **str2);
 void					cmd_cd(char **args, t_env *head);
 void					cmd_env(t_env *head);
-void 					cmd_pwd(t_env *head);
+void 					cmd_pwd();
 void 					select_cmd(t_head_struct *head_struct, char **str, t_list_args *args);
 void 					start_shell(t_all *all, t_head_struct *head_struct);
 
@@ -102,6 +101,7 @@ char					**path_bin(t_env **head);
 t_list_args				*ft_lstnew_arg(void *content, int flag);
 t_list_args				*ft_lstlast_arg(t_list_args *lst);
 
+t_env					*new_key_value(char *str, int visible);
 
 
 #endif
