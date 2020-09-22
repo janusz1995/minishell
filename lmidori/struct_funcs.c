@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:46:25 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/21 20:05:54 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/22 12:46:16 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int			fool_strcut(t_all *all, t_list_args **list)
 	t_list_args *tmp;
 
 	tmp = *list;
+	ft_init_struct(all);
 	if (tmp)
 	{
-		ft_init_struct(all);
 		if (tmp->spec_flag == 2)
 			all->equal = 1;
 		while (tmp && tmp->spec_flag != 1)

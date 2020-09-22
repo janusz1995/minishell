@@ -5,12 +5,17 @@ void		cmd_cd(char **args, t_env *head)
 {
 	char	*str_cwd;
 	t_env	*tmp;
+	char	*dir;
 
 	tmp = head;
-	if (chdir(args[1]) == -1)
+	if (args[1] == NULL)
+		dir = get_home_dir(head);
+	else
+		dir = args[1];
+	if (chdir(dir) == -1)
 	{
 		ft_putstr_fd("Error\n",2);
-		exit (0);
+		return ;
 	}
 	str_cwd = getcwd(NULL, 0);
 	while (tmp->next != NULL)
@@ -23,7 +28,4 @@ void		cmd_cd(char **args, t_env *head)
 		}
 		tmp = tmp->next;
 	}
-//	ft_putstr_fd(env->key_value[0], 1);
-//	ft_putstr_fd(env->key_value[1], 1);
-//	write(1, "\n" , 1);
 }

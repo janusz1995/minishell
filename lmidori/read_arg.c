@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:52:29 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/21 18:22:22 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/22 14:50:46 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int			init_quotes_slash(char *str, int *i, t_arg *arg, t_env *env)
 	}
 	else
 	{
-		if (str[*i] == '=' && i != 0 && (ft_isdigit(str[*i - 1]) || ft_isalpha(str[*i - 1])))
+		if (str[*i] == '=' && i != 0 && (ft_isdigit(str[*i - 1]) || ft_isalpha(str[*i - 1]) || str[*i - 1] == '_'))
 			flag = 2;
 		arg->arg[arg->j++] = str[*i];
 	}

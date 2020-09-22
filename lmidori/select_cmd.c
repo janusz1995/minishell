@@ -53,7 +53,8 @@ void 		cmd_echo(t_list_args *list)
 	while (tmp)
 	{
 		write(1,tmp->content , ft_strlen(tmp->content));
-		write(1, " ",1);
+		if (tmp->next)
+			write(1, " ",1);
 		tmp = tmp->next;
 	}
 	write(1, "\n",1);
@@ -101,7 +102,10 @@ void 		start_shell(t_all *all, t_head_struct *head_struct)
 	// 	printf("%s\n", str[i]);
 	// if (head_struct)
 	// 	i++;
+	if (*str[0] == '\0')
+		return;
 	select_cmd(head_struct, str, head_struct->all.args);
+	free(str);
 }
 
 char		*get_value_env(char *var)
@@ -166,6 +170,7 @@ t_env		*lst_new_env(char *name, char *value, int visable)
 	tmp->key_value[1] = value;
 	tmp->key_value[2] = NULL;
 	tmp->visible = visable;
+	tmp->next = NULL;
 	return (tmp);
 }
 
@@ -173,13 +178,25 @@ int			init_env(char *var, t_env **env)
 {
 	char	*name;
 	char	*value;
+	t_env	*tmp;
 
+	tmp = *env;
 	if (!(name = get_name_env(var)))
 		return (0);
 	if (!(value = get_value_env(&var[ft_strlen(name) + 1])))
 		return (0);
-	
-	add_back(env, lst_new_env(name, value, 0));
+	while (tmp && ft_strncmp(name, tmp->key_value[0], ft_strlen(name) + 1) != 0)
+		tmp = tmp->next;
+	if (!tmp)
+	{
+		add_back(env, lst_new_env(name, value, 0));
+	}
+	else
+	{
+		free(tmp->key_value[1]);
+		free(name);
+		tmp->key_value[1] = value;
+	}
 	return (1);
 }
 
@@ -200,10 +217,6 @@ int			add_new_env(t_head_struct *head_struct, char **str)
 		arg = arg->next;
 		i++;
 	}
-	if (!flag)
-	{
-		select_cmd(head_struct, &str[i], arg);
-	}
 	if (!arg)
 	{
 		arg = head_struct->all.args;
@@ -214,6 +227,12 @@ int			add_new_env(t_head_struct *head_struct, char **str)
 			arg = arg->next;
 		}
 	}
+	else if (!flag || arg->spec_flag != 2)
+	{
+		head_struct->all.equal = 0;
+		select_cmd(head_struct, &str[i], arg);
+	}
+
 	// if (!(init_env(arg->content, &(head_struct->env))))
 	// 		return (-1);
 	// arg = arg->next;
@@ -263,5 +282,4 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 	{
 		diff_cmd(head_struct, str);
 	}
-	free(str);
 }

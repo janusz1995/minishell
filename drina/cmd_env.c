@@ -8,7 +8,7 @@ void		cmd_env(t_env *head)
 	tmp = head;
 	while (tmp != NULL)
 	{
-		if (tmp->visible)
+		if (tmp->visible == 1)
 		{
 			ft_putstr_fd( tmp->key_value[0], 1);
 			write(1, "=" , 1);

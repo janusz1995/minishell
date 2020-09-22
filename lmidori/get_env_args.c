@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:48:59 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/18 21:49:52 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/22 12:38:09 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char		*get_arg_env(char *tmp, t_env *env)
 	if (*tmp != '\0')
 		while (env)
 		{
-			if ((ft_strncmp(env->key_value[0], tmp, ft_strlen(env->key_value[0]))) == 0)
+			if ((ft_strncmp(env->key_value[0], tmp, ft_strlen(env->key_value[0]) + 1)) == 0)
 			{
 				value = env->key_value[1];
 				break;

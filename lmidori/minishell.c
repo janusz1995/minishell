@@ -4,13 +4,19 @@
 void		all_envp(t_env **env, char **envp)
 {
 	int i;
+	int	flag;
 
+	flag = 0;
 	i = 0;
 	while (envp[i] != NULL)
 	{
+		if (ft_strncmp("OLDPWD", envp[i], 7) == 0)
+			flag = 1;
 		add_back(env, lstnew(envp[i], 1));
 		i++;
 	}
+	if (!flag)
+		add_back(env, lstnew("OLDPWD=", 2));
 }
 
 
