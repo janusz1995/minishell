@@ -98,6 +98,8 @@ int		main(int argc, char **argv, char **envp)
 		//ft_push_args(&all, &list);
 		ft_lstclear_args(&head_struct.list, free);
 		head_struct.list = NULL;
+		dup2(saveinput, 0);
+		dup2(saveoutput, 1);
 	}
 	close(saveinput);
 	close(saveoutput);

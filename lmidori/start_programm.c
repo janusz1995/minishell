@@ -7,10 +7,9 @@ void 		start_programm(t_head_struct *head_struct, char *path_bin, char **env, ch
 	pid_t	wait_pid;
 	char	*tmp;
 	int		status;
-	int		pfildes[2];
 
 	if (head_struct->all.spec && *(head_struct->all.spec) == '|')
-		pipe(pfildes);
+		pipe(head_struct->fd);
 	pid = fork();
 	if (path_bin != NULL)
 		tmp = ft_strjoin(path_bin, "/");
@@ -19,9 +18,9 @@ void 		start_programm(t_head_struct *head_struct, char *path_bin, char **env, ch
 	{
 		if (head_struct->all.spec && *(head_struct->all.spec) == '|')
 		{
-			close(pfildes[0]);
-			dup2(pfildes[1], 1);
-			close(pfildes[1]);
+			close(head_struct->fd[0]);
+			dup2(head_struct->fd[1], 1);
+			close(head_struct->fd[1]);
 		}
 		if (execve(tmp, cmd_arg, env) == -1)
 		{
@@ -37,9 +36,9 @@ void 		start_programm(t_head_struct *head_struct, char *path_bin, char **env, ch
 	{
 		if (head_struct->all.spec && *(head_struct->all.spec) == '|')
 		{
-			close(pfildes[1]);
-			dup2(pfildes[0], 0);
-			close(pfildes[0]);
+			close(head_struct->fd[1]);
+			dup2(head_struct->fd[0], 0);
+			close(head_struct->fd[0]);
 		}
 		wait_pid = waitpid(pid, &status, WUNTRACED);
 	}

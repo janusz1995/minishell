@@ -314,6 +314,8 @@ int			add_new_env(t_head_struct *head_struct, char **str)
 
 void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 {
+
+	// pipe
 	if (head_struct->all.equal == 1)
 	{
 		add_new_env(head_struct, str);

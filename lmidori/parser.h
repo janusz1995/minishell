@@ -54,6 +54,7 @@ typedef struct			s_head_struct
 	t_env				*env;
 	t_all				all;
 	t_list_args			*list;
+	int 				fd[2];
 }						t_head_struct;
 
 void					ft_lstadd_back_arg(t_list_args **lst, t_list_args *new);
