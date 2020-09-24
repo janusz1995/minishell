@@ -83,6 +83,7 @@ int		main(int argc, char **argv, char **envp)
 	saveoutput = dup(1);
 	while (21)
 	{
+		head_struct.flag_pipe = 0;
 		write(1, "shell > ", 8);
 		if ((get_next_line(0, &str1)) > 0)
 		{

@@ -1,27 +1,34 @@
 
 #include "parser.h"
 
-void 		start_programm(t_head_struct *head_struct, char *path_bin, char **env, char **cmd_arg)
+void		start_programm_pipe(char *path_bin, char **env, char **cmd_arg)
+{
+	char	*tmp;
+	int		status;
+
+	if (path_bin != NULL)
+		tmp = ft_strjoin(path_bin, "/");
+	tmp = ft_strjoin(tmp, cmd_arg[0]);  // утечка
+	if (execve(tmp, cmd_arg, env) == -1)
+	{
+		ft_putstr_fd( "Error start programm\n",2);
+		exit (WEXITSTATUS(status));
+	}
+}
+
+void 		start_programm(char *path_bin, char **env, char **cmd_arg)
 {
 	pid_t	pid;
 	pid_t	wait_pid;
 	char	*tmp;
 	int		status;
 
-	if (head_struct->all.spec && *(head_struct->all.spec) == '|')
-		pipe(head_struct->fd);
 	pid = fork();
 	if (path_bin != NULL)
 		tmp = ft_strjoin(path_bin, "/");
 	tmp = ft_strjoin(tmp, cmd_arg[0]);  // утечка
 	if (pid == 0)
 	{
-		if (head_struct->all.spec && *(head_struct->all.spec) == '|')
-		{
-			close(head_struct->fd[0]);
-			dup2(head_struct->fd[1], 1);
-			close(head_struct->fd[1]);
-		}
 		if (execve(tmp, cmd_arg, env) == -1)
 		{
 			ft_putstr_fd( "Error start programm\n",2);
@@ -29,17 +36,7 @@ void 		start_programm(t_head_struct *head_struct, char *path_bin, char **env, ch
 		}
 	}
 	else if (pid < 0)
-	{
 		perror("lsh");
-	}
 	else
-	{
-		if (head_struct->all.spec && *(head_struct->all.spec) == '|')
-		{
-			close(head_struct->fd[1]);
-			dup2(head_struct->fd[0], 0);
-			close(head_struct->fd[0]);
-		}
 		wait_pid = waitpid(pid, &status, WUNTRACED);
-	}
 }

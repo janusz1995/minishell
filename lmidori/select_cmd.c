@@ -78,60 +78,6 @@ int			find_in_env(t_env **env, char *name, char *value)
 	return (0);
 }
 
-// int			find_in_env(t_env *env, char *name)
-// {
-
-// }
-
-//void		cmd_export(t_env **envp, t_list_args *args)
-//{
-//	t_env	*tmp;
-//	char	*name;
-//	char	*value;
-//	char	*str;
-//
-//	tmp = *envp;
-//	if (!args->next)
-//	{
-//		ft_putstr_fd("HELLO", 1);
-//	}
-//	else
-//	{
-//		str = args->next->content;
-//		if (args->next->spec_flag == 2)
-//		{
-//			if (!(name = get_name_env(str)))
-//				return ;
-//			if (!(value = get_value_env(str[ft_strlen(name) + 1])))
-//				return ;
-//			if (find_in_env(envp, name, value))
-//			{
-//				free(name);
-//				free(value);
-//				return ;
-//			}
-//			else
-//			{
-//				add_back(envp, lst_new_env(name, value, 1));
-//				free(name);
-//				free(value);
-//			}
-//		}
-//		else
-//		{
-//			if (!(name = check_name(str, '\0')))
-//				return ;
-//			add_back(envp, lst_new_env(name, "", 1));
-//		}
-//
-//		if (find_in_export(tmp, name))
-//		{
-//
-//		}
-//	}
-//
-//}
-
 int			check_name(char *var, char ch)
 {
 	int		i;
@@ -253,9 +199,7 @@ int			init_env(char *var, t_env **env)
 	while (tmp && ft_strncmp(name, tmp->key_value[0], ft_strlen(name) + 1) != 0)
 		tmp = tmp->next;
 	if (!tmp)
-	{
 		add_back(env, lst_new_env(name, value, 0));
-	}
 	else
 	{
 		free(tmp->key_value[1]);
@@ -298,56 +242,97 @@ int			add_new_env(t_head_struct *head_struct, char **str)
 		head_struct->all.equal = 0;
 		select_cmd(head_struct, &str[i], arg);
 	}
-
-	// if (!(init_env(arg->content, &(head_struct->env))))
-	// 		return (-1);
-	// arg = arg->next;
-	// while (arg && arg->spec_flag == 2)
-	// {
-	// 	if (!(init_env(arg->content, &(head_struct->env))))
-	// 		return (-1);
-	// 	arg = arg->next;
-	// }
-	// if (!arg)
 	return (1);
 }
 
+int 		check_cond(char *str)
+{
+	return ((ft_strncmp(str, "cd", ft_strlen(str) + 1) == 0) ||
+			(ft_strncmp(str, "pwd", ft_strlen(str) + 1) == 0) ||
+			(ft_strncmp(str, "env", ft_strlen(str) + 1) == 0) ||
+			(ft_strncmp(str, "unset", ft_strlen(str) + 1) == 0) ||
+			(ft_strncmp(str, "echo", ft_strlen(str) + 1) == 0) ||
+			(ft_strncmp(str, "exit", ft_strlen(str) + 1) == 0));
+}
+
+
+
 void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 {
+	pid_t	pid;
+	pid_t	wait_pid;
+	int		status;
 
-	// pipe
-	if (head_struct->all.equal == 1)
+	head_struct->flag_pipe = 0;
+	if (head_struct->all.spec && *(head_struct->all.spec) == '|')
 	{
-		add_new_env(head_struct, str);
-	}
-	else if (str[0] && (ft_strncmp(str[0], "cd", ft_strlen(str[0]) + 1) == 0))
-	{
-		cmd_cd(str, head_struct->env);
-	}
-	else if (str[0] && (ft_strncmp(str[0], "pwd", ft_strlen(str[0]) + 1)) == 0)
-	{
-		cmd_pwd(head_struct->env);
-	}
-	else if (str[0] && (ft_strncmp(str[0], "env", ft_strlen(str[0]) + 1) == 0))
-	{
-		cmd_env(head_struct->env);
-	}
-	else if (str[0] && (ft_strncmp(str[0], "unset", ft_strlen(str[0]) + 1) == 0))
-	{
-		cmd_unset(&(head_struct->env), str[1]);
-	}
+		head_struct->flag_pipe = 1;
+		pipe(head_struct->fd);
+		pid = fork();
+		if (pid == 0)
+		{
+			close(head_struct->fd[0]);
+			dup2(head_struct->fd[1], 1);
+			close(head_struct->fd[1]);
+			if (check_cond(str[0]) == 1)
+			{
+				if (str[0] && (ft_strncmp(str[0], "cd", ft_strlen(str[0]) + 1) == 0))
+					cmd_cd(str, head_struct->env);
+				else if (str[0] && (ft_strncmp(str[0], "pwd", ft_strlen(str[0]) + 1)) == 0)
+					cmd_pwd(head_struct->env);
+				else if (str[0] && (ft_strncmp(str[0], "env", ft_strlen(str[0]) + 1) == 0))
+					cmd_env(head_struct->env);
+				else if (str[0] && (ft_strncmp(str[0], "unset", ft_strlen(str[0]) + 1) == 0))
+					cmd_unset(&(head_struct->env), str[1]);
 //	else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
 //	{
 //		cmd_export(&(head_struct->env), args);
 //	}
-	else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
-	{
-		cmd_echo(args);
+				else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
+					cmd_echo(args);
+				else if (str[0] && (ft_strncmp(str[0], "exit", ft_strlen(str[0]) + 1) == 0))
+					exit(0);
+				exit(0);
+			}
+			else
+				diff_cmd(head_struct, str);
+		}
+		else if (pid < 0)
+		{
+			perror("lsh");
+		}
+		else
+		{
+			close(head_struct->fd[1]);
+			dup2(head_struct->fd[0], 0);
+			close(head_struct->fd[0]);
+			wait_pid = waitpid(pid, &status, WUNTRACED);
+		}
 	}
-	else if (str[0] && (ft_strncmp(str[0], "exit", ft_strlen(str[0]) + 1) == 0))
-		exit(0);
 	else
 	{
-		diff_cmd(head_struct, str);
+		if (head_struct->all.equal == 1)
+			add_new_env(head_struct, str);
+		else if (check_cond(str[0]))
+		{
+			if (str[0] && (ft_strncmp(str[0], "cd", ft_strlen(str[0]) + 1) == 0))
+				cmd_cd(str, head_struct->env);
+			else if (str[0] && (ft_strncmp(str[0], "pwd", ft_strlen(str[0]) + 1)) == 0)
+				cmd_pwd(head_struct->env);
+			else if (str[0] && (ft_strncmp(str[0], "env", ft_strlen(str[0]) + 1) == 0))
+				cmd_env(head_struct->env);
+			else if (str[0] && (ft_strncmp(str[0], "unset", ft_strlen(str[0]) + 1) == 0))
+				cmd_unset(&(head_struct->env), str[1]);
+//	else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
+//	{
+//		cmd_export(&(head_struct->env), args);
+//	}
+			else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
+				cmd_echo(args);
+			else if (str[0] && (ft_strncmp(str[0], "exit", ft_strlen(str[0]) + 1) == 0))
+				exit(0);
+		}
+		else
+			diff_cmd(head_struct, str);
 	}
 }
