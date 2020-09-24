@@ -19,7 +19,7 @@ char		*get_home_dir(t_env *env)
 	str = "";
 	while (env->next != NULL)
 	{
-		if ((ft_strncmp(env->key_value[0], "HOME", 4)) == 0)
+		if ((ft_strncmp(env->key_value[0], "HOME", 5)) == 0)
 		{
 			if (!(str = ft_strdup(env->key_value[1])))
 				return (NULL);

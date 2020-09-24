@@ -295,7 +295,10 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 				exit(0);
 			}
 			else
+			{
 				diff_cmd(head_struct, str);
+				exit(0);
+			}
 		}
 		else if (pid < 0)
 		{
