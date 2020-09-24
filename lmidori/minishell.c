@@ -76,8 +76,14 @@ int		main(int argc, char **argv, char **envp)
 	// ft_putstr_fd(home, 1);
 	// write(1, "\n" , 1);
 
+	int 	saveinput;
+	int 	saveoutput;
+
+	saveinput = dup(0);
+	saveoutput = dup(1);
 	while (21)
 	{
+		head_struct.flag_pipe = 0;
 		write(1, "shell > ", 8);
 		if ((get_next_line(0, &str1)) > 0)
 		{
@@ -93,6 +99,10 @@ int		main(int argc, char **argv, char **envp)
 		//ft_push_args(&all, &list);
 		ft_lstclear_args(&head_struct.list, free);
 		head_struct.list = NULL;
+		dup2(saveinput, 0);
+		dup2(saveoutput, 1);
 	}
+	close(saveinput);
+	close(saveoutput);
 	return (1);
 }

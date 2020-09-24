@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:48:59 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/22 12:38:09 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/24 20:56:38 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		*get_home_dir(t_env *env)
 	str = "";
 	while (env->next != NULL)
 	{
-		if ((ft_strncmp(env->key_value[0], "HOME", 4)) == 0)
+		if ((ft_strncmp(env->key_value[0], "HOME", 5)) == 0)
 		{
 			if (!(str = ft_strdup(env->key_value[1])))
 				return (NULL);

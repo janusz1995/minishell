@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/22 17:48:50 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/09/24 21:10:12 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,16 @@ typedef struct			s_head_struct
 	t_env				*env;
 	t_all				all;
 	t_list_args			*list;
+	int 				fd[2];
+	int					flag_pipe;
 }						t_head_struct;
 
 void					ft_lstadd_back_arg(t_list_args **lst, t_list_args *new);
 void					ft_lstclear_args(t_list_args **lst, void (*del)(void*));
 void					ft_lst_print(t_list_args *list);
 
-void 					start_programm(char *cmd, char *path_bin, char **env, char **cmd_arg);
+void					start_programm_pipe(char *path_bin, char **env, char **cmd_arg);
+void 					start_programm(char *path_bin, char **env, char **cmd_arg);
 void					diff_cmd(t_head_struct *head_struct, char **str2);
 void					cmd_cd(char **args, t_env *head);
 void					cmd_env(t_env *head);
