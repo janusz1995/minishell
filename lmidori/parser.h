@@ -73,6 +73,10 @@ void 					start_shell(t_all *all, t_head_struct *head_struct);
 
 void					ft_init_struct(t_all *all);
 void					ft_clear_strcut(t_all *all);
+void					print_export(t_env **env);
+void 					cmd_unset(t_env **head, char *del_str);
+void 					cmd_echo(t_list_args *list);
+void					cmd_export(t_env **envp, t_list_args *args);
 
 int						ft_lstlast_env(t_env *lst);
 int						parse(char *str, t_list_args **list, t_env *env);
@@ -93,18 +97,28 @@ int						init_arg_env(char *str, t_arg *arg, t_env *env);
 int						str_concatenated(t_arg *arg, char *tmp1, char *tmp2);
 int						init_struct(t_arg *arg, int len);
 int						fool_strcut(t_all *all, t_list_args **list);
+int						redact_env(t_env **envp, char *name, char *value);
+int						find_in_env(t_env **env, char *name);
+int						check_name(char *var, char ch);
+int 					check_cond(char *str);
+int						init_env(char *var, t_env **env);
+int						ft_lstsize_arg(t_list_args *lst);
 
 char					*get_home_dir(t_env *env);
 char					*get_arg_env(char *tmp, t_env *env);
 char					*get_arg_env(char *tmp, t_env *env);
 char					*skip_spaces(char *ptr);
+char					*get_value_env(char *var);
+char					*get_name_env(char *var, char ch);
 
+char					**get_arg(t_list_args **list);
 char					**path_bin(t_env **head);
 
 t_list_args				*ft_lstnew_arg(void *content, int flag);
 t_list_args				*ft_lstlast_arg(t_list_args *lst);
 
 t_env					*new_key_value(char *str, int visible);
+t_env					*lst_new_env(char *name, char *value, int visable);
 
 
 #endif

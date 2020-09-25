@@ -1,5 +1,5 @@
 #include "minishell.h"
-#include "../drina/minishelldrina.h"
+#include "../Drina/minishelldrina.h"
 
 t_env		*new_key_value(char *str, int visible)
 {

@@ -169,6 +169,7 @@ CMakeFiles/myminishell.dir/lmidori/add_back.c.o: ../lmidori/parser.h
 CMakeFiles/myminishell.dir/lmidori/cmd_cd.c.o: ../libft/get_next_line.h
 CMakeFiles/myminishell.dir/lmidori/cmd_cd.c.o: ../libft/libft.h
 CMakeFiles/myminishell.dir/lmidori/cmd_cd.c.o: ../lmidori/cmd_cd.c
+CMakeFiles/myminishell.dir/lmidori/cmd_cd.c.o: ../lmidori/minishell.h
 CMakeFiles/myminishell.dir/lmidori/cmd_cd.c.o: ../lmidori/parser.h
 
 CMakeFiles/myminishell.dir/lmidori/diff_cmd.c.o: ../libft/get_next_line.h
@@ -208,7 +209,7 @@ CMakeFiles/myminishell.dir/lmidori/lstnew.c.o: ../lmidori/lstnew.c
 CMakeFiles/myminishell.dir/lmidori/lstnew.c.o: ../lmidori/minishell.h
 CMakeFiles/myminishell.dir/lmidori/lstnew.c.o: ../lmidori/parser.h
 
-CMakeFiles/myminishell.dir/lmidori/minishell.c.o: ../drina/minishelldrina.h
+CMakeFiles/myminishell.dir/lmidori/minishell.c.o: ../Drina/minishelldrina.h
 CMakeFiles/myminishell.dir/lmidori/minishell.c.o: ../libft/get_next_line.h
 CMakeFiles/myminishell.dir/lmidori/minishell.c.o: ../libft/libft.h
 CMakeFiles/myminishell.dir/lmidori/minishell.c.o: ../lmidori/minishell.c
@@ -233,6 +234,7 @@ CMakeFiles/myminishell.dir/lmidori/read_arg.c.o: ../lmidori/read_arg.c
 
 CMakeFiles/myminishell.dir/lmidori/select_cmd.c.o: ../libft/get_next_line.h
 CMakeFiles/myminishell.dir/lmidori/select_cmd.c.o: ../libft/libft.h
+CMakeFiles/myminishell.dir/lmidori/select_cmd.c.o: ../lmidori/minishell.h
 CMakeFiles/myminishell.dir/lmidori/select_cmd.c.o: ../lmidori/parser.h
 CMakeFiles/myminishell.dir/lmidori/select_cmd.c.o: ../lmidori/select_cmd.c
 
