@@ -47,6 +47,35 @@ int			add_new_env(t_head_struct *head_struct, char **str)
 	return (1);
 }
 
+void		select_cmd_two(t_head_struct *head_struct, char **str, t_list_args *args, int flag)
+{
+	int i;
+
+	i = 0;
+	if (str[0] && (ft_strncmp(str[0], "cd", ft_strlen(str[0]) + 1) == 0))
+		cmd_cd(str, head_struct->env);
+	else if (str[0] && (ft_strncmp(str[0], "pwd", ft_strlen(str[0]) + 1)) == 0)
+		cmd_pwd(head_struct->env);
+	else if (str[0] && (ft_strncmp(str[0], "env", ft_strlen(str[0]) + 1) == 0))
+		cmd_env(head_struct->env);
+	else if (str[0] && (ft_strncmp(str[0], "unset", ft_strlen(str[0]) + 1) == 0))
+	{
+		if (flag)
+		{
+			while (str[i])
+				cmd_unset(&(head_struct->env), str[i++]);
+		}
+		else
+			cmd_unset(&(head_struct->env), str[1]);
+	}
+	else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
+		cmd_export(&(head_struct->env), args);
+	else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
+		cmd_echo(args);
+	else if (str[0] && (ft_strncmp(str[0], "exit", ft_strlen(str[0]) + 1) == 0))
+		exit(0);
+}
+
 void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 {
 	pid_t	pid;
@@ -65,33 +94,13 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 			dup2(head_struct->fd[1], 1);
 			close(head_struct->fd[1]);
 			if (check_cond(str[0]) == 1)
-			{
-				if (str[0] && (ft_strncmp(str[0], "cd", ft_strlen(str[0]) + 1) == 0))
-					cmd_cd(str, head_struct->env);
-				else if (str[0] && (ft_strncmp(str[0], "pwd", ft_strlen(str[0]) + 1)) == 0)
-					cmd_pwd(head_struct->env);
-				else if (str[0] && (ft_strncmp(str[0], "env", ft_strlen(str[0]) + 1) == 0))
-					cmd_env(head_struct->env);
-				else if (str[0] && (ft_strncmp(str[0], "unset", ft_strlen(str[0]) + 1) == 0))
-					cmd_unset(&(head_struct->env), str[1]);
-				else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
-					cmd_export(&(head_struct->env), args);
-				else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
-					cmd_echo(args);
-				else if (str[0] && (ft_strncmp(str[0], "exit", ft_strlen(str[0]) + 1) == 0))
-					exit(0);
-				exit(0);
-			}
+				select_cmd_two(head_struct, str, args, 0);
 			else
-			{
 				diff_cmd(head_struct, str);
-				exit(0);
-			}
+			exit(0);
 		}
 		else if (pid < 0)
-		{
 			perror("lsh");
-		}
 		else
 		{
 			close(head_struct->fd[1]);
@@ -105,26 +114,7 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 		if (head_struct->all.equal == 1)
 			add_new_env(head_struct, str);
 		else if (check_cond(str[0]))
-		{
-			if (str[0] && (ft_strncmp(str[0], "cd", ft_strlen(str[0]) + 1) == 0))
-				cmd_cd(str, head_struct->env);
-			else if (str[0] && (ft_strncmp(str[0], "pwd", ft_strlen(str[0]) + 1)) == 0)
-				cmd_pwd(head_struct->env);
-			else if (str[0] && (ft_strncmp(str[0], "env", ft_strlen(str[0]) + 1) == 0))
-				cmd_env(head_struct->env);
-			else if (str[0] && (ft_strncmp(str[0], "unset", ft_strlen(str[0]) + 1) == 0))
-			{
-				int i = 0;
-				while (str[i])
-					cmd_unset(&(head_struct->env), str[i++]);
-			}
-			else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
-				cmd_export(&(head_struct->env), args);
-			else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
-				cmd_echo(args);
-			else if (str[0] && (ft_strncmp(str[0], "exit", ft_strlen(str[0]) + 1) == 0))
-				exit(0);
-		}
+			select_cmd_two(head_struct, str, args, 1);
 		else
 			diff_cmd(head_struct, str);
 	}
