@@ -106,12 +106,22 @@ void 		redirect(t_head_struct *head_struct, char **str)
 		head_struct->p_copy = &head_struct->copy_all;
 		head_struct->flag_redir = 1;
 	}
+	else if (head_struct->all.spec && ft_strncmp(head_struct->all.spec, ">>", 3) == 0)
+	{
+		if ((fd = open(str[0], O_CREAT | O_APPEND | O_WRONLY , 0644)) < 0)  //O_CREAT
+		{
+
+		}
+		write(fd, "HELLO", 5);
+		close(fd);
+	}
 	else if (head_struct->all.spec && *(head_struct->all.spec) == '>')
 	{
-		if ((fd = open(head_struct->list->content, O_WRONLY)) < 0)  //O_CREAT
+		if ((fd = open(str[0], O_CREAT | O_WRONLY , 0644)) < 0)  //O_CREAT
 		{
-			//return error
+			// return error
 		}
+		close(fd);
 	}
 	else
 	{
@@ -164,7 +174,8 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 			wait_pid = waitpid(pid, &status, WUNTRACED);
 		}
 	}
-	else if (head_struct->flag_redir || (head_struct->all.spec && *(head_struct->all.spec) == '>'))
+	else if (head_struct->flag_redir || (head_struct->all.spec && (*(head_struct->all.spec) == '>' ||
+			(ft_strncmp(head_struct->all.spec, ">>", 3) == 0))))
 	{
 		redirect(head_struct, str);
 	}
