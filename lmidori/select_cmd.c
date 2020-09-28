@@ -76,6 +76,23 @@ void		select_cmd_two(t_head_struct *head_struct, char **str, t_list_args *args, 
 		exit(0);
 }
 
+void		get_copy_all(t_all *all, t_all *copy_all)
+{
+	t_all	*tmp;
+	t_all	*tmp_copy;
+
+	tmp = all;
+	tmp_copy = copy_all;
+	tmp_copy->args = NULL;
+	tmp_copy->spec = NULL;
+	tmp_copy->equal = 0;
+	while (tmp->args)
+	{
+		ft_lstadd_back_arg(&(copy_all->args), ft_lstnew_arg(ft_strdup(tmp->args->content), tmp->args->spec_flag));
+		tmp->args = tmp->args->next;
+	}
+}
+
 void 		redirect(t_head_struct *head_struct, char **str)
 {
 	int		fd;
@@ -85,7 +102,7 @@ void 		redirect(t_head_struct *head_struct, char **str)
 	save_all = NULL;
 	if (head_struct->p_copy == NULL)
 	{
-		head_struct->copy_all = ft_head_struct->all;
+		get_copy_all(&head_struct->all, &head_struct->copy_all);
 		head_struct->p_copy = &head_struct->copy_all;
 		head_struct->flag_redir = 1;
 	}
@@ -99,7 +116,7 @@ void 		redirect(t_head_struct *head_struct, char **str)
 	else
 	{
 		head_struct->flag_redir = 0;
-		if ((fd = open(str[0], O_CREAT | O_WRONLY)) < 0)  //O_CREAT
+		if ((fd = open(str[0], O_CREAT | O_WRONLY , 0644)) < 0)  //O_CREAT
 		{
 			//return error
 		}
@@ -109,6 +126,8 @@ void 		redirect(t_head_struct *head_struct, char **str)
 		select_cmd(head_struct, save_all, head_struct->copy_all.args);
 		dup2(saveout, 1);
 		head_struct->p_copy = NULL;
+		close(fd);
+		close(saveout);
 	}
 }
 
