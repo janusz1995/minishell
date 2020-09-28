@@ -4,15 +4,15 @@
 
 int		ft_lstsize_arg(t_list_args *lst)
 {
-	int	count;
+	int	count_pony;
 
-	count = 0;
+	count_pony = 0;
 	while (lst != NULL)
 	{
-		count++;
+		count_pony++;
 		lst = lst->next;
 	}
-	return (count);
+	return (count_pony);
 }
 
 char		**get_arg(t_list_args **list)

@@ -1,5 +1,5 @@
 
-.PHONY: all re fclean clean
+.PONY: all re fclean clean
 
 NAME = minishell
 
@@ -43,3 +43,4 @@ fclean: clean
 	make fclean -C $(LIBFTDIR)
 
 re: fclean all
+#I am little pony. Find more ponies inside this makefile and project!

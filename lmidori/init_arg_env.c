@@ -17,19 +17,19 @@ int			str_concatenated(t_arg *arg, char *tmp1, char *tmp2)
 	int		i;
 	int		j;
 	int		len;
-	char	*new_arg;
+	char	*pony;
 	
 	len = arg->len - ft_strlen(tmp1) + ft_strlen(tmp2);
-	if (!(new_arg = (char *)ft_calloc(sizeof(char), (len + 1))))
+	if (!(pony = (char *)ft_calloc(sizeof(char), (len + 1))))
 		return (-1);
 	i = -1;
 	while (arg->arg[++i] != '\0')
-		new_arg[i] = arg->arg[i];
+		pony[i] = arg->arg[i];
 	j = -1;
 	while (tmp2[++j] != '\0')
-		new_arg[i++] = tmp2[j];
+		pony[i++] = tmp2[j];
 	free(arg->arg);
-	arg->arg = new_arg;
+	arg->arg = pony;
 	arg->len = len;
 	arg->j = i;
 	return (1);
