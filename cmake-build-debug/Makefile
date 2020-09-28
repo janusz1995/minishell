@@ -131,125 +131,125 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named myminishell
+# Target rules for targets named minishell
 
 # Build rule for target.
-myminishell: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myminishell
-.PHONY : myminishell
+minishell: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 minishell
+.PHONY : minishell
 
 # fast build rule for target.
-myminishell/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/build
-.PHONY : myminishell/fast
+minishell/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/build
+.PHONY : minishell/fast
 
-drina/add_equal.o: drina/add_equal.c.o
+Drina/add_equal.o: Drina/add_equal.c.o
 
-.PHONY : drina/add_equal.o
-
-# target to build an object file
-drina/add_equal.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/add_equal.c.o
-.PHONY : drina/add_equal.c.o
-
-drina/add_equal.i: drina/add_equal.c.i
-
-.PHONY : drina/add_equal.i
-
-# target to preprocess a source file
-drina/add_equal.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/add_equal.c.i
-.PHONY : drina/add_equal.c.i
-
-drina/add_equal.s: drina/add_equal.c.s
-
-.PHONY : drina/add_equal.s
-
-# target to generate assembly for a file
-drina/add_equal.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/add_equal.c.s
-.PHONY : drina/add_equal.c.s
-
-drina/cmd_env.o: drina/cmd_env.c.o
-
-.PHONY : drina/cmd_env.o
+.PHONY : Drina/add_equal.o
 
 # target to build an object file
-drina/cmd_env.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/cmd_env.c.o
-.PHONY : drina/cmd_env.c.o
+Drina/add_equal.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/add_equal.c.o
+.PHONY : Drina/add_equal.c.o
 
-drina/cmd_env.i: drina/cmd_env.c.i
+Drina/add_equal.i: Drina/add_equal.c.i
 
-.PHONY : drina/cmd_env.i
+.PHONY : Drina/add_equal.i
 
 # target to preprocess a source file
-drina/cmd_env.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/cmd_env.c.i
-.PHONY : drina/cmd_env.c.i
+Drina/add_equal.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/add_equal.c.i
+.PHONY : Drina/add_equal.c.i
 
-drina/cmd_env.s: drina/cmd_env.c.s
+Drina/add_equal.s: Drina/add_equal.c.s
 
-.PHONY : drina/cmd_env.s
+.PHONY : Drina/add_equal.s
 
 # target to generate assembly for a file
-drina/cmd_env.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/cmd_env.c.s
-.PHONY : drina/cmd_env.c.s
+Drina/add_equal.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/add_equal.c.s
+.PHONY : Drina/add_equal.c.s
 
-drina/cmd_pwd.o: drina/cmd_pwd.c.o
+Drina/cmd_env.o: Drina/cmd_env.c.o
 
-.PHONY : drina/cmd_pwd.o
+.PHONY : Drina/cmd_env.o
 
 # target to build an object file
-drina/cmd_pwd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/cmd_pwd.c.o
-.PHONY : drina/cmd_pwd.c.o
+Drina/cmd_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_env.c.o
+.PHONY : Drina/cmd_env.c.o
 
-drina/cmd_pwd.i: drina/cmd_pwd.c.i
+Drina/cmd_env.i: Drina/cmd_env.c.i
 
-.PHONY : drina/cmd_pwd.i
+.PHONY : Drina/cmd_env.i
 
 # target to preprocess a source file
-drina/cmd_pwd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/cmd_pwd.c.i
-.PHONY : drina/cmd_pwd.c.i
+Drina/cmd_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_env.c.i
+.PHONY : Drina/cmd_env.c.i
 
-drina/cmd_pwd.s: drina/cmd_pwd.c.s
+Drina/cmd_env.s: Drina/cmd_env.c.s
 
-.PHONY : drina/cmd_pwd.s
+.PHONY : Drina/cmd_env.s
 
 # target to generate assembly for a file
-drina/cmd_pwd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/cmd_pwd.c.s
-.PHONY : drina/cmd_pwd.c.s
+Drina/cmd_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_env.c.s
+.PHONY : Drina/cmd_env.c.s
 
-drina/sort_list.o: drina/sort_list.c.o
+Drina/cmd_pwd.o: Drina/cmd_pwd.c.o
 
-.PHONY : drina/sort_list.o
+.PHONY : Drina/cmd_pwd.o
 
 # target to build an object file
-drina/sort_list.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/sort_list.c.o
-.PHONY : drina/sort_list.c.o
+Drina/cmd_pwd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_pwd.c.o
+.PHONY : Drina/cmd_pwd.c.o
 
-drina/sort_list.i: drina/sort_list.c.i
+Drina/cmd_pwd.i: Drina/cmd_pwd.c.i
 
-.PHONY : drina/sort_list.i
+.PHONY : Drina/cmd_pwd.i
 
 # target to preprocess a source file
-drina/sort_list.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/sort_list.c.i
-.PHONY : drina/sort_list.c.i
+Drina/cmd_pwd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_pwd.c.i
+.PHONY : Drina/cmd_pwd.c.i
 
-drina/sort_list.s: drina/sort_list.c.s
+Drina/cmd_pwd.s: Drina/cmd_pwd.c.s
 
-.PHONY : drina/sort_list.s
+.PHONY : Drina/cmd_pwd.s
 
 # target to generate assembly for a file
-drina/sort_list.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/drina/sort_list.c.s
-.PHONY : drina/sort_list.c.s
+Drina/cmd_pwd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_pwd.c.s
+.PHONY : Drina/cmd_pwd.c.s
+
+Drina/sort_list.o: Drina/sort_list.c.o
+
+.PHONY : Drina/sort_list.o
+
+# target to build an object file
+Drina/sort_list.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/sort_list.c.o
+.PHONY : Drina/sort_list.c.o
+
+Drina/sort_list.i: Drina/sort_list.c.i
+
+.PHONY : Drina/sort_list.i
+
+# target to preprocess a source file
+Drina/sort_list.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/sort_list.c.i
+.PHONY : Drina/sort_list.c.i
+
+Drina/sort_list.s: Drina/sort_list.c.s
+
+.PHONY : Drina/sort_list.s
+
+# target to generate assembly for a file
+Drina/sort_list.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/sort_list.c.s
+.PHONY : Drina/sort_list.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -257,7 +257,7 @@ libft/ft_atoi.o: libft/ft_atoi.c.o
 
 # target to build an object file
 libft/ft_atoi.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_atoi.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_atoi.c.o
 .PHONY : libft/ft_atoi.c.o
 
 libft/ft_atoi.i: libft/ft_atoi.c.i
@@ -266,7 +266,7 @@ libft/ft_atoi.i: libft/ft_atoi.c.i
 
 # target to preprocess a source file
 libft/ft_atoi.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_atoi.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_atoi.c.i
 .PHONY : libft/ft_atoi.c.i
 
 libft/ft_atoi.s: libft/ft_atoi.c.s
@@ -275,7 +275,7 @@ libft/ft_atoi.s: libft/ft_atoi.c.s
 
 # target to generate assembly for a file
 libft/ft_atoi.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_atoi.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_atoi.c.s
 .PHONY : libft/ft_atoi.c.s
 
 libft/ft_bzero.o: libft/ft_bzero.c.o
@@ -284,7 +284,7 @@ libft/ft_bzero.o: libft/ft_bzero.c.o
 
 # target to build an object file
 libft/ft_bzero.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_bzero.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_bzero.c.o
 .PHONY : libft/ft_bzero.c.o
 
 libft/ft_bzero.i: libft/ft_bzero.c.i
@@ -293,7 +293,7 @@ libft/ft_bzero.i: libft/ft_bzero.c.i
 
 # target to preprocess a source file
 libft/ft_bzero.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_bzero.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_bzero.c.i
 .PHONY : libft/ft_bzero.c.i
 
 libft/ft_bzero.s: libft/ft_bzero.c.s
@@ -302,7 +302,7 @@ libft/ft_bzero.s: libft/ft_bzero.c.s
 
 # target to generate assembly for a file
 libft/ft_bzero.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_bzero.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_bzero.c.s
 .PHONY : libft/ft_bzero.c.s
 
 libft/ft_calloc.o: libft/ft_calloc.c.o
@@ -311,7 +311,7 @@ libft/ft_calloc.o: libft/ft_calloc.c.o
 
 # target to build an object file
 libft/ft_calloc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_calloc.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_calloc.c.o
 .PHONY : libft/ft_calloc.c.o
 
 libft/ft_calloc.i: libft/ft_calloc.c.i
@@ -320,7 +320,7 @@ libft/ft_calloc.i: libft/ft_calloc.c.i
 
 # target to preprocess a source file
 libft/ft_calloc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_calloc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_calloc.c.i
 .PHONY : libft/ft_calloc.c.i
 
 libft/ft_calloc.s: libft/ft_calloc.c.s
@@ -329,7 +329,7 @@ libft/ft_calloc.s: libft/ft_calloc.c.s
 
 # target to generate assembly for a file
 libft/ft_calloc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_calloc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_calloc.c.s
 .PHONY : libft/ft_calloc.c.s
 
 libft/ft_isalnum.o: libft/ft_isalnum.c.o
@@ -338,7 +338,7 @@ libft/ft_isalnum.o: libft/ft_isalnum.c.o
 
 # target to build an object file
 libft/ft_isalnum.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isalnum.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isalnum.c.o
 .PHONY : libft/ft_isalnum.c.o
 
 libft/ft_isalnum.i: libft/ft_isalnum.c.i
@@ -347,7 +347,7 @@ libft/ft_isalnum.i: libft/ft_isalnum.c.i
 
 # target to preprocess a source file
 libft/ft_isalnum.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isalnum.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isalnum.c.i
 .PHONY : libft/ft_isalnum.c.i
 
 libft/ft_isalnum.s: libft/ft_isalnum.c.s
@@ -356,7 +356,7 @@ libft/ft_isalnum.s: libft/ft_isalnum.c.s
 
 # target to generate assembly for a file
 libft/ft_isalnum.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isalnum.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isalnum.c.s
 .PHONY : libft/ft_isalnum.c.s
 
 libft/ft_isalpha.o: libft/ft_isalpha.c.o
@@ -365,7 +365,7 @@ libft/ft_isalpha.o: libft/ft_isalpha.c.o
 
 # target to build an object file
 libft/ft_isalpha.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isalpha.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isalpha.c.o
 .PHONY : libft/ft_isalpha.c.o
 
 libft/ft_isalpha.i: libft/ft_isalpha.c.i
@@ -374,7 +374,7 @@ libft/ft_isalpha.i: libft/ft_isalpha.c.i
 
 # target to preprocess a source file
 libft/ft_isalpha.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isalpha.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isalpha.c.i
 .PHONY : libft/ft_isalpha.c.i
 
 libft/ft_isalpha.s: libft/ft_isalpha.c.s
@@ -383,7 +383,7 @@ libft/ft_isalpha.s: libft/ft_isalpha.c.s
 
 # target to generate assembly for a file
 libft/ft_isalpha.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isalpha.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isalpha.c.s
 .PHONY : libft/ft_isalpha.c.s
 
 libft/ft_isascii.o: libft/ft_isascii.c.o
@@ -392,7 +392,7 @@ libft/ft_isascii.o: libft/ft_isascii.c.o
 
 # target to build an object file
 libft/ft_isascii.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isascii.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isascii.c.o
 .PHONY : libft/ft_isascii.c.o
 
 libft/ft_isascii.i: libft/ft_isascii.c.i
@@ -401,7 +401,7 @@ libft/ft_isascii.i: libft/ft_isascii.c.i
 
 # target to preprocess a source file
 libft/ft_isascii.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isascii.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isascii.c.i
 .PHONY : libft/ft_isascii.c.i
 
 libft/ft_isascii.s: libft/ft_isascii.c.s
@@ -410,7 +410,7 @@ libft/ft_isascii.s: libft/ft_isascii.c.s
 
 # target to generate assembly for a file
 libft/ft_isascii.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isascii.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isascii.c.s
 .PHONY : libft/ft_isascii.c.s
 
 libft/ft_isdigit.o: libft/ft_isdigit.c.o
@@ -419,7 +419,7 @@ libft/ft_isdigit.o: libft/ft_isdigit.c.o
 
 # target to build an object file
 libft/ft_isdigit.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isdigit.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isdigit.c.o
 .PHONY : libft/ft_isdigit.c.o
 
 libft/ft_isdigit.i: libft/ft_isdigit.c.i
@@ -428,7 +428,7 @@ libft/ft_isdigit.i: libft/ft_isdigit.c.i
 
 # target to preprocess a source file
 libft/ft_isdigit.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isdigit.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isdigit.c.i
 .PHONY : libft/ft_isdigit.c.i
 
 libft/ft_isdigit.s: libft/ft_isdigit.c.s
@@ -437,7 +437,7 @@ libft/ft_isdigit.s: libft/ft_isdigit.c.s
 
 # target to generate assembly for a file
 libft/ft_isdigit.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isdigit.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isdigit.c.s
 .PHONY : libft/ft_isdigit.c.s
 
 libft/ft_isprint.o: libft/ft_isprint.c.o
@@ -446,7 +446,7 @@ libft/ft_isprint.o: libft/ft_isprint.c.o
 
 # target to build an object file
 libft/ft_isprint.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isprint.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isprint.c.o
 .PHONY : libft/ft_isprint.c.o
 
 libft/ft_isprint.i: libft/ft_isprint.c.i
@@ -455,7 +455,7 @@ libft/ft_isprint.i: libft/ft_isprint.c.i
 
 # target to preprocess a source file
 libft/ft_isprint.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isprint.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isprint.c.i
 .PHONY : libft/ft_isprint.c.i
 
 libft/ft_isprint.s: libft/ft_isprint.c.s
@@ -464,7 +464,7 @@ libft/ft_isprint.s: libft/ft_isprint.c.s
 
 # target to generate assembly for a file
 libft/ft_isprint.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_isprint.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_isprint.c.s
 .PHONY : libft/ft_isprint.c.s
 
 libft/ft_itoa.o: libft/ft_itoa.c.o
@@ -473,7 +473,7 @@ libft/ft_itoa.o: libft/ft_itoa.c.o
 
 # target to build an object file
 libft/ft_itoa.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_itoa.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_itoa.c.o
 .PHONY : libft/ft_itoa.c.o
 
 libft/ft_itoa.i: libft/ft_itoa.c.i
@@ -482,7 +482,7 @@ libft/ft_itoa.i: libft/ft_itoa.c.i
 
 # target to preprocess a source file
 libft/ft_itoa.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_itoa.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_itoa.c.i
 .PHONY : libft/ft_itoa.c.i
 
 libft/ft_itoa.s: libft/ft_itoa.c.s
@@ -491,7 +491,7 @@ libft/ft_itoa.s: libft/ft_itoa.c.s
 
 # target to generate assembly for a file
 libft/ft_itoa.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_itoa.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_itoa.c.s
 .PHONY : libft/ft_itoa.c.s
 
 libft/ft_lstadd_back.o: libft/ft_lstadd_back.c.o
@@ -500,7 +500,7 @@ libft/ft_lstadd_back.o: libft/ft_lstadd_back.c.o
 
 # target to build an object file
 libft/ft_lstadd_back.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstadd_back.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstadd_back.c.o
 .PHONY : libft/ft_lstadd_back.c.o
 
 libft/ft_lstadd_back.i: libft/ft_lstadd_back.c.i
@@ -509,7 +509,7 @@ libft/ft_lstadd_back.i: libft/ft_lstadd_back.c.i
 
 # target to preprocess a source file
 libft/ft_lstadd_back.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstadd_back.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstadd_back.c.i
 .PHONY : libft/ft_lstadd_back.c.i
 
 libft/ft_lstadd_back.s: libft/ft_lstadd_back.c.s
@@ -518,7 +518,7 @@ libft/ft_lstadd_back.s: libft/ft_lstadd_back.c.s
 
 # target to generate assembly for a file
 libft/ft_lstadd_back.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstadd_back.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstadd_back.c.s
 .PHONY : libft/ft_lstadd_back.c.s
 
 libft/ft_lstadd_front.o: libft/ft_lstadd_front.c.o
@@ -527,7 +527,7 @@ libft/ft_lstadd_front.o: libft/ft_lstadd_front.c.o
 
 # target to build an object file
 libft/ft_lstadd_front.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstadd_front.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstadd_front.c.o
 .PHONY : libft/ft_lstadd_front.c.o
 
 libft/ft_lstadd_front.i: libft/ft_lstadd_front.c.i
@@ -536,7 +536,7 @@ libft/ft_lstadd_front.i: libft/ft_lstadd_front.c.i
 
 # target to preprocess a source file
 libft/ft_lstadd_front.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstadd_front.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstadd_front.c.i
 .PHONY : libft/ft_lstadd_front.c.i
 
 libft/ft_lstadd_front.s: libft/ft_lstadd_front.c.s
@@ -545,7 +545,7 @@ libft/ft_lstadd_front.s: libft/ft_lstadd_front.c.s
 
 # target to generate assembly for a file
 libft/ft_lstadd_front.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstadd_front.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstadd_front.c.s
 .PHONY : libft/ft_lstadd_front.c.s
 
 libft/ft_lstclear.o: libft/ft_lstclear.c.o
@@ -554,7 +554,7 @@ libft/ft_lstclear.o: libft/ft_lstclear.c.o
 
 # target to build an object file
 libft/ft_lstclear.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstclear.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstclear.c.o
 .PHONY : libft/ft_lstclear.c.o
 
 libft/ft_lstclear.i: libft/ft_lstclear.c.i
@@ -563,7 +563,7 @@ libft/ft_lstclear.i: libft/ft_lstclear.c.i
 
 # target to preprocess a source file
 libft/ft_lstclear.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstclear.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstclear.c.i
 .PHONY : libft/ft_lstclear.c.i
 
 libft/ft_lstclear.s: libft/ft_lstclear.c.s
@@ -572,7 +572,7 @@ libft/ft_lstclear.s: libft/ft_lstclear.c.s
 
 # target to generate assembly for a file
 libft/ft_lstclear.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstclear.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstclear.c.s
 .PHONY : libft/ft_lstclear.c.s
 
 libft/ft_lstdelone.o: libft/ft_lstdelone.c.o
@@ -581,7 +581,7 @@ libft/ft_lstdelone.o: libft/ft_lstdelone.c.o
 
 # target to build an object file
 libft/ft_lstdelone.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstdelone.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstdelone.c.o
 .PHONY : libft/ft_lstdelone.c.o
 
 libft/ft_lstdelone.i: libft/ft_lstdelone.c.i
@@ -590,7 +590,7 @@ libft/ft_lstdelone.i: libft/ft_lstdelone.c.i
 
 # target to preprocess a source file
 libft/ft_lstdelone.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstdelone.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstdelone.c.i
 .PHONY : libft/ft_lstdelone.c.i
 
 libft/ft_lstdelone.s: libft/ft_lstdelone.c.s
@@ -599,7 +599,7 @@ libft/ft_lstdelone.s: libft/ft_lstdelone.c.s
 
 # target to generate assembly for a file
 libft/ft_lstdelone.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstdelone.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstdelone.c.s
 .PHONY : libft/ft_lstdelone.c.s
 
 libft/ft_lstiter.o: libft/ft_lstiter.c.o
@@ -608,7 +608,7 @@ libft/ft_lstiter.o: libft/ft_lstiter.c.o
 
 # target to build an object file
 libft/ft_lstiter.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstiter.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstiter.c.o
 .PHONY : libft/ft_lstiter.c.o
 
 libft/ft_lstiter.i: libft/ft_lstiter.c.i
@@ -617,7 +617,7 @@ libft/ft_lstiter.i: libft/ft_lstiter.c.i
 
 # target to preprocess a source file
 libft/ft_lstiter.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstiter.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstiter.c.i
 .PHONY : libft/ft_lstiter.c.i
 
 libft/ft_lstiter.s: libft/ft_lstiter.c.s
@@ -626,7 +626,7 @@ libft/ft_lstiter.s: libft/ft_lstiter.c.s
 
 # target to generate assembly for a file
 libft/ft_lstiter.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstiter.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstiter.c.s
 .PHONY : libft/ft_lstiter.c.s
 
 libft/ft_lstlast.o: libft/ft_lstlast.c.o
@@ -635,7 +635,7 @@ libft/ft_lstlast.o: libft/ft_lstlast.c.o
 
 # target to build an object file
 libft/ft_lstlast.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstlast.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstlast.c.o
 .PHONY : libft/ft_lstlast.c.o
 
 libft/ft_lstlast.i: libft/ft_lstlast.c.i
@@ -644,7 +644,7 @@ libft/ft_lstlast.i: libft/ft_lstlast.c.i
 
 # target to preprocess a source file
 libft/ft_lstlast.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstlast.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstlast.c.i
 .PHONY : libft/ft_lstlast.c.i
 
 libft/ft_lstlast.s: libft/ft_lstlast.c.s
@@ -653,7 +653,7 @@ libft/ft_lstlast.s: libft/ft_lstlast.c.s
 
 # target to generate assembly for a file
 libft/ft_lstlast.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstlast.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstlast.c.s
 .PHONY : libft/ft_lstlast.c.s
 
 libft/ft_lstmap.o: libft/ft_lstmap.c.o
@@ -662,7 +662,7 @@ libft/ft_lstmap.o: libft/ft_lstmap.c.o
 
 # target to build an object file
 libft/ft_lstmap.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstmap.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstmap.c.o
 .PHONY : libft/ft_lstmap.c.o
 
 libft/ft_lstmap.i: libft/ft_lstmap.c.i
@@ -671,7 +671,7 @@ libft/ft_lstmap.i: libft/ft_lstmap.c.i
 
 # target to preprocess a source file
 libft/ft_lstmap.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstmap.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstmap.c.i
 .PHONY : libft/ft_lstmap.c.i
 
 libft/ft_lstmap.s: libft/ft_lstmap.c.s
@@ -680,7 +680,7 @@ libft/ft_lstmap.s: libft/ft_lstmap.c.s
 
 # target to generate assembly for a file
 libft/ft_lstmap.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstmap.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstmap.c.s
 .PHONY : libft/ft_lstmap.c.s
 
 libft/ft_lstnew.o: libft/ft_lstnew.c.o
@@ -689,7 +689,7 @@ libft/ft_lstnew.o: libft/ft_lstnew.c.o
 
 # target to build an object file
 libft/ft_lstnew.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstnew.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstnew.c.o
 .PHONY : libft/ft_lstnew.c.o
 
 libft/ft_lstnew.i: libft/ft_lstnew.c.i
@@ -698,7 +698,7 @@ libft/ft_lstnew.i: libft/ft_lstnew.c.i
 
 # target to preprocess a source file
 libft/ft_lstnew.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstnew.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstnew.c.i
 .PHONY : libft/ft_lstnew.c.i
 
 libft/ft_lstnew.s: libft/ft_lstnew.c.s
@@ -707,7 +707,7 @@ libft/ft_lstnew.s: libft/ft_lstnew.c.s
 
 # target to generate assembly for a file
 libft/ft_lstnew.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstnew.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstnew.c.s
 .PHONY : libft/ft_lstnew.c.s
 
 libft/ft_lstsize.o: libft/ft_lstsize.c.o
@@ -716,7 +716,7 @@ libft/ft_lstsize.o: libft/ft_lstsize.c.o
 
 # target to build an object file
 libft/ft_lstsize.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstsize.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstsize.c.o
 .PHONY : libft/ft_lstsize.c.o
 
 libft/ft_lstsize.i: libft/ft_lstsize.c.i
@@ -725,7 +725,7 @@ libft/ft_lstsize.i: libft/ft_lstsize.c.i
 
 # target to preprocess a source file
 libft/ft_lstsize.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstsize.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstsize.c.i
 .PHONY : libft/ft_lstsize.c.i
 
 libft/ft_lstsize.s: libft/ft_lstsize.c.s
@@ -734,7 +734,7 @@ libft/ft_lstsize.s: libft/ft_lstsize.c.s
 
 # target to generate assembly for a file
 libft/ft_lstsize.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_lstsize.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_lstsize.c.s
 .PHONY : libft/ft_lstsize.c.s
 
 libft/ft_memccpy.o: libft/ft_memccpy.c.o
@@ -743,7 +743,7 @@ libft/ft_memccpy.o: libft/ft_memccpy.c.o
 
 # target to build an object file
 libft/ft_memccpy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memccpy.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memccpy.c.o
 .PHONY : libft/ft_memccpy.c.o
 
 libft/ft_memccpy.i: libft/ft_memccpy.c.i
@@ -752,7 +752,7 @@ libft/ft_memccpy.i: libft/ft_memccpy.c.i
 
 # target to preprocess a source file
 libft/ft_memccpy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memccpy.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memccpy.c.i
 .PHONY : libft/ft_memccpy.c.i
 
 libft/ft_memccpy.s: libft/ft_memccpy.c.s
@@ -761,7 +761,7 @@ libft/ft_memccpy.s: libft/ft_memccpy.c.s
 
 # target to generate assembly for a file
 libft/ft_memccpy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memccpy.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memccpy.c.s
 .PHONY : libft/ft_memccpy.c.s
 
 libft/ft_memchr.o: libft/ft_memchr.c.o
@@ -770,7 +770,7 @@ libft/ft_memchr.o: libft/ft_memchr.c.o
 
 # target to build an object file
 libft/ft_memchr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memchr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memchr.c.o
 .PHONY : libft/ft_memchr.c.o
 
 libft/ft_memchr.i: libft/ft_memchr.c.i
@@ -779,7 +779,7 @@ libft/ft_memchr.i: libft/ft_memchr.c.i
 
 # target to preprocess a source file
 libft/ft_memchr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memchr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memchr.c.i
 .PHONY : libft/ft_memchr.c.i
 
 libft/ft_memchr.s: libft/ft_memchr.c.s
@@ -788,7 +788,7 @@ libft/ft_memchr.s: libft/ft_memchr.c.s
 
 # target to generate assembly for a file
 libft/ft_memchr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memchr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memchr.c.s
 .PHONY : libft/ft_memchr.c.s
 
 libft/ft_memcmp.o: libft/ft_memcmp.c.o
@@ -797,7 +797,7 @@ libft/ft_memcmp.o: libft/ft_memcmp.c.o
 
 # target to build an object file
 libft/ft_memcmp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memcmp.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memcmp.c.o
 .PHONY : libft/ft_memcmp.c.o
 
 libft/ft_memcmp.i: libft/ft_memcmp.c.i
@@ -806,7 +806,7 @@ libft/ft_memcmp.i: libft/ft_memcmp.c.i
 
 # target to preprocess a source file
 libft/ft_memcmp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memcmp.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memcmp.c.i
 .PHONY : libft/ft_memcmp.c.i
 
 libft/ft_memcmp.s: libft/ft_memcmp.c.s
@@ -815,7 +815,7 @@ libft/ft_memcmp.s: libft/ft_memcmp.c.s
 
 # target to generate assembly for a file
 libft/ft_memcmp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memcmp.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memcmp.c.s
 .PHONY : libft/ft_memcmp.c.s
 
 libft/ft_memcpy.o: libft/ft_memcpy.c.o
@@ -824,7 +824,7 @@ libft/ft_memcpy.o: libft/ft_memcpy.c.o
 
 # target to build an object file
 libft/ft_memcpy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memcpy.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memcpy.c.o
 .PHONY : libft/ft_memcpy.c.o
 
 libft/ft_memcpy.i: libft/ft_memcpy.c.i
@@ -833,7 +833,7 @@ libft/ft_memcpy.i: libft/ft_memcpy.c.i
 
 # target to preprocess a source file
 libft/ft_memcpy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memcpy.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memcpy.c.i
 .PHONY : libft/ft_memcpy.c.i
 
 libft/ft_memcpy.s: libft/ft_memcpy.c.s
@@ -842,7 +842,7 @@ libft/ft_memcpy.s: libft/ft_memcpy.c.s
 
 # target to generate assembly for a file
 libft/ft_memcpy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memcpy.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memcpy.c.s
 .PHONY : libft/ft_memcpy.c.s
 
 libft/ft_memmove.o: libft/ft_memmove.c.o
@@ -851,7 +851,7 @@ libft/ft_memmove.o: libft/ft_memmove.c.o
 
 # target to build an object file
 libft/ft_memmove.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memmove.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memmove.c.o
 .PHONY : libft/ft_memmove.c.o
 
 libft/ft_memmove.i: libft/ft_memmove.c.i
@@ -860,7 +860,7 @@ libft/ft_memmove.i: libft/ft_memmove.c.i
 
 # target to preprocess a source file
 libft/ft_memmove.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memmove.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memmove.c.i
 .PHONY : libft/ft_memmove.c.i
 
 libft/ft_memmove.s: libft/ft_memmove.c.s
@@ -869,7 +869,7 @@ libft/ft_memmove.s: libft/ft_memmove.c.s
 
 # target to generate assembly for a file
 libft/ft_memmove.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memmove.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memmove.c.s
 .PHONY : libft/ft_memmove.c.s
 
 libft/ft_memset.o: libft/ft_memset.c.o
@@ -878,7 +878,7 @@ libft/ft_memset.o: libft/ft_memset.c.o
 
 # target to build an object file
 libft/ft_memset.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memset.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memset.c.o
 .PHONY : libft/ft_memset.c.o
 
 libft/ft_memset.i: libft/ft_memset.c.i
@@ -887,7 +887,7 @@ libft/ft_memset.i: libft/ft_memset.c.i
 
 # target to preprocess a source file
 libft/ft_memset.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memset.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memset.c.i
 .PHONY : libft/ft_memset.c.i
 
 libft/ft_memset.s: libft/ft_memset.c.s
@@ -896,7 +896,7 @@ libft/ft_memset.s: libft/ft_memset.c.s
 
 # target to generate assembly for a file
 libft/ft_memset.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_memset.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_memset.c.s
 .PHONY : libft/ft_memset.c.s
 
 libft/ft_putchar_fd.o: libft/ft_putchar_fd.c.o
@@ -905,7 +905,7 @@ libft/ft_putchar_fd.o: libft/ft_putchar_fd.c.o
 
 # target to build an object file
 libft/ft_putchar_fd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putchar_fd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putchar_fd.c.o
 .PHONY : libft/ft_putchar_fd.c.o
 
 libft/ft_putchar_fd.i: libft/ft_putchar_fd.c.i
@@ -914,7 +914,7 @@ libft/ft_putchar_fd.i: libft/ft_putchar_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putchar_fd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putchar_fd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putchar_fd.c.i
 .PHONY : libft/ft_putchar_fd.c.i
 
 libft/ft_putchar_fd.s: libft/ft_putchar_fd.c.s
@@ -923,7 +923,7 @@ libft/ft_putchar_fd.s: libft/ft_putchar_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putchar_fd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putchar_fd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putchar_fd.c.s
 .PHONY : libft/ft_putchar_fd.c.s
 
 libft/ft_putendl_fd.o: libft/ft_putendl_fd.c.o
@@ -932,7 +932,7 @@ libft/ft_putendl_fd.o: libft/ft_putendl_fd.c.o
 
 # target to build an object file
 libft/ft_putendl_fd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putendl_fd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putendl_fd.c.o
 .PHONY : libft/ft_putendl_fd.c.o
 
 libft/ft_putendl_fd.i: libft/ft_putendl_fd.c.i
@@ -941,7 +941,7 @@ libft/ft_putendl_fd.i: libft/ft_putendl_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putendl_fd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putendl_fd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putendl_fd.c.i
 .PHONY : libft/ft_putendl_fd.c.i
 
 libft/ft_putendl_fd.s: libft/ft_putendl_fd.c.s
@@ -950,7 +950,7 @@ libft/ft_putendl_fd.s: libft/ft_putendl_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putendl_fd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putendl_fd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putendl_fd.c.s
 .PHONY : libft/ft_putendl_fd.c.s
 
 libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c.o
@@ -959,7 +959,7 @@ libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c.o
 
 # target to build an object file
 libft/ft_putnbr_fd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putnbr_fd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putnbr_fd.c.o
 .PHONY : libft/ft_putnbr_fd.c.o
 
 libft/ft_putnbr_fd.i: libft/ft_putnbr_fd.c.i
@@ -968,7 +968,7 @@ libft/ft_putnbr_fd.i: libft/ft_putnbr_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putnbr_fd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putnbr_fd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putnbr_fd.c.i
 .PHONY : libft/ft_putnbr_fd.c.i
 
 libft/ft_putnbr_fd.s: libft/ft_putnbr_fd.c.s
@@ -977,7 +977,7 @@ libft/ft_putnbr_fd.s: libft/ft_putnbr_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putnbr_fd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putnbr_fd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putnbr_fd.c.s
 .PHONY : libft/ft_putnbr_fd.c.s
 
 libft/ft_putstr_fd.o: libft/ft_putstr_fd.c.o
@@ -986,7 +986,7 @@ libft/ft_putstr_fd.o: libft/ft_putstr_fd.c.o
 
 # target to build an object file
 libft/ft_putstr_fd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putstr_fd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putstr_fd.c.o
 .PHONY : libft/ft_putstr_fd.c.o
 
 libft/ft_putstr_fd.i: libft/ft_putstr_fd.c.i
@@ -995,7 +995,7 @@ libft/ft_putstr_fd.i: libft/ft_putstr_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putstr_fd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putstr_fd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putstr_fd.c.i
 .PHONY : libft/ft_putstr_fd.c.i
 
 libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
@@ -1004,7 +1004,7 @@ libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putstr_fd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_putstr_fd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_putstr_fd.c.s
 .PHONY : libft/ft_putstr_fd.c.s
 
 libft/ft_split.o: libft/ft_split.c.o
@@ -1013,7 +1013,7 @@ libft/ft_split.o: libft/ft_split.c.o
 
 # target to build an object file
 libft/ft_split.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_split.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_split.c.o
 .PHONY : libft/ft_split.c.o
 
 libft/ft_split.i: libft/ft_split.c.i
@@ -1022,7 +1022,7 @@ libft/ft_split.i: libft/ft_split.c.i
 
 # target to preprocess a source file
 libft/ft_split.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_split.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_split.c.i
 .PHONY : libft/ft_split.c.i
 
 libft/ft_split.s: libft/ft_split.c.s
@@ -1031,7 +1031,7 @@ libft/ft_split.s: libft/ft_split.c.s
 
 # target to generate assembly for a file
 libft/ft_split.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_split.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_split.c.s
 .PHONY : libft/ft_split.c.s
 
 libft/ft_strchr.o: libft/ft_strchr.c.o
@@ -1040,7 +1040,7 @@ libft/ft_strchr.o: libft/ft_strchr.c.o
 
 # target to build an object file
 libft/ft_strchr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strchr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strchr.c.o
 .PHONY : libft/ft_strchr.c.o
 
 libft/ft_strchr.i: libft/ft_strchr.c.i
@@ -1049,7 +1049,7 @@ libft/ft_strchr.i: libft/ft_strchr.c.i
 
 # target to preprocess a source file
 libft/ft_strchr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strchr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strchr.c.i
 .PHONY : libft/ft_strchr.c.i
 
 libft/ft_strchr.s: libft/ft_strchr.c.s
@@ -1058,7 +1058,7 @@ libft/ft_strchr.s: libft/ft_strchr.c.s
 
 # target to generate assembly for a file
 libft/ft_strchr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strchr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strchr.c.s
 .PHONY : libft/ft_strchr.c.s
 
 libft/ft_strdup.o: libft/ft_strdup.c.o
@@ -1067,7 +1067,7 @@ libft/ft_strdup.o: libft/ft_strdup.c.o
 
 # target to build an object file
 libft/ft_strdup.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strdup.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strdup.c.o
 .PHONY : libft/ft_strdup.c.o
 
 libft/ft_strdup.i: libft/ft_strdup.c.i
@@ -1076,7 +1076,7 @@ libft/ft_strdup.i: libft/ft_strdup.c.i
 
 # target to preprocess a source file
 libft/ft_strdup.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strdup.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strdup.c.i
 .PHONY : libft/ft_strdup.c.i
 
 libft/ft_strdup.s: libft/ft_strdup.c.s
@@ -1085,7 +1085,7 @@ libft/ft_strdup.s: libft/ft_strdup.c.s
 
 # target to generate assembly for a file
 libft/ft_strdup.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strdup.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strdup.c.s
 .PHONY : libft/ft_strdup.c.s
 
 libft/ft_strjoin.o: libft/ft_strjoin.c.o
@@ -1094,7 +1094,7 @@ libft/ft_strjoin.o: libft/ft_strjoin.c.o
 
 # target to build an object file
 libft/ft_strjoin.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strjoin.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strjoin.c.o
 .PHONY : libft/ft_strjoin.c.o
 
 libft/ft_strjoin.i: libft/ft_strjoin.c.i
@@ -1103,7 +1103,7 @@ libft/ft_strjoin.i: libft/ft_strjoin.c.i
 
 # target to preprocess a source file
 libft/ft_strjoin.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strjoin.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strjoin.c.i
 .PHONY : libft/ft_strjoin.c.i
 
 libft/ft_strjoin.s: libft/ft_strjoin.c.s
@@ -1112,7 +1112,7 @@ libft/ft_strjoin.s: libft/ft_strjoin.c.s
 
 # target to generate assembly for a file
 libft/ft_strjoin.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strjoin.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strjoin.c.s
 .PHONY : libft/ft_strjoin.c.s
 
 libft/ft_strlcat.o: libft/ft_strlcat.c.o
@@ -1121,7 +1121,7 @@ libft/ft_strlcat.o: libft/ft_strlcat.c.o
 
 # target to build an object file
 libft/ft_strlcat.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strlcat.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strlcat.c.o
 .PHONY : libft/ft_strlcat.c.o
 
 libft/ft_strlcat.i: libft/ft_strlcat.c.i
@@ -1130,7 +1130,7 @@ libft/ft_strlcat.i: libft/ft_strlcat.c.i
 
 # target to preprocess a source file
 libft/ft_strlcat.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strlcat.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strlcat.c.i
 .PHONY : libft/ft_strlcat.c.i
 
 libft/ft_strlcat.s: libft/ft_strlcat.c.s
@@ -1139,7 +1139,7 @@ libft/ft_strlcat.s: libft/ft_strlcat.c.s
 
 # target to generate assembly for a file
 libft/ft_strlcat.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strlcat.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strlcat.c.s
 .PHONY : libft/ft_strlcat.c.s
 
 libft/ft_strlcpy.o: libft/ft_strlcpy.c.o
@@ -1148,7 +1148,7 @@ libft/ft_strlcpy.o: libft/ft_strlcpy.c.o
 
 # target to build an object file
 libft/ft_strlcpy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strlcpy.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strlcpy.c.o
 .PHONY : libft/ft_strlcpy.c.o
 
 libft/ft_strlcpy.i: libft/ft_strlcpy.c.i
@@ -1157,7 +1157,7 @@ libft/ft_strlcpy.i: libft/ft_strlcpy.c.i
 
 # target to preprocess a source file
 libft/ft_strlcpy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strlcpy.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strlcpy.c.i
 .PHONY : libft/ft_strlcpy.c.i
 
 libft/ft_strlcpy.s: libft/ft_strlcpy.c.s
@@ -1166,7 +1166,7 @@ libft/ft_strlcpy.s: libft/ft_strlcpy.c.s
 
 # target to generate assembly for a file
 libft/ft_strlcpy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strlcpy.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strlcpy.c.s
 .PHONY : libft/ft_strlcpy.c.s
 
 libft/ft_strlen.o: libft/ft_strlen.c.o
@@ -1175,7 +1175,7 @@ libft/ft_strlen.o: libft/ft_strlen.c.o
 
 # target to build an object file
 libft/ft_strlen.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strlen.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strlen.c.o
 .PHONY : libft/ft_strlen.c.o
 
 libft/ft_strlen.i: libft/ft_strlen.c.i
@@ -1184,7 +1184,7 @@ libft/ft_strlen.i: libft/ft_strlen.c.i
 
 # target to preprocess a source file
 libft/ft_strlen.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strlen.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strlen.c.i
 .PHONY : libft/ft_strlen.c.i
 
 libft/ft_strlen.s: libft/ft_strlen.c.s
@@ -1193,7 +1193,7 @@ libft/ft_strlen.s: libft/ft_strlen.c.s
 
 # target to generate assembly for a file
 libft/ft_strlen.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strlen.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strlen.c.s
 .PHONY : libft/ft_strlen.c.s
 
 libft/ft_strmapi.o: libft/ft_strmapi.c.o
@@ -1202,7 +1202,7 @@ libft/ft_strmapi.o: libft/ft_strmapi.c.o
 
 # target to build an object file
 libft/ft_strmapi.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strmapi.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strmapi.c.o
 .PHONY : libft/ft_strmapi.c.o
 
 libft/ft_strmapi.i: libft/ft_strmapi.c.i
@@ -1211,7 +1211,7 @@ libft/ft_strmapi.i: libft/ft_strmapi.c.i
 
 # target to preprocess a source file
 libft/ft_strmapi.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strmapi.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strmapi.c.i
 .PHONY : libft/ft_strmapi.c.i
 
 libft/ft_strmapi.s: libft/ft_strmapi.c.s
@@ -1220,7 +1220,7 @@ libft/ft_strmapi.s: libft/ft_strmapi.c.s
 
 # target to generate assembly for a file
 libft/ft_strmapi.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strmapi.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strmapi.c.s
 .PHONY : libft/ft_strmapi.c.s
 
 libft/ft_strncmp.o: libft/ft_strncmp.c.o
@@ -1229,7 +1229,7 @@ libft/ft_strncmp.o: libft/ft_strncmp.c.o
 
 # target to build an object file
 libft/ft_strncmp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strncmp.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strncmp.c.o
 .PHONY : libft/ft_strncmp.c.o
 
 libft/ft_strncmp.i: libft/ft_strncmp.c.i
@@ -1238,7 +1238,7 @@ libft/ft_strncmp.i: libft/ft_strncmp.c.i
 
 # target to preprocess a source file
 libft/ft_strncmp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strncmp.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strncmp.c.i
 .PHONY : libft/ft_strncmp.c.i
 
 libft/ft_strncmp.s: libft/ft_strncmp.c.s
@@ -1247,7 +1247,7 @@ libft/ft_strncmp.s: libft/ft_strncmp.c.s
 
 # target to generate assembly for a file
 libft/ft_strncmp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strncmp.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strncmp.c.s
 .PHONY : libft/ft_strncmp.c.s
 
 libft/ft_strnstr.o: libft/ft_strnstr.c.o
@@ -1256,7 +1256,7 @@ libft/ft_strnstr.o: libft/ft_strnstr.c.o
 
 # target to build an object file
 libft/ft_strnstr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strnstr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strnstr.c.o
 .PHONY : libft/ft_strnstr.c.o
 
 libft/ft_strnstr.i: libft/ft_strnstr.c.i
@@ -1265,7 +1265,7 @@ libft/ft_strnstr.i: libft/ft_strnstr.c.i
 
 # target to preprocess a source file
 libft/ft_strnstr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strnstr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strnstr.c.i
 .PHONY : libft/ft_strnstr.c.i
 
 libft/ft_strnstr.s: libft/ft_strnstr.c.s
@@ -1274,7 +1274,7 @@ libft/ft_strnstr.s: libft/ft_strnstr.c.s
 
 # target to generate assembly for a file
 libft/ft_strnstr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strnstr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strnstr.c.s
 .PHONY : libft/ft_strnstr.c.s
 
 libft/ft_strrchr.o: libft/ft_strrchr.c.o
@@ -1283,7 +1283,7 @@ libft/ft_strrchr.o: libft/ft_strrchr.c.o
 
 # target to build an object file
 libft/ft_strrchr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strrchr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strrchr.c.o
 .PHONY : libft/ft_strrchr.c.o
 
 libft/ft_strrchr.i: libft/ft_strrchr.c.i
@@ -1292,7 +1292,7 @@ libft/ft_strrchr.i: libft/ft_strrchr.c.i
 
 # target to preprocess a source file
 libft/ft_strrchr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strrchr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strrchr.c.i
 .PHONY : libft/ft_strrchr.c.i
 
 libft/ft_strrchr.s: libft/ft_strrchr.c.s
@@ -1301,7 +1301,7 @@ libft/ft_strrchr.s: libft/ft_strrchr.c.s
 
 # target to generate assembly for a file
 libft/ft_strrchr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strrchr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strrchr.c.s
 .PHONY : libft/ft_strrchr.c.s
 
 libft/ft_strtrim.o: libft/ft_strtrim.c.o
@@ -1310,7 +1310,7 @@ libft/ft_strtrim.o: libft/ft_strtrim.c.o
 
 # target to build an object file
 libft/ft_strtrim.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strtrim.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strtrim.c.o
 .PHONY : libft/ft_strtrim.c.o
 
 libft/ft_strtrim.i: libft/ft_strtrim.c.i
@@ -1319,7 +1319,7 @@ libft/ft_strtrim.i: libft/ft_strtrim.c.i
 
 # target to preprocess a source file
 libft/ft_strtrim.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strtrim.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strtrim.c.i
 .PHONY : libft/ft_strtrim.c.i
 
 libft/ft_strtrim.s: libft/ft_strtrim.c.s
@@ -1328,7 +1328,7 @@ libft/ft_strtrim.s: libft/ft_strtrim.c.s
 
 # target to generate assembly for a file
 libft/ft_strtrim.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_strtrim.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_strtrim.c.s
 .PHONY : libft/ft_strtrim.c.s
 
 libft/ft_substr.o: libft/ft_substr.c.o
@@ -1337,7 +1337,7 @@ libft/ft_substr.o: libft/ft_substr.c.o
 
 # target to build an object file
 libft/ft_substr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_substr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_substr.c.o
 .PHONY : libft/ft_substr.c.o
 
 libft/ft_substr.i: libft/ft_substr.c.i
@@ -1346,7 +1346,7 @@ libft/ft_substr.i: libft/ft_substr.c.i
 
 # target to preprocess a source file
 libft/ft_substr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_substr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_substr.c.i
 .PHONY : libft/ft_substr.c.i
 
 libft/ft_substr.s: libft/ft_substr.c.s
@@ -1355,7 +1355,7 @@ libft/ft_substr.s: libft/ft_substr.c.s
 
 # target to generate assembly for a file
 libft/ft_substr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_substr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_substr.c.s
 .PHONY : libft/ft_substr.c.s
 
 libft/ft_tolower.o: libft/ft_tolower.c.o
@@ -1364,7 +1364,7 @@ libft/ft_tolower.o: libft/ft_tolower.c.o
 
 # target to build an object file
 libft/ft_tolower.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_tolower.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_tolower.c.o
 .PHONY : libft/ft_tolower.c.o
 
 libft/ft_tolower.i: libft/ft_tolower.c.i
@@ -1373,7 +1373,7 @@ libft/ft_tolower.i: libft/ft_tolower.c.i
 
 # target to preprocess a source file
 libft/ft_tolower.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_tolower.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_tolower.c.i
 .PHONY : libft/ft_tolower.c.i
 
 libft/ft_tolower.s: libft/ft_tolower.c.s
@@ -1382,7 +1382,7 @@ libft/ft_tolower.s: libft/ft_tolower.c.s
 
 # target to generate assembly for a file
 libft/ft_tolower.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_tolower.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_tolower.c.s
 .PHONY : libft/ft_tolower.c.s
 
 libft/ft_toupper.o: libft/ft_toupper.c.o
@@ -1391,7 +1391,7 @@ libft/ft_toupper.o: libft/ft_toupper.c.o
 
 # target to build an object file
 libft/ft_toupper.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_toupper.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_toupper.c.o
 .PHONY : libft/ft_toupper.c.o
 
 libft/ft_toupper.i: libft/ft_toupper.c.i
@@ -1400,7 +1400,7 @@ libft/ft_toupper.i: libft/ft_toupper.c.i
 
 # target to preprocess a source file
 libft/ft_toupper.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_toupper.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_toupper.c.i
 .PHONY : libft/ft_toupper.c.i
 
 libft/ft_toupper.s: libft/ft_toupper.c.s
@@ -1409,7 +1409,7 @@ libft/ft_toupper.s: libft/ft_toupper.c.s
 
 # target to generate assembly for a file
 libft/ft_toupper.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/ft_toupper.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
 libft/get_next_line.o: libft/get_next_line.c.o
@@ -1418,7 +1418,7 @@ libft/get_next_line.o: libft/get_next_line.c.o
 
 # target to build an object file
 libft/get_next_line.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/get_next_line.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/get_next_line.c.o
 .PHONY : libft/get_next_line.c.o
 
 libft/get_next_line.i: libft/get_next_line.c.i
@@ -1427,7 +1427,7 @@ libft/get_next_line.i: libft/get_next_line.c.i
 
 # target to preprocess a source file
 libft/get_next_line.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/get_next_line.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/get_next_line.c.i
 .PHONY : libft/get_next_line.c.i
 
 libft/get_next_line.s: libft/get_next_line.c.s
@@ -1436,7 +1436,7 @@ libft/get_next_line.s: libft/get_next_line.c.s
 
 # target to generate assembly for a file
 libft/get_next_line.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/get_next_line.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
 libft/get_next_line_utils.o: libft/get_next_line_utils.c.o
@@ -1445,7 +1445,7 @@ libft/get_next_line_utils.o: libft/get_next_line_utils.c.o
 
 # target to build an object file
 libft/get_next_line_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/get_next_line_utils.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/get_next_line_utils.c.o
 .PHONY : libft/get_next_line_utils.c.o
 
 libft/get_next_line_utils.i: libft/get_next_line_utils.c.i
@@ -1454,7 +1454,7 @@ libft/get_next_line_utils.i: libft/get_next_line_utils.c.i
 
 # target to preprocess a source file
 libft/get_next_line_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/get_next_line_utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/get_next_line_utils.c.i
 .PHONY : libft/get_next_line_utils.c.i
 
 libft/get_next_line_utils.s: libft/get_next_line_utils.c.s
@@ -1463,7 +1463,7 @@ libft/get_next_line_utils.s: libft/get_next_line_utils.c.s
 
 # target to generate assembly for a file
 libft/get_next_line_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/libft/get_next_line_utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/get_next_line_utils.c.s
 .PHONY : libft/get_next_line_utils.c.s
 
 lmidori/add_back.o: lmidori/add_back.c.o
@@ -1472,7 +1472,7 @@ lmidori/add_back.o: lmidori/add_back.c.o
 
 # target to build an object file
 lmidori/add_back.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/add_back.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/add_back.c.o
 .PHONY : lmidori/add_back.c.o
 
 lmidori/add_back.i: lmidori/add_back.c.i
@@ -1481,7 +1481,7 @@ lmidori/add_back.i: lmidori/add_back.c.i
 
 # target to preprocess a source file
 lmidori/add_back.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/add_back.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/add_back.c.i
 .PHONY : lmidori/add_back.c.i
 
 lmidori/add_back.s: lmidori/add_back.c.s
@@ -1490,8 +1490,35 @@ lmidori/add_back.s: lmidori/add_back.c.s
 
 # target to generate assembly for a file
 lmidori/add_back.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/add_back.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/add_back.c.s
 .PHONY : lmidori/add_back.c.s
+
+lmidori/check.o: lmidori/check.c.o
+
+.PHONY : lmidori/check.o
+
+# target to build an object file
+lmidori/check.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/check.c.o
+.PHONY : lmidori/check.c.o
+
+lmidori/check.i: lmidori/check.c.i
+
+.PHONY : lmidori/check.i
+
+# target to preprocess a source file
+lmidori/check.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/check.c.i
+.PHONY : lmidori/check.c.i
+
+lmidori/check.s: lmidori/check.c.s
+
+.PHONY : lmidori/check.s
+
+# target to generate assembly for a file
+lmidori/check.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/check.c.s
+.PHONY : lmidori/check.c.s
 
 lmidori/cmd_cd.o: lmidori/cmd_cd.c.o
 
@@ -1499,7 +1526,7 @@ lmidori/cmd_cd.o: lmidori/cmd_cd.c.o
 
 # target to build an object file
 lmidori/cmd_cd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/cmd_cd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_cd.c.o
 .PHONY : lmidori/cmd_cd.c.o
 
 lmidori/cmd_cd.i: lmidori/cmd_cd.c.i
@@ -1508,7 +1535,7 @@ lmidori/cmd_cd.i: lmidori/cmd_cd.c.i
 
 # target to preprocess a source file
 lmidori/cmd_cd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/cmd_cd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_cd.c.i
 .PHONY : lmidori/cmd_cd.c.i
 
 lmidori/cmd_cd.s: lmidori/cmd_cd.c.s
@@ -1517,8 +1544,89 @@ lmidori/cmd_cd.s: lmidori/cmd_cd.c.s
 
 # target to generate assembly for a file
 lmidori/cmd_cd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/cmd_cd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_cd.c.s
 .PHONY : lmidori/cmd_cd.c.s
+
+lmidori/cmd_echo.o: lmidori/cmd_echo.c.o
+
+.PHONY : lmidori/cmd_echo.o
+
+# target to build an object file
+lmidori/cmd_echo.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_echo.c.o
+.PHONY : lmidori/cmd_echo.c.o
+
+lmidori/cmd_echo.i: lmidori/cmd_echo.c.i
+
+.PHONY : lmidori/cmd_echo.i
+
+# target to preprocess a source file
+lmidori/cmd_echo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_echo.c.i
+.PHONY : lmidori/cmd_echo.c.i
+
+lmidori/cmd_echo.s: lmidori/cmd_echo.c.s
+
+.PHONY : lmidori/cmd_echo.s
+
+# target to generate assembly for a file
+lmidori/cmd_echo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_echo.c.s
+.PHONY : lmidori/cmd_echo.c.s
+
+lmidori/cmd_export.o: lmidori/cmd_export.c.o
+
+.PHONY : lmidori/cmd_export.o
+
+# target to build an object file
+lmidori/cmd_export.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_export.c.o
+.PHONY : lmidori/cmd_export.c.o
+
+lmidori/cmd_export.i: lmidori/cmd_export.c.i
+
+.PHONY : lmidori/cmd_export.i
+
+# target to preprocess a source file
+lmidori/cmd_export.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_export.c.i
+.PHONY : lmidori/cmd_export.c.i
+
+lmidori/cmd_export.s: lmidori/cmd_export.c.s
+
+.PHONY : lmidori/cmd_export.s
+
+# target to generate assembly for a file
+lmidori/cmd_export.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_export.c.s
+.PHONY : lmidori/cmd_export.c.s
+
+lmidori/cmd_unset.o: lmidori/cmd_unset.c.o
+
+.PHONY : lmidori/cmd_unset.o
+
+# target to build an object file
+lmidori/cmd_unset.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_unset.c.o
+.PHONY : lmidori/cmd_unset.c.o
+
+lmidori/cmd_unset.i: lmidori/cmd_unset.c.i
+
+.PHONY : lmidori/cmd_unset.i
+
+# target to preprocess a source file
+lmidori/cmd_unset.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_unset.c.i
+.PHONY : lmidori/cmd_unset.c.i
+
+lmidori/cmd_unset.s: lmidori/cmd_unset.c.s
+
+.PHONY : lmidori/cmd_unset.s
+
+# target to generate assembly for a file
+lmidori/cmd_unset.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_unset.c.s
+.PHONY : lmidori/cmd_unset.c.s
 
 lmidori/diff_cmd.o: lmidori/diff_cmd.c.o
 
@@ -1526,7 +1634,7 @@ lmidori/diff_cmd.o: lmidori/diff_cmd.c.o
 
 # target to build an object file
 lmidori/diff_cmd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/diff_cmd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/diff_cmd.c.o
 .PHONY : lmidori/diff_cmd.c.o
 
 lmidori/diff_cmd.i: lmidori/diff_cmd.c.i
@@ -1535,7 +1643,7 @@ lmidori/diff_cmd.i: lmidori/diff_cmd.c.i
 
 # target to preprocess a source file
 lmidori/diff_cmd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/diff_cmd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/diff_cmd.c.i
 .PHONY : lmidori/diff_cmd.c.i
 
 lmidori/diff_cmd.s: lmidori/diff_cmd.c.s
@@ -1544,7 +1652,7 @@ lmidori/diff_cmd.s: lmidori/diff_cmd.c.s
 
 # target to generate assembly for a file
 lmidori/diff_cmd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/diff_cmd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/diff_cmd.c.s
 .PHONY : lmidori/diff_cmd.c.s
 
 lmidori/enter_cd.o: lmidori/enter_cd.c.o
@@ -1553,7 +1661,7 @@ lmidori/enter_cd.o: lmidori/enter_cd.c.o
 
 # target to build an object file
 lmidori/enter_cd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/enter_cd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/enter_cd.c.o
 .PHONY : lmidori/enter_cd.c.o
 
 lmidori/enter_cd.i: lmidori/enter_cd.c.i
@@ -1562,7 +1670,7 @@ lmidori/enter_cd.i: lmidori/enter_cd.c.i
 
 # target to preprocess a source file
 lmidori/enter_cd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/enter_cd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/enter_cd.c.i
 .PHONY : lmidori/enter_cd.c.i
 
 lmidori/enter_cd.s: lmidori/enter_cd.c.s
@@ -1571,8 +1679,35 @@ lmidori/enter_cd.s: lmidori/enter_cd.c.s
 
 # target to generate assembly for a file
 lmidori/enter_cd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/enter_cd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/enter_cd.c.s
 .PHONY : lmidori/enter_cd.c.s
+
+lmidori/find_in_env.o: lmidori/find_in_env.c.o
+
+.PHONY : lmidori/find_in_env.o
+
+# target to build an object file
+lmidori/find_in_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/find_in_env.c.o
+.PHONY : lmidori/find_in_env.c.o
+
+lmidori/find_in_env.i: lmidori/find_in_env.c.i
+
+.PHONY : lmidori/find_in_env.i
+
+# target to preprocess a source file
+lmidori/find_in_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/find_in_env.c.i
+.PHONY : lmidori/find_in_env.c.i
+
+lmidori/find_in_env.s: lmidori/find_in_env.c.s
+
+.PHONY : lmidori/find_in_env.s
+
+# target to generate assembly for a file
+lmidori/find_in_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/find_in_env.c.s
+.PHONY : lmidori/find_in_env.c.s
 
 lmidori/find_len_arg.o: lmidori/find_len_arg.c.o
 
@@ -1580,7 +1715,7 @@ lmidori/find_len_arg.o: lmidori/find_len_arg.c.o
 
 # target to build an object file
 lmidori/find_len_arg.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/find_len_arg.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/find_len_arg.c.o
 .PHONY : lmidori/find_len_arg.c.o
 
 lmidori/find_len_arg.i: lmidori/find_len_arg.c.i
@@ -1589,7 +1724,7 @@ lmidori/find_len_arg.i: lmidori/find_len_arg.c.i
 
 # target to preprocess a source file
 lmidori/find_len_arg.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/find_len_arg.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/find_len_arg.c.i
 .PHONY : lmidori/find_len_arg.c.i
 
 lmidori/find_len_arg.s: lmidori/find_len_arg.c.s
@@ -1598,8 +1733,62 @@ lmidori/find_len_arg.s: lmidori/find_len_arg.c.s
 
 # target to generate assembly for a file
 lmidori/find_len_arg.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/find_len_arg.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/find_len_arg.c.s
 .PHONY : lmidori/find_len_arg.c.s
+
+lmidori/ft_lstsize_arg.o: lmidori/ft_lstsize_arg.c.o
+
+.PHONY : lmidori/ft_lstsize_arg.o
+
+# target to build an object file
+lmidori/ft_lstsize_arg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/ft_lstsize_arg.c.o
+.PHONY : lmidori/ft_lstsize_arg.c.o
+
+lmidori/ft_lstsize_arg.i: lmidori/ft_lstsize_arg.c.i
+
+.PHONY : lmidori/ft_lstsize_arg.i
+
+# target to preprocess a source file
+lmidori/ft_lstsize_arg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/ft_lstsize_arg.c.i
+.PHONY : lmidori/ft_lstsize_arg.c.i
+
+lmidori/ft_lstsize_arg.s: lmidori/ft_lstsize_arg.c.s
+
+.PHONY : lmidori/ft_lstsize_arg.s
+
+# target to generate assembly for a file
+lmidori/ft_lstsize_arg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/ft_lstsize_arg.c.s
+.PHONY : lmidori/ft_lstsize_arg.c.s
+
+lmidori/get_arg.o: lmidori/get_arg.c.o
+
+.PHONY : lmidori/get_arg.o
+
+# target to build an object file
+lmidori/get_arg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_arg.c.o
+.PHONY : lmidori/get_arg.c.o
+
+lmidori/get_arg.i: lmidori/get_arg.c.i
+
+.PHONY : lmidori/get_arg.i
+
+# target to preprocess a source file
+lmidori/get_arg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_arg.c.i
+.PHONY : lmidori/get_arg.c.i
+
+lmidori/get_arg.s: lmidori/get_arg.c.s
+
+.PHONY : lmidori/get_arg.s
+
+# target to generate assembly for a file
+lmidori/get_arg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_arg.c.s
+.PHONY : lmidori/get_arg.c.s
 
 lmidori/get_env_args.o: lmidori/get_env_args.c.o
 
@@ -1607,7 +1796,7 @@ lmidori/get_env_args.o: lmidori/get_env_args.c.o
 
 # target to build an object file
 lmidori/get_env_args.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/get_env_args.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_env_args.c.o
 .PHONY : lmidori/get_env_args.c.o
 
 lmidori/get_env_args.i: lmidori/get_env_args.c.i
@@ -1616,7 +1805,7 @@ lmidori/get_env_args.i: lmidori/get_env_args.c.i
 
 # target to preprocess a source file
 lmidori/get_env_args.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/get_env_args.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_env_args.c.i
 .PHONY : lmidori/get_env_args.c.i
 
 lmidori/get_env_args.s: lmidori/get_env_args.c.s
@@ -1625,8 +1814,62 @@ lmidori/get_env_args.s: lmidori/get_env_args.c.s
 
 # target to generate assembly for a file
 lmidori/get_env_args.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/get_env_args.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_env_args.c.s
 .PHONY : lmidori/get_env_args.c.s
+
+lmidori/get_name_env.o: lmidori/get_name_env.c.o
+
+.PHONY : lmidori/get_name_env.o
+
+# target to build an object file
+lmidori/get_name_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_name_env.c.o
+.PHONY : lmidori/get_name_env.c.o
+
+lmidori/get_name_env.i: lmidori/get_name_env.c.i
+
+.PHONY : lmidori/get_name_env.i
+
+# target to preprocess a source file
+lmidori/get_name_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_name_env.c.i
+.PHONY : lmidori/get_name_env.c.i
+
+lmidori/get_name_env.s: lmidori/get_name_env.c.s
+
+.PHONY : lmidori/get_name_env.s
+
+# target to generate assembly for a file
+lmidori/get_name_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_name_env.c.s
+.PHONY : lmidori/get_name_env.c.s
+
+lmidori/get_value_env.o: lmidori/get_value_env.c.o
+
+.PHONY : lmidori/get_value_env.o
+
+# target to build an object file
+lmidori/get_value_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_value_env.c.o
+.PHONY : lmidori/get_value_env.c.o
+
+lmidori/get_value_env.i: lmidori/get_value_env.c.i
+
+.PHONY : lmidori/get_value_env.i
+
+# target to preprocess a source file
+lmidori/get_value_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_value_env.c.i
+.PHONY : lmidori/get_value_env.c.i
+
+lmidori/get_value_env.s: lmidori/get_value_env.c.s
+
+.PHONY : lmidori/get_value_env.s
+
+# target to generate assembly for a file
+lmidori/get_value_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/get_value_env.c.s
+.PHONY : lmidori/get_value_env.c.s
 
 lmidori/init_arg_env.o: lmidori/init_arg_env.c.o
 
@@ -1634,7 +1877,7 @@ lmidori/init_arg_env.o: lmidori/init_arg_env.c.o
 
 # target to build an object file
 lmidori/init_arg_env.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/init_arg_env.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_arg_env.c.o
 .PHONY : lmidori/init_arg_env.c.o
 
 lmidori/init_arg_env.i: lmidori/init_arg_env.c.i
@@ -1643,7 +1886,7 @@ lmidori/init_arg_env.i: lmidori/init_arg_env.c.i
 
 # target to preprocess a source file
 lmidori/init_arg_env.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/init_arg_env.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_arg_env.c.i
 .PHONY : lmidori/init_arg_env.c.i
 
 lmidori/init_arg_env.s: lmidori/init_arg_env.c.s
@@ -1652,8 +1895,35 @@ lmidori/init_arg_env.s: lmidori/init_arg_env.c.s
 
 # target to generate assembly for a file
 lmidori/init_arg_env.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/init_arg_env.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_arg_env.c.s
 .PHONY : lmidori/init_arg_env.c.s
+
+lmidori/init_env.o: lmidori/init_env.c.o
+
+.PHONY : lmidori/init_env.o
+
+# target to build an object file
+lmidori/init_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_env.c.o
+.PHONY : lmidori/init_env.c.o
+
+lmidori/init_env.i: lmidori/init_env.c.i
+
+.PHONY : lmidori/init_env.i
+
+# target to preprocess a source file
+lmidori/init_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_env.c.i
+.PHONY : lmidori/init_env.c.i
+
+lmidori/init_env.s: lmidori/init_env.c.s
+
+.PHONY : lmidori/init_env.s
+
+# target to generate assembly for a file
+lmidori/init_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_env.c.s
+.PHONY : lmidori/init_env.c.s
 
 lmidori/lst_args.o: lmidori/lst_args.c.o
 
@@ -1661,7 +1931,7 @@ lmidori/lst_args.o: lmidori/lst_args.c.o
 
 # target to build an object file
 lmidori/lst_args.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/lst_args.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_args.c.o
 .PHONY : lmidori/lst_args.c.o
 
 lmidori/lst_args.i: lmidori/lst_args.c.i
@@ -1670,7 +1940,7 @@ lmidori/lst_args.i: lmidori/lst_args.c.i
 
 # target to preprocess a source file
 lmidori/lst_args.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/lst_args.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_args.c.i
 .PHONY : lmidori/lst_args.c.i
 
 lmidori/lst_args.s: lmidori/lst_args.c.s
@@ -1679,8 +1949,62 @@ lmidori/lst_args.s: lmidori/lst_args.c.s
 
 # target to generate assembly for a file
 lmidori/lst_args.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/lst_args.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_args.c.s
 .PHONY : lmidori/lst_args.c.s
+
+lmidori/lst_env.o: lmidori/lst_env.c.o
+
+.PHONY : lmidori/lst_env.o
+
+# target to build an object file
+lmidori/lst_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_env.c.o
+.PHONY : lmidori/lst_env.c.o
+
+lmidori/lst_env.i: lmidori/lst_env.c.i
+
+.PHONY : lmidori/lst_env.i
+
+# target to preprocess a source file
+lmidori/lst_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_env.c.i
+.PHONY : lmidori/lst_env.c.i
+
+lmidori/lst_env.s: lmidori/lst_env.c.s
+
+.PHONY : lmidori/lst_env.s
+
+# target to generate assembly for a file
+lmidori/lst_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_env.c.s
+.PHONY : lmidori/lst_env.c.s
+
+lmidori/lst_new_env.o: lmidori/lst_new_env.c.o
+
+.PHONY : lmidori/lst_new_env.o
+
+# target to build an object file
+lmidori/lst_new_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_new_env.c.o
+.PHONY : lmidori/lst_new_env.c.o
+
+lmidori/lst_new_env.i: lmidori/lst_new_env.c.i
+
+.PHONY : lmidori/lst_new_env.i
+
+# target to preprocess a source file
+lmidori/lst_new_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_new_env.c.i
+.PHONY : lmidori/lst_new_env.c.i
+
+lmidori/lst_new_env.s: lmidori/lst_new_env.c.s
+
+.PHONY : lmidori/lst_new_env.s
+
+# target to generate assembly for a file
+lmidori/lst_new_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_new_env.c.s
+.PHONY : lmidori/lst_new_env.c.s
 
 lmidori/lstnew.o: lmidori/lstnew.c.o
 
@@ -1688,7 +2012,7 @@ lmidori/lstnew.o: lmidori/lstnew.c.o
 
 # target to build an object file
 lmidori/lstnew.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/lstnew.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lstnew.c.o
 .PHONY : lmidori/lstnew.c.o
 
 lmidori/lstnew.i: lmidori/lstnew.c.i
@@ -1697,7 +2021,7 @@ lmidori/lstnew.i: lmidori/lstnew.c.i
 
 # target to preprocess a source file
 lmidori/lstnew.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/lstnew.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lstnew.c.i
 .PHONY : lmidori/lstnew.c.i
 
 lmidori/lstnew.s: lmidori/lstnew.c.s
@@ -1706,7 +2030,7 @@ lmidori/lstnew.s: lmidori/lstnew.c.s
 
 # target to generate assembly for a file
 lmidori/lstnew.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/lstnew.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lstnew.c.s
 .PHONY : lmidori/lstnew.c.s
 
 lmidori/minishell.o: lmidori/minishell.c.o
@@ -1715,7 +2039,7 @@ lmidori/minishell.o: lmidori/minishell.c.o
 
 # target to build an object file
 lmidori/minishell.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/minishell.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/minishell.c.o
 .PHONY : lmidori/minishell.c.o
 
 lmidori/minishell.i: lmidori/minishell.c.i
@@ -1724,7 +2048,7 @@ lmidori/minishell.i: lmidori/minishell.c.i
 
 # target to preprocess a source file
 lmidori/minishell.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/minishell.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/minishell.c.i
 .PHONY : lmidori/minishell.c.i
 
 lmidori/minishell.s: lmidori/minishell.c.s
@@ -1733,7 +2057,7 @@ lmidori/minishell.s: lmidori/minishell.c.s
 
 # target to generate assembly for a file
 lmidori/minishell.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/minishell.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/minishell.c.s
 .PHONY : lmidori/minishell.c.s
 
 lmidori/parser.o: lmidori/parser.c.o
@@ -1742,7 +2066,7 @@ lmidori/parser.o: lmidori/parser.c.o
 
 # target to build an object file
 lmidori/parser.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/parser.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/parser.c.o
 .PHONY : lmidori/parser.c.o
 
 lmidori/parser.i: lmidori/parser.c.i
@@ -1751,7 +2075,7 @@ lmidori/parser.i: lmidori/parser.c.i
 
 # target to preprocess a source file
 lmidori/parser.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/parser.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/parser.c.i
 .PHONY : lmidori/parser.c.i
 
 lmidori/parser.s: lmidori/parser.c.s
@@ -1760,7 +2084,7 @@ lmidori/parser.s: lmidori/parser.c.s
 
 # target to generate assembly for a file
 lmidori/parser.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/parser.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/parser.c.s
 .PHONY : lmidori/parser.c.s
 
 lmidori/path_bin.o: lmidori/path_bin.c.o
@@ -1769,7 +2093,7 @@ lmidori/path_bin.o: lmidori/path_bin.c.o
 
 # target to build an object file
 lmidori/path_bin.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/path_bin.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/path_bin.c.o
 .PHONY : lmidori/path_bin.c.o
 
 lmidori/path_bin.i: lmidori/path_bin.c.i
@@ -1778,7 +2102,7 @@ lmidori/path_bin.i: lmidori/path_bin.c.i
 
 # target to preprocess a source file
 lmidori/path_bin.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/path_bin.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/path_bin.c.i
 .PHONY : lmidori/path_bin.c.i
 
 lmidori/path_bin.s: lmidori/path_bin.c.s
@@ -1787,8 +2111,35 @@ lmidori/path_bin.s: lmidori/path_bin.c.s
 
 # target to generate assembly for a file
 lmidori/path_bin.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/path_bin.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/path_bin.c.s
 .PHONY : lmidori/path_bin.c.s
+
+lmidori/print_export.o: lmidori/print_export.c.o
+
+.PHONY : lmidori/print_export.o
+
+# target to build an object file
+lmidori/print_export.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/print_export.c.o
+.PHONY : lmidori/print_export.c.o
+
+lmidori/print_export.i: lmidori/print_export.c.i
+
+.PHONY : lmidori/print_export.i
+
+# target to preprocess a source file
+lmidori/print_export.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/print_export.c.i
+.PHONY : lmidori/print_export.c.i
+
+lmidori/print_export.s: lmidori/print_export.c.s
+
+.PHONY : lmidori/print_export.s
+
+# target to generate assembly for a file
+lmidori/print_export.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/print_export.c.s
+.PHONY : lmidori/print_export.c.s
 
 lmidori/read_arg.o: lmidori/read_arg.c.o
 
@@ -1796,7 +2147,7 @@ lmidori/read_arg.o: lmidori/read_arg.c.o
 
 # target to build an object file
 lmidori/read_arg.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/read_arg.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/read_arg.c.o
 .PHONY : lmidori/read_arg.c.o
 
 lmidori/read_arg.i: lmidori/read_arg.c.i
@@ -1805,7 +2156,7 @@ lmidori/read_arg.i: lmidori/read_arg.c.i
 
 # target to preprocess a source file
 lmidori/read_arg.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/read_arg.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/read_arg.c.i
 .PHONY : lmidori/read_arg.c.i
 
 lmidori/read_arg.s: lmidori/read_arg.c.s
@@ -1814,8 +2165,35 @@ lmidori/read_arg.s: lmidori/read_arg.c.s
 
 # target to generate assembly for a file
 lmidori/read_arg.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/read_arg.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/read_arg.c.s
 .PHONY : lmidori/read_arg.c.s
+
+lmidori/redact_env.o: lmidori/redact_env.c.o
+
+.PHONY : lmidori/redact_env.o
+
+# target to build an object file
+lmidori/redact_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/redact_env.c.o
+.PHONY : lmidori/redact_env.c.o
+
+lmidori/redact_env.i: lmidori/redact_env.c.i
+
+.PHONY : lmidori/redact_env.i
+
+# target to preprocess a source file
+lmidori/redact_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/redact_env.c.i
+.PHONY : lmidori/redact_env.c.i
+
+lmidori/redact_env.s: lmidori/redact_env.c.s
+
+.PHONY : lmidori/redact_env.s
+
+# target to generate assembly for a file
+lmidori/redact_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/redact_env.c.s
+.PHONY : lmidori/redact_env.c.s
 
 lmidori/select_cmd.o: lmidori/select_cmd.c.o
 
@@ -1823,7 +2201,7 @@ lmidori/select_cmd.o: lmidori/select_cmd.c.o
 
 # target to build an object file
 lmidori/select_cmd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/select_cmd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/select_cmd.c.o
 .PHONY : lmidori/select_cmd.c.o
 
 lmidori/select_cmd.i: lmidori/select_cmd.c.i
@@ -1832,7 +2210,7 @@ lmidori/select_cmd.i: lmidori/select_cmd.c.i
 
 # target to preprocess a source file
 lmidori/select_cmd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/select_cmd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/select_cmd.c.i
 .PHONY : lmidori/select_cmd.c.i
 
 lmidori/select_cmd.s: lmidori/select_cmd.c.s
@@ -1841,7 +2219,7 @@ lmidori/select_cmd.s: lmidori/select_cmd.c.s
 
 # target to generate assembly for a file
 lmidori/select_cmd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/select_cmd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/select_cmd.c.s
 .PHONY : lmidori/select_cmd.c.s
 
 lmidori/start_programm.o: lmidori/start_programm.c.o
@@ -1850,7 +2228,7 @@ lmidori/start_programm.o: lmidori/start_programm.c.o
 
 # target to build an object file
 lmidori/start_programm.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/start_programm.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/start_programm.c.o
 .PHONY : lmidori/start_programm.c.o
 
 lmidori/start_programm.i: lmidori/start_programm.c.i
@@ -1859,7 +2237,7 @@ lmidori/start_programm.i: lmidori/start_programm.c.i
 
 # target to preprocess a source file
 lmidori/start_programm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/start_programm.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/start_programm.c.i
 .PHONY : lmidori/start_programm.c.i
 
 lmidori/start_programm.s: lmidori/start_programm.c.s
@@ -1868,7 +2246,7 @@ lmidori/start_programm.s: lmidori/start_programm.c.s
 
 # target to generate assembly for a file
 lmidori/start_programm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/start_programm.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/start_programm.c.s
 .PHONY : lmidori/start_programm.c.s
 
 lmidori/struct_funcs.o: lmidori/struct_funcs.c.o
@@ -1877,7 +2255,7 @@ lmidori/struct_funcs.o: lmidori/struct_funcs.c.o
 
 # target to build an object file
 lmidori/struct_funcs.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/struct_funcs.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/struct_funcs.c.o
 .PHONY : lmidori/struct_funcs.c.o
 
 lmidori/struct_funcs.i: lmidori/struct_funcs.c.i
@@ -1886,7 +2264,7 @@ lmidori/struct_funcs.i: lmidori/struct_funcs.c.i
 
 # target to preprocess a source file
 lmidori/struct_funcs.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/struct_funcs.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/struct_funcs.c.i
 .PHONY : lmidori/struct_funcs.c.i
 
 lmidori/struct_funcs.s: lmidori/struct_funcs.c.s
@@ -1895,7 +2273,7 @@ lmidori/struct_funcs.s: lmidori/struct_funcs.c.s
 
 # target to generate assembly for a file
 lmidori/struct_funcs.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myminishell.dir/build.make CMakeFiles/myminishell.dir/lmidori/struct_funcs.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/struct_funcs.c.s
 .PHONY : lmidori/struct_funcs.c.s
 
 # Help Target
@@ -1906,19 +2284,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... myminishell"
-	@echo "... drina/add_equal.o"
-	@echo "... drina/add_equal.i"
-	@echo "... drina/add_equal.s"
-	@echo "... drina/cmd_env.o"
-	@echo "... drina/cmd_env.i"
-	@echo "... drina/cmd_env.s"
-	@echo "... drina/cmd_pwd.o"
-	@echo "... drina/cmd_pwd.i"
-	@echo "... drina/cmd_pwd.s"
-	@echo "... drina/sort_list.o"
-	@echo "... drina/sort_list.i"
-	@echo "... drina/sort_list.s"
+	@echo "... minishell"
+	@echo "... Drina/add_equal.o"
+	@echo "... Drina/add_equal.i"
+	@echo "... Drina/add_equal.s"
+	@echo "... Drina/cmd_env.o"
+	@echo "... Drina/cmd_env.i"
+	@echo "... Drina/cmd_env.s"
+	@echo "... Drina/cmd_pwd.o"
+	@echo "... Drina/cmd_pwd.i"
+	@echo "... Drina/cmd_pwd.s"
+	@echo "... Drina/sort_list.o"
+	@echo "... Drina/sort_list.i"
+	@echo "... Drina/sort_list.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
@@ -2057,27 +2435,63 @@ help:
 	@echo "... lmidori/add_back.o"
 	@echo "... lmidori/add_back.i"
 	@echo "... lmidori/add_back.s"
+	@echo "... lmidori/check.o"
+	@echo "... lmidori/check.i"
+	@echo "... lmidori/check.s"
 	@echo "... lmidori/cmd_cd.o"
 	@echo "... lmidori/cmd_cd.i"
 	@echo "... lmidori/cmd_cd.s"
+	@echo "... lmidori/cmd_echo.o"
+	@echo "... lmidori/cmd_echo.i"
+	@echo "... lmidori/cmd_echo.s"
+	@echo "... lmidori/cmd_export.o"
+	@echo "... lmidori/cmd_export.i"
+	@echo "... lmidori/cmd_export.s"
+	@echo "... lmidori/cmd_unset.o"
+	@echo "... lmidori/cmd_unset.i"
+	@echo "... lmidori/cmd_unset.s"
 	@echo "... lmidori/diff_cmd.o"
 	@echo "... lmidori/diff_cmd.i"
 	@echo "... lmidori/diff_cmd.s"
 	@echo "... lmidori/enter_cd.o"
 	@echo "... lmidori/enter_cd.i"
 	@echo "... lmidori/enter_cd.s"
+	@echo "... lmidori/find_in_env.o"
+	@echo "... lmidori/find_in_env.i"
+	@echo "... lmidori/find_in_env.s"
 	@echo "... lmidori/find_len_arg.o"
 	@echo "... lmidori/find_len_arg.i"
 	@echo "... lmidori/find_len_arg.s"
+	@echo "... lmidori/ft_lstsize_arg.o"
+	@echo "... lmidori/ft_lstsize_arg.i"
+	@echo "... lmidori/ft_lstsize_arg.s"
+	@echo "... lmidori/get_arg.o"
+	@echo "... lmidori/get_arg.i"
+	@echo "... lmidori/get_arg.s"
 	@echo "... lmidori/get_env_args.o"
 	@echo "... lmidori/get_env_args.i"
 	@echo "... lmidori/get_env_args.s"
+	@echo "... lmidori/get_name_env.o"
+	@echo "... lmidori/get_name_env.i"
+	@echo "... lmidori/get_name_env.s"
+	@echo "... lmidori/get_value_env.o"
+	@echo "... lmidori/get_value_env.i"
+	@echo "... lmidori/get_value_env.s"
 	@echo "... lmidori/init_arg_env.o"
 	@echo "... lmidori/init_arg_env.i"
 	@echo "... lmidori/init_arg_env.s"
+	@echo "... lmidori/init_env.o"
+	@echo "... lmidori/init_env.i"
+	@echo "... lmidori/init_env.s"
 	@echo "... lmidori/lst_args.o"
 	@echo "... lmidori/lst_args.i"
 	@echo "... lmidori/lst_args.s"
+	@echo "... lmidori/lst_env.o"
+	@echo "... lmidori/lst_env.i"
+	@echo "... lmidori/lst_env.s"
+	@echo "... lmidori/lst_new_env.o"
+	@echo "... lmidori/lst_new_env.i"
+	@echo "... lmidori/lst_new_env.s"
 	@echo "... lmidori/lstnew.o"
 	@echo "... lmidori/lstnew.i"
 	@echo "... lmidori/lstnew.s"
@@ -2090,9 +2504,15 @@ help:
 	@echo "... lmidori/path_bin.o"
 	@echo "... lmidori/path_bin.i"
 	@echo "... lmidori/path_bin.s"
+	@echo "... lmidori/print_export.o"
+	@echo "... lmidori/print_export.i"
+	@echo "... lmidori/print_export.s"
 	@echo "... lmidori/read_arg.o"
 	@echo "... lmidori/read_arg.i"
 	@echo "... lmidori/read_arg.s"
+	@echo "... lmidori/redact_env.o"
+	@echo "... lmidori/redact_env.i"
+	@echo "... lmidori/redact_env.s"
 	@echo "... lmidori/select_cmd.o"
 	@echo "... lmidori/select_cmd.i"
 	@echo "... lmidori/select_cmd.s"

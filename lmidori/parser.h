@@ -59,6 +59,8 @@ typedef struct			s_head_struct
 	t_list_args			*list;
 	int 				fd[2];
 	int					flag_pipe;
+	int 				flag_redir;
+
 }						t_head_struct;
 
 void					ft_lstadd_back_arg(t_list_args **lst, t_list_args *new);
