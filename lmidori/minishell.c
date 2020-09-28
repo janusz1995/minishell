@@ -44,14 +44,14 @@ void		all_envp(t_env **env, char **envp)
 
 
 
-int		main(int argc, char **argv, char **envp)
+int		main(int argc, char **pony, char **envp)
 {
 	char *str1;
 	char **arr;
 	int num;
 	t_arg arg;
 	
-	arr = argv;
+	arr = pony;
 	num = argc;
 
 
