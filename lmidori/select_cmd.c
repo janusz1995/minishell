@@ -76,6 +76,34 @@ void		select_cmd_two(t_head_struct *head_struct, char **str, t_list_args *args, 
 		exit(0);
 }
 
+void 		redirect(t_head_struct *head_struct)
+{
+	int		fd;
+
+	if (head_struct->p_copy == NULL)
+	{
+		head_struct->copy_all = head_struct->all;
+		head_struct->p_copy = &head_struct->copy_all;
+	}
+	else if (*(head_struct->all.spec) != '>')
+	{
+		if ((fd = open(head_struct->list->content, O_WRONLY)) < 0)  //O_CREAT
+		{
+			//return error
+		}
+
+
+	}
+	else
+	{
+		if ((fd = open(head_struct->list->content, O_WRONLY)) < 0)  //O_CREAT
+		{
+			//return error
+		}
+	}
+
+}
+
 void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 {
 	pid_t	pid;
@@ -108,6 +136,10 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 			close(head_struct->fd[0]);
 			wait_pid = waitpid(pid, &status, WUNTRACED);
 		}
+	}
+	else if (head_struct->all.spec && *(head_struct->all.spec) == '>')
+	{
+
 	}
 	else
 	{

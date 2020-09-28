@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdio.h>
+# include <fcntl.h>
 # include "../libft/libft.h"
 # include "../libft/get_next_line.h"
 # include <sys/types.h>
@@ -53,6 +54,8 @@ typedef struct			s_head_struct
 	char				**bin;
 	t_env				*env;
 	t_all				all;
+	t_all				copy_all;
+	t_all				*p_copy;
 	t_list_args			*list;
 	int 				fd[2];
 	int					flag_pipe;
