@@ -86,6 +86,8 @@ void		get_copy_all(t_all *all, t_all *copy_all)
 	tmp_copy->args = NULL;
 	tmp_copy->spec = NULL;
 	tmp_copy->equal = 0;
+
+	tmp_copy->spec = ft_strdup(tmp->spec);
 	while (tmp->args)
 	{
 		ft_lstadd_back_arg(&(copy_all->args), ft_lstnew_arg(ft_strdup(tmp->args->content), tmp->args->spec_flag));
@@ -126,9 +128,20 @@ void 		redirect(t_head_struct *head_struct, char **str)
 	else
 	{
 		head_struct->flag_redir = 0;
-		if ((fd = open(str[0], O_CREAT | O_WRONLY , 0644)) < 0)  //O_CREAT
+
+		if (head_struct->copy_all.spec && ft_strncmp(head_struct->copy_all.spec, ">>", 3) == 0)
 		{
-			//return error
+			if ((fd = open(str[0], O_CREAT | O_APPEND | O_WRONLY , 0644)) < 0)	//O_CREAT;
+			{
+
+			}
+		}
+		else
+		{
+ 			if ((fd = open(str[0], O_CREAT | O_WRONLY, 0644)) < 0)  //O_CREAT
+			{
+				//return error
+			}
 		}
 		save_all = get_arg((&head_struct->copy_all.args));
 		saveout = dup(1);
