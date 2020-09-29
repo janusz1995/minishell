@@ -98,7 +98,7 @@ void		get_copy_all(t_all *all, t_all *copy_all)
 void 		redirect(t_head_struct *head_struct, char **str)
 {
 	int		fd;
-	int 	saveout;
+//	int 	saveout;
 	char	**save_all;
 
 	save_all = NULL;
@@ -119,12 +119,19 @@ void 		redirect(t_head_struct *head_struct, char **str)
 	}
 	else if (head_struct->all.spec && *(head_struct->all.spec) == '>')
 	{
-		if ((fd = open(str[0], O_CREAT | O_WRONLY , 0644)) < 0)  //O_CREAT
+		if ((fd = open(str[0], O_CREAT | O_WRONLY | O_TRUNC, 0644)) < 0)  //O_CREAT
 		{
 			// return error
 		}
 		close(fd);
 	}
+//	else if (head_struct->all.spec && *(head_struct->all.spec) == '<')
+//	{
+//		if (fd = read())
+//		{
+//
+//		}
+//	}
 	else
 	{
 		head_struct->flag_redir = 0;
@@ -144,13 +151,13 @@ void 		redirect(t_head_struct *head_struct, char **str)
 			}
 		}
 		save_all = get_arg((&head_struct->copy_all.args));
-		saveout = dup(1);
+		//saveout = dup(1);
 		dup2(fd, 1);
 		select_cmd(head_struct, save_all, head_struct->copy_all.args);
-		dup2(saveout, 1);
+		//dup2(saveout, 1);
 		head_struct->p_copy = NULL;
 		close(fd);
-		close(saveout);
+		//close(saveout);
 	}
 }
 

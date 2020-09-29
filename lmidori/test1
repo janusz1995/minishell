@@ -65,4 +65,5 @@ start_programm.c
 start_programm.o
 struct_funcs.c
 struct_funcs.o
-t1
+test
+test1
