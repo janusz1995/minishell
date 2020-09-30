@@ -208,6 +208,8 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 	else if (head_struct->flag_redir || (head_struct->all.spec && (*(head_struct->all.spec) == '>' ||
 			(ft_strncmp(head_struct->all.spec, ">>", 3) == 0) || *(head_struct->all.spec) == '<')))
 	{
+		if (head_struct->p_copy != NULL)
+			ft_lstadd_back_arg(&head_struct->copy_all.args, args->next);
 		redirect(head_struct, str);
 	}
 	else
