@@ -7,7 +7,7 @@ void 		start_shell(t_all *all, t_head_struct *head_struct)
 	char	**str;
 
 	str = get_arg(&(all->args));
-	if (*str[0] == '\0') // leak
+	if (*str[0] == '\0' && all->spec == NULL) // leak
 		return;
 	select_cmd(head_struct, str, head_struct->all.args);
 	free(str);
