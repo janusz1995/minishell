@@ -6,13 +6,13 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 21:10:38 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/14 11:43:59 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/01 21:19:19 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-t_list_args	*ft_lstnew_arg(void *content, int flag)
+t_list_args		*ft_lstnew_arg(void *content, int flag)
 {
 	t_list_args	*list;
 
@@ -25,7 +25,7 @@ t_list_args	*ft_lstnew_arg(void *content, int flag)
 	return (list);
 }
 
-t_list_args	*ft_lstlast_arg(t_list_args *lst)
+t_list_args		*ft_lstlast_arg(t_list_args *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -34,7 +34,7 @@ t_list_args	*ft_lstlast_arg(t_list_args *lst)
 	return (lst);
 }
 
-void	ft_lstadd_back_arg(t_list_args **lst, t_list_args *new)
+void			ft_lstadd_back_arg(t_list_args **lst, t_list_args *new)
 {
 	if (!lst || !new)
 		return ;
@@ -44,7 +44,7 @@ void	ft_lstadd_back_arg(t_list_args **lst, t_list_args *new)
 		ft_lstlast_arg(*lst)->next = new;
 }
 
-void	ft_lstclear_args(t_list_args **lst, void (*del)(void*))
+void			ft_lstclear_args(t_list_args **lst, void (*del)(void*))
 {
 	t_list_args	*list;
 
@@ -60,7 +60,7 @@ void	ft_lstclear_args(t_list_args **lst, void (*del)(void*))
 	}
 }
 
-void	ft_lst_print(t_list_args *list)
+void			ft_lst_print(t_list_args *list)
 {
 	ft_putstr_fd("		START LIST\n", 2);
 	while (list)

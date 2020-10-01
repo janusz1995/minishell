@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:55:02 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/22 17:13:07 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/01 20:57:48 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int			str_concatenated(t_arg *arg, char *tmp1, char *tmp2)
 	int		j;
 	int		len;
 	char	*new_arg;
-	
+
 	len = arg->len - ft_strlen(tmp1) + ft_strlen(tmp2);
 	if (!(new_arg = (char *)ft_calloc(sizeof(char), (len + 1))))
 		return (-1);
@@ -44,7 +44,7 @@ int			init_arg_env(char *str, t_arg *arg, t_env *env)
 
 	i = 1;
 	if (!ft_isalpha(str[i]) && str[i] != '_')
-		return (1);
+		return (-2);
 	while (ft_isdigit(str[i]) || ft_isalpha(str[i]) || str[i] == '_')
 		i++;
 	len = i - 1;

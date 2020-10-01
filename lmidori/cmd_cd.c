@@ -1,6 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cmd_cd.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/01 23:14:13 by lmidori           #+#    #+#             */
+/*   Updated: 2020/10/01 23:26:27 by lmidori          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "parser.h"
 #include "minishell.h"
+
+void		replace_pwd(t_env *tmp, char *oldpwd, char *str_cwd, int *flag)
+{
+	if ((ft_strncmp(tmp->key_value[0], "OLDPWD",
+		ft_strlen(tmp->key_value[0]) + 1)) == 0)
+	{
+		*flag = 1;
+		tmp->visible = 1;
+		free(tmp->key_value[1]);
+		tmp->key_value[1] = ft_strdup(oldpwd);
+	}
+	if ((ft_strncmp(tmp->key_value[0], "PWD",
+		ft_strlen(tmp->key_value[0]) + 1)) == 0)
+	{
+		free(tmp->key_value[1]);
+		tmp->key_value[1] = ft_strdup(str_cwd);
+	}
+	return ;
+}
+
+void		find_pwd(t_env *head, t_env *tmp, char *oldpwd, char *str_cwd)
+{
+	int		flag;
+	char	*pwd;
+
+	flag = 0;
+	while (tmp->next != NULL)
+	{
+		replace_pwd(tmp, oldpwd, str_cwd, &flag);
+		tmp = tmp->next;
+	}
+	if (!flag)
+	{
+		pwd = ft_strdup("OLDPWD=");
+		add_back(&head, new_key_value(pwd, 1));
+		free(pwd);
+	}
+}
 
 void		cmd_cd(char **args, t_env *head)
 {
@@ -8,9 +57,7 @@ void		cmd_cd(char **args, t_env *head)
 	t_env	*tmp;
 	char	*dir;
 	char	*oldpwd;
-	int		flag;
 
-	flag = 0;
 	tmp = head;
 	if (args[1] == NULL)
 		dir = get_home_dir(head);
@@ -19,34 +66,13 @@ void		cmd_cd(char **args, t_env *head)
 	oldpwd = getcwd(NULL, 0);
 	if (chdir(dir) == -1)
 	{
-		ft_putstr_fd("Error\n",2);
+		ft_putstr_fd("Error\n", 2);
 		return ;
 	}
 	if (!args[1])
 		free(dir);
 	str_cwd = getcwd(NULL, 0);
-	while (tmp->next != NULL)
-	{
-		if ((ft_strncmp(tmp->key_value[0], "OLDPWD", ft_strlen(tmp->key_value[0]) + 1)) == 0)
-		{
-			flag = 1;
-			tmp->visible = 1;
-			free(tmp->key_value[1]);
-			tmp->key_value[1] = ft_strdup(oldpwd);
-		}
-		if ((ft_strncmp(tmp->key_value[0], "PWD", ft_strlen(tmp->key_value[0]) + 1)) == 0)
-		{
-			free(tmp->key_value[1]);
-			tmp->key_value[1] = ft_strdup(str_cwd);
-		}
-		tmp = tmp->next;
-	}
-	if (!flag)
-	{
-		char *pwd = ft_strdup("OLDPWD=");
-		add_back(&head, new_key_value(pwd, 1));
-		free(pwd);
-	}
+	find_pwd(head, tmp, oldpwd, str_cwd);
 	free(oldpwd);
 	free(str_cwd);
 }

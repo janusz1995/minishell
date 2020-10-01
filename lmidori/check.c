@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/01 17:46:07 by lmidori           #+#    #+#             */
+/*   Updated: 2020/10/01 17:46:34 by lmidori          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "parser.h"
 
@@ -16,7 +27,7 @@ int			check_name(char *var, char ch)
 	return (i);
 }
 
-int 		check_cond(char *str)
+int			check_cond(char *str)
 {
 	return ((ft_strncmp(str, "cd", ft_strlen(str) + 1) == 0) ||
 			(ft_strncmp(str, "pwd", ft_strlen(str) + 1) == 0) ||

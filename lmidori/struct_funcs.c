@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:46:25 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 16:09:35 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/01 23:02:42 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ int			fool_strcut(t_all *all, t_list_args **list)
 			all->equal = 1;
 		while (tmp && tmp->spec_flag != 1)
 		{
-			ft_lstadd_back_arg(&(all->args), ft_lstnew_arg(tmp->content, tmp->spec_flag));
-			if (!all->args)		// ???
+			ft_lstadd_back_arg(&(all->args),
+				ft_lstnew_arg(tmp->content, tmp->spec_flag));
+			if (!all->args)
 				return (-1);
 			tmp = tmp->next;
 		}
-
 		if (tmp && tmp->spec_flag)
 		{
 			all->spec = tmp->content;
@@ -65,5 +65,4 @@ void		ft_clear_strcut(t_all *all)
 		free(all->spec);
 	all->spec = NULL;
 	ft_lstclear_args(&(all->args), free);
-	// free(all);
 }

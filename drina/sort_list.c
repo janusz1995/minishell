@@ -46,5 +46,4 @@ void				sort_list(t_env **head)
 				tmp = tmp->next;
 		}
 	}
-
 }

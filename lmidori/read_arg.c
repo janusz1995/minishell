@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:52:29 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/22 17:13:45 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/01 18:19:31 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int			init_arg_quotes(char *str, t_arg *arg, t_env *env)
 		{
 			if ((tmp = init_arg_env(&str[i], arg, env)) == -1)
 				return (-1);
-			i += tmp;
+			if (tmp == -2)
+				arg->arg[arg->j++] = str[i];
+			else
+				i += tmp;
 		}
 		else
 			arg->arg[arg->j++] = str[i];

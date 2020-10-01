@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:49:35 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/18 21:55:41 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/01 21:16:07 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int			len_marks(char *ptr, char ch, int *len)
 	i = 0;
 	while (ptr[i] != ch && ptr[i] != '\0')
 	{
-		if (ptr[i] == '\\' && ch != '\'' && 
+		if (ptr[i] == '\\' && ch != '\'' &&
 			(ptr[i + 1] == '\\' || ptr[i + 1] == '$'
 			|| ptr[i + 1] == '`' || ptr[i + 1] == '\"'))
 		{

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cmd_echo.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/01 17:46:57 by lmidori           #+#    #+#             */
+/*   Updated: 2020/10/01 17:47:34 by lmidori          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "parser.h"
 
@@ -15,11 +26,11 @@ void				cmd_echo(t_list_args *list)
 	}
 	while (tmp)
 	{
-		write(1,tmp->content , ft_strlen(tmp->content));
+		write(1, tmp->content, ft_strlen(tmp->content));
 		if (tmp->next)
-			write(1, " ",1);
+			write(1, " ", 1);
 		tmp = tmp->next;
 	}
 	if (!flag)
-		write(1, "\n",1);
+		write(1, "\n", 1);
 }
