@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 16:37:25 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/21 15:28:49 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/01 16:40:31 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <sys/types.h>
 # include <dirent.h>
 # include "parser.h"
+#include <signal.h>
 
 
 

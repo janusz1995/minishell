@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 12:03:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/21 22:51:09 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/01 15:55:54 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int			read_special_char(char *str, t_list_args **list)
 void		init_head_struct(t_head_struct	*head_struct)
 {
 	head_struct->all.args = NULL;
+	head_struct->list = NULL;
 }
 
 

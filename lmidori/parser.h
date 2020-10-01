@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/09/24 21:10:12 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/01 16:39:40 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include "../libft/get_next_line.h"
 # include <sys/types.h>
 # include <dirent.h>
+
+char		*str1;
+pid_t		g_pid;
 
 typedef struct			s_list_args
 {

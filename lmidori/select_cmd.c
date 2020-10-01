@@ -29,7 +29,7 @@ int			add_new_env(t_head_struct *head_struct, char **str)
 		arg = arg->next;
 		i++;
 	}
-	if (!arg)
+	if (!arg && (head_struct->all.spec == NULL || *head_struct->all.spec != '|'))
 	{
 		arg = head_struct->all.args;
 		while (arg != NULL)
@@ -45,6 +45,86 @@ int			add_new_env(t_head_struct *head_struct, char **str)
 		select_cmd(head_struct, &str[i], arg);
 	}
 	return (1);
+}
+
+long long		ft_atol_exit(const char *str)
+{
+	int				i;
+	int				sign;
+	double		number;
+	long long	out;
+
+	out = 0;
+	i = 0;
+	sign = 1;
+	number = 0;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i++] == '-')
+			sign = -1;
+	}
+	while (str[i] <= '9' && str[i] >= '0')
+		number = number * 10 + (str[i++] - '0');
+	if (number > 9223372036854775807)
+	{
+		return (256);
+	}
+	out = (long long)(number);
+	if (sign == 1)
+		out %= 256;
+	else
+		out = -(out % 256) + 256;
+	return (out);
+}
+
+void		exit_cmd(char **str)
+{
+	int		i;
+	int		minus;
+	unsigned short code;
+	minus = 0;
+	i = 0;
+	while (str[i] != NULL)
+		i++;
+	if (i == 1)
+		exit(1);
+	if (i != 2)
+		ft_putstr_fd("exit\nminishell: exit: too many arguments\n", 1);
+	else
+	{
+		i = -1;
+		if (str[1][0] =='-')
+		{
+			minus = 1;
+			i++;
+		}
+		while (str[1][++i] != '\0')
+			if (!ft_isdigit(str[1][i]))
+			{
+				i = 0;
+				break;
+			}
+		if (i == 0)
+		{
+			ft_putstr_fd("exit\nminishell: exit: ", 1);
+			ft_putstr_fd(str[1], 1);
+			ft_putstr_fd(": numeric argument required\n", 1);
+			exit (255);
+		}
+		else
+		{
+			if ((code = (unsigned short)ft_atol_exit(str[1])) == 256)
+			{
+				ft_putstr_fd("exit\nminishell: exit: ", 1);
+				ft_putstr_fd(str[1], 1);
+				ft_putstr_fd(": numeric argument required\n", 1);
+				exit (255);
+			}
+			else
+				exit (code);
+		}
+	}
+	
 }
 
 void		select_cmd_two(t_head_struct *head_struct, char **str, t_list_args *args, int flag)
@@ -73,29 +153,33 @@ void		select_cmd_two(t_head_struct *head_struct, char **str, t_list_args *args, 
 	else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
 		cmd_echo(args);
 	else if (str[0] && (ft_strncmp(str[0], "exit", ft_strlen(str[0]) + 1) == 0))
-		exit(0);
+	{
+		exit_cmd(str);
+	}
 }
 
-void		get_copy_all(t_all *all, t_all *copy_all)
+
+
+void		get_copy_all(t_all *all, t_all *copy_all, t_list_args *args)
 {
-	t_all	*tmp;
+	t_list_args	*tmp;
 	t_all	*tmp_copy;
 
-	tmp = all;
+	tmp = args;
 	tmp_copy = copy_all;
 	tmp_copy->args = NULL;
 	tmp_copy->spec = NULL;
 	tmp_copy->equal = 0;
 
-	tmp_copy->spec = ft_strdup(tmp->spec);
-	while (tmp->args)
+	tmp_copy->spec = ft_strdup(all->spec);
+	while (tmp)
 	{
-		ft_lstadd_back_arg(&(copy_all->args), ft_lstnew_arg(ft_strdup(tmp->args->content), tmp->args->spec_flag));
-		tmp->args = tmp->args->next;
+		ft_lstadd_back_arg(&(copy_all->args), ft_lstnew_arg(ft_strdup(tmp->content), tmp->spec_flag));
+		tmp = tmp->next;
 	}
 }
 
-void 		redirect(t_head_struct *head_struct, char **str)
+void 		redirect(t_head_struct *head_struct, char **str, t_list_args *args)
 {
 	int		fd;
 //	int 	saveout;
@@ -104,7 +188,7 @@ void 		redirect(t_head_struct *head_struct, char **str)
 	save_all = NULL;
 	if (head_struct->p_copy == NULL)
 	{
-		get_copy_all(&head_struct->all, &head_struct->copy_all);
+		get_copy_all(&head_struct->all, &head_struct->copy_all, args);
 		head_struct->p_copy = &head_struct->copy_all;
 		head_struct->flag_redir = 1;
 	}
@@ -152,7 +236,7 @@ void 		redirect(t_head_struct *head_struct, char **str)
 		}
 		else
 		{
- 			if ((fd = open(str[0], O_CREAT | O_WRONLY, 0644)) < 0)  //O_CREAT
+ 			if ((fd = open(str[0], O_CREAT | O_WRONLY | O_TRUNC, 0644)) < 0)  //O_CREAT
 			{
 				//return error
 			}
@@ -179,7 +263,9 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 	int		status;
 
 	head_struct->flag_pipe = 0;
-	if (head_struct->all.spec && *(head_struct->all.spec) == '|')
+	if (head_struct->all.equal == 1)
+		add_new_env(head_struct, str);
+	else if (head_struct->all.spec && *(head_struct->all.spec) == '|')
 	{
 		head_struct->flag_pipe = 1;
 		pipe(head_struct->fd);
@@ -210,13 +296,11 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 	{
 		if (head_struct->p_copy != NULL)
 			ft_lstadd_back_arg(&head_struct->copy_all.args, args->next);
-		redirect(head_struct, str);
+		redirect(head_struct, str, args);
 	}
 	else
 	{
-		if (head_struct->all.equal == 1)
-			add_new_env(head_struct, str);
-		else if (check_cond(str[0]))
+		if (check_cond(str[0]))
 			select_cmd_two(head_struct, str, args, 1);
 		else
 			diff_cmd(head_struct, str);

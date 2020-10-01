@@ -42,6 +42,26 @@ void		all_envp(t_env **env, char **envp)
 	}
 }
 
+void	sigquit(int sig)
+{
+	sig = 9;
+	str1[ft_strlen(str1) - 1] = '\0';
+	return ;
+}
+
+void	sigint(int sig)
+{
+	sig = 9;
+	if (g_pid != 0)
+		kill(g_pid, sig);
+	if (str1 && ft_strlen(str1))
+	{
+		free(str1);
+		str1 = (char *)malloc(sizeof(char));
+		str1[0] = '\0';
+	}
+	write(1, "\nshell > ", 9);
+}
 
 
 int		main(int argc, char **argv, char **envp)
@@ -54,6 +74,9 @@ int		main(int argc, char **argv, char **envp)
 	arr = argv;
 	num = argc;
 
+
+	signal(SIGINT, sigint);
+	signal(SIGQUIT, sigquit);
 
 	t_head_struct	head_struct;
 	str1 = NULL;
@@ -83,13 +106,14 @@ int		main(int argc, char **argv, char **envp)
 	saveoutput = dup(1);
 	head_struct.p_copy = NULL;
 	head_struct.flag_redir = 0;
+	int res;
 	while (21)
 	{
 		head_struct.flag_pipe = 0;
 		dup2(saveinput, 0);
 		dup2(saveoutput, 1);
 		write(1, "shell > ", 8);
-		if ((get_next_line(0, &str1)) > 0)
+		if ((res = get_next_line(0, &str1)) > 0)
 		{
 			if (parser(str1, &arg, &head_struct) != -1)
 			{
@@ -100,6 +124,8 @@ int		main(int argc, char **argv, char **envp)
 			else
 				ft_putstr_fd("ERROR\n", 2);
 		}
+		if (res == 0)
+			exit (0);
 		//ft_push_args(&all, &list);
 		ft_lstclear_args(&head_struct.list, free);
 		head_struct.list = NULL;
