@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drina <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 21:59:29 by drina             #+#    #+#             */
-/*   Updated: 2020/07/23 15:11:10 by drina            ###   ########.fr       */
+/*   Updated: 2020/10/01 16:39:42 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,19 +69,19 @@ void			free_and_line(char **line, char *list)
 int				get_next_line(int fd, char **line)
 {
 	ssize_t		count;
-	char		list[BUFFER_SIZE + 1];
-	static char	*last_list;
 	char		*tmp;
 	char		*pointer;
+	char		list[BUFFER_SIZE + 1];
+	static char	*last_list;
 
 	count = -1;
 	if (fd < 0 || BUFFER_SIZE < 1 || !line || 0 > (read(fd, list, 0)))
 		return (-1);
 	pointer = last(&last_list, line);
-	while (!pointer && 0 <= (count = read(fd, list, BUFFER_SIZE)))
+	while (!pointer && 0 <= (count = read(fd, list, BUFFER_SIZE)) && list[0])
 	{
-		if (count == 0)
-			break ;
+		if (count == 0 && list[0])
+			continue ;
 		list[count] = '\0';
 		if ((pointer = ft_strchr_gnl(list, '\n')))
 		{
