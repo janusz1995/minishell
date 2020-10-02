@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 22:55:58 by drina             #+#    #+#             */
-/*   Updated: 2020/09/12 20:07:24 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 19:21:58 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-
+#include "../lmidori/parser.h"
 typedef struct		s_list
 {
 	void			*content;

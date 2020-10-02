@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 21:46:02 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 22:52:49 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 23:12:50 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ char		**creat_array(t_env **env)
 	i = 0;
 	tmp = *env;
 	len = env_size(tmp);
-	if (!(str = (char **)malloc(sizeof(char *) * (len + 1))))
-		return (NULL);
+	str = (char **)xmalloc(sizeof(char *) * (len + 1));
 	str[len] = NULL;
 	i = 0;
 	while (i < len)
@@ -113,4 +112,5 @@ void		print_export(t_env **env)
 		free(str[i]);
 	}
 	free(str);
+	error = 0;
 }

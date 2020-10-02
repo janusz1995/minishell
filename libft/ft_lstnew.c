@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drina <drina@marvin.42.fr>                 +#+  +:+       +#+        */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 20:10:01 by drina             #+#    #+#             */
-/*   Updated: 2020/05/07 15:33:02 by drina            ###   ########.fr       */
+/*   Updated: 2020/10/02 19:23:20 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*list;
 
-	list = (t_list *)malloc(sizeof(t_list));
-	if (!list)
-		return (NULL);
+	list = (t_list *)xmalloc(sizeof(t_list));
 	list->content = content;
 	list->next = NULL;
 	return (list);

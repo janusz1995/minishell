@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 17:46:57 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 17:47:34 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 22:41:30 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ void				cmd_echo(t_list_args *list)
 	}
 	if (!flag)
 		write(1, "\n", 1);
+	error = 0;
 }

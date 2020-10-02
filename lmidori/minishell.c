@@ -122,10 +122,17 @@ int		main(int argc, char **argv, char **envp)
 				str1 = NULL;
 			}
 			else
-				ft_putstr_fd("ERROR\n", 2);
+			{
+				if (str1)
+					free(str1);
+				str1 = NULL;
+			}
 		}
 		if (res == 0)
+		{
+			ft_putstr_fd("\n", 1);
 			exit (0);
+		}
 		//ft_push_args(&all, &list);
 		ft_lstclear_args(&head_struct.list, free);
 		head_struct.list = NULL;

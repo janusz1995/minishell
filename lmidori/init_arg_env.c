@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:55:02 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 20:57:48 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 20:04:18 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ int			str_concatenated(t_arg *arg, char *tmp1, char *tmp2)
 
 	len = arg->len - ft_strlen(tmp1) + ft_strlen(tmp2);
 	if (!(new_arg = (char *)ft_calloc(sizeof(char), (len + 1))))
-		return (-1);
+	{
+		ft_putstr_fd("Error: The memory could not be allocated\n", 1);
+		exit(2);
+	}
 	i = -1;
 	while (arg->arg[++i] != '\0')
 		new_arg[i] = arg->arg[i];
@@ -48,12 +51,9 @@ int			init_arg_env(char *str, t_arg *arg, t_env *env)
 	while (ft_isdigit(str[i]) || ft_isalpha(str[i]) || str[i] == '_')
 		i++;
 	len = i - 1;
-	if (!(tmp1 = ft_substr(str, 1, len)))
-		return (-1);
-	if (!(tmp2 = get_arg_env(tmp1, env)))
-		return (-1);
-	if (str_concatenated(arg, tmp1, tmp2) == -1)
-		return (-1);
+	tmp1 = ft_substr(str, 1, len);
+	tmp2 = get_arg_env(tmp1, env);
+	str_concatenated(arg, tmp1, tmp2);
 	i = ft_strlen(tmp1);
 	free(tmp1);
 	free(tmp2);

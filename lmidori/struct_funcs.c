@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:46:25 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 23:02:42 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 19:09:12 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int			init_struct(t_arg *arg, int len)
 {
-	if (len == -1)
-		return (-1);
 	arg->len = len;
 	if ((arg->arg = (char *)ft_calloc(sizeof(char), (len + 1))) == NULL)
-		return (-1);
+	{
+		ft_putstr_fd("Error: The memory could not be allocated\n", 1);
+		exit(2);
+	}
 	arg->arg[len] = '\0';
 	arg->j = 0;
 	return (1);
@@ -38,8 +39,6 @@ int			fool_strcut(t_all *all, t_list_args **list)
 		{
 			ft_lstadd_back_arg(&(all->args),
 				ft_lstnew_arg(tmp->content, tmp->spec_flag));
-			if (!all->args)
-				return (-1);
 			tmp = tmp->next;
 		}
 		if (tmp && tmp->spec_flag)

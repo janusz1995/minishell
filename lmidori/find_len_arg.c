@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:49:35 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 21:16:07 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 19:05:16 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,10 @@ int			len_arg(char *ptr)
 		tmp = 1;
 		tmp = check_len_quotes_slash(&i, ptr, &len);
 		if (tmp == -1)
+		{
+			ft_putstr_fd("Error: dquote\n", 1);
 			return (-1);
+		}
 		i += tmp;
 	}
 	return (len);

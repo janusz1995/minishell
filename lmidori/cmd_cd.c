@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 23:14:13 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 23:26:27 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 23:12:14 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,14 @@ void		find_pwd(t_env *head, t_env *tmp, char *oldpwd, char *str_cwd)
 	}
 }
 
+void		error_cd(char *str, int fd)
+{
+	ft_putstr_fd("minishell: cd: no such file or directory: ", fd);
+	ft_putstr_fd(str, fd);
+	ft_putstr_fd("\n", fd);
+	error = 1;
+}
+
 void		cmd_cd(char **args, t_env *head)
 {
 	char	*str_cwd;
@@ -66,7 +74,7 @@ void		cmd_cd(char **args, t_env *head)
 	oldpwd = getcwd(NULL, 0);
 	if (chdir(dir) == -1)
 	{
-		ft_putstr_fd("Error\n", 2);
+		error_cd(dir, 2);
 		return ;
 	}
 	if (!args[1])
@@ -75,4 +83,5 @@ void		cmd_cd(char **args, t_env *head)
 	find_pwd(head, tmp, oldpwd, str_cwd);
 	free(oldpwd);
 	free(str_cwd);
+	error = 0;
 }

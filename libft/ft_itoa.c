@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drina <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 21:24:13 by drina             #+#    #+#             */
-/*   Updated: 2020/05/05 21:49:32 by drina            ###   ########.fr       */
+/*   Updated: 2020/10/02 19:22:44 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ char			*ft_itoa(int c)
 
 	number = (long long)c;
 	count = num(number);
-	list = (char *)malloc((count + 1) * sizeof(char));
-	if (!list)
-		return (NULL);
+	list = (char *)xmalloc((count + 1) * sizeof(char));
 	if (number < 0)
 	{
 		list[0] = '-';

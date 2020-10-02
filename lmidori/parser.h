@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 16:39:40 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 22:38:57 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 
 char		*str1;
 pid_t		g_pid;
+int			error;
+
 
 typedef struct			s_list_args
 {
@@ -128,5 +130,6 @@ t_list_args				*ft_lstlast_arg(t_list_args *lst);
 t_env					*new_key_value(char *str, int visible);
 t_env					*lst_new_env(char *name, char *value, int visable);
 
+void					*xmalloc(size_t __size);
 
 #endif

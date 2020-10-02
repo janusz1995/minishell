@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 21:10:38 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 21:19:19 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 18:56:55 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ t_list_args		*ft_lstnew_arg(void *content, int flag)
 {
 	t_list_args	*list;
 
-	list = (t_list_args *)malloc(sizeof(t_list_args));
-	if (!list)
-		return (NULL);
+	list = (t_list_args *)xmalloc(sizeof(t_list_args));
 	list->content = content;
 	list->spec_flag = flag;
 	list->next = NULL;

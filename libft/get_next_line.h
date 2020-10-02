@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 14:44:37 by drina             #+#    #+#             */
-/*   Updated: 2020/10/01 16:39:38 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/02 19:28:03 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define BUFFER_SIZE 1
 # include <stdlib.h>
 # include <unistd.h>
+#include "../lmidori/parser.h"
 
 int		get_next_line(int fd, char **line);
 int		ft_strlen_gnl(char *list);

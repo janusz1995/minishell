@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drina <drina@marvin.42.fr>                 +#+  +:+       +#+        */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 22:03:26 by drina             #+#    #+#             */
-/*   Updated: 2020/05/06 17:45:14 by drina            ###   ########.fr       */
+/*   Updated: 2020/10/02 19:25:47 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	count = 0;
 	if (!s || !f)
 		return (NULL);
-	list = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	list = (char *)xmalloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!list)
 		return (NULL);
 	while (s[count] != '\0')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drina <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 20:14:51 by drina             #+#    #+#             */
-/*   Updated: 2020/05/05 16:41:42 by drina            ###   ########.fr       */
+/*   Updated: 2020/10/02 19:26:04 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 		while (check_symbol(s1[count], set) == 1 && s1[count] != '\0')
 			count++;
 	}
-	if (!(list = (char *)malloc(((len_s1 - count) + 1) * sizeof(char))))
+	if (!(list = (char *)xmalloc(((len_s1 - count) + 1) * sizeof(char))))
 		return (NULL);
 	while (count < len_s1)
 		list[i++] = s1[count++];

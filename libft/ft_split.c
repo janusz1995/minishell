@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drina <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 15:34:41 by drina             #+#    #+#             */
-/*   Updated: 2020/05/14 15:06:07 by drina            ###   ########.fr       */
+/*   Updated: 2020/10/02 19:24:56 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static char		**full_list(const char *s, char c, char **list, size_t count_w)
 		len_word = count;
 		while (s[len_word] != c && s[len_word] != '\0')
 			len_word++;
-		list[words] = (char *)malloc(((len_word - count) + 1) * sizeof(char));
+		list[words] = (char *)xmalloc(((len_word - count) + 1) * sizeof(char));
 		if (!list[words])
 		{
 			free_memory(list, words);
@@ -96,7 +96,7 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = words_count(s, c);
-	list = (char **)malloc((words + 1) * sizeof(char *));
+	list = (char **)xmalloc((words + 1) * sizeof(char *));
 	if (!list)
 		return (NULL);
 	list = full_list(s, c, list, words);

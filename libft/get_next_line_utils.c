@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drina <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 18:16:12 by drina             #+#    #+#             */
-/*   Updated: 2020/05/24 17:23:06 by drina            ###   ########.fr       */
+/*   Updated: 2020/10/02 19:26:20 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup_gnl(char *last_list)
 	i = 0;
 	while (last_list[i] != '\0')
 		i++;
-	if (!(array = (char *)malloc((i + 1) * sizeof(char))))
+	if (!(array = (char *)xmalloc((i + 1) * sizeof(char))))
 		return (NULL);
 	i = 0;
 	while (last_list[i] != '\0')
@@ -50,7 +50,7 @@ char	*ft_strjoin_gnl(char *line, char *list)
 
 	count = 0;
 	i = 0;
-	array = (char *)malloc(((ft_strlen_gnl(line) +
+	array = (char *)xmalloc(((ft_strlen_gnl(line) +
 					ft_strlen_gnl(list)) + 1) * sizeof(char));
 	if (!array)
 		return (NULL);
