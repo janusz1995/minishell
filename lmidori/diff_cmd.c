@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   diff_cmd.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/03 22:29:14 by lmidori           #+#    #+#             */
+/*   Updated: 2020/10/03 22:29:16 by lmidori          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "parser.h"
 
@@ -10,8 +21,8 @@ char		**init_envp(t_env *env)
 	char	*tmp2;
 
 	i = -1;
-	len = ft_lstlast_env(env);
-	array = (char **)malloc(sizeof(char *) * (len + 1));
+	len = lstsize_env(env, 1);
+	array = (char **)xmalloc(sizeof(char *) * (len + 1));
 	array[len] = NULL;
 	while (env != NULL)
 	{

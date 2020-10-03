@@ -6,11 +6,11 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 12:03:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 22:15:52 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/03 22:30:20 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "parser.h"
 
 int			read_special_char(char *str, t_list_args **list)
 {

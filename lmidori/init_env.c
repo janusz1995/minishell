@@ -6,12 +6,11 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 21:18:16 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 21:18:33 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/03 22:30:51 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
-#include "minishell.h"
 
 int			init_env(char *var, t_env **env)
 {

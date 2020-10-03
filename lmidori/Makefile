@@ -3,17 +3,14 @@
 
 NAME = minishell
 
-SRC = minishell.c add_back.c lstnew.c lst_args.c read_arg.c init_arg_env.c \
+SRC = minishell.c lst_args.c read_arg.c init_arg_env.c \
         find_len_arg.c struct_funcs.c get_env_args.c parser.c path_bin.c cmd_cd.c \
-        start_programm.c select_cmd.c diff_cmd.c lst_env.c print_export.c redact_env.c \
-        lst_new_env.c find_in_env.c check.c cmd_unset.c get_value_env.c get_name_env.c \
-        cmd_echo.c init_env.c ft_lstsize_arg.c get_arg.c cmd_export.c xmalloc.c
-
-SRCDRINA = ../drina/add_equal.c ../drina/sort_list.c ../drina/cmd_pwd.c ../drina/cmd_env.c
+        start_programm.c select_cmd.c diff_cmd.c print_export.c redact_env.c \
+        lst_env.c find_in_env.c check.c cmd_unset.c get_value_env.c get_name_env.c \
+        cmd_echo.c init_env.c get_arg.c cmd_export.c xmalloc.c cmd_exit.c \
+        add_new_env.c cmd_pwd.c cmd_env.c
 
 SRCO = $(SRC:.c=.o)
-
-SRCDRINAO = $(SRCDRINA:.c=.o)
 
 CC = gcc
 
@@ -27,8 +24,8 @@ FLAGS = -g -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME): $(SRCO) $(LIBFT) $(SRCDRINAO)
-	$(CC) -g -L$(LIBFTDIR) -lft $(SRCO) $(SRCDRINAO) -o $(NAME)
+$(NAME): $(SRCO) $(LIBFT)
+	$(CC) -g -L$(LIBFTDIR) -lft $(SRCO) -o $(NAME)
 
 $(LIBFT):
 	make -C $(LIBFTDIR)

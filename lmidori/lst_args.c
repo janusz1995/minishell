@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 21:10:38 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 18:56:55 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/03 20:01:53 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,15 @@ void			ft_lstclear_args(t_list_args **lst, void (*del)(void*))
 	}
 }
 
-void			ft_lst_print(t_list_args *list)
+int		ft_lstsize_arg(t_list_args *lst)
 {
-	ft_putstr_fd("		START LIST\n", 2);
-	while (list)
+	int	count;
+
+	count = 0;
+	while (lst != NULL)
 	{
-		ft_putstr_fd((char *)list->content, 1);
-		ft_putnbr_fd(list->spec_flag, 1);
-		write(1, "\n", 1);
-		list = list->next;
+		count++;
+		lst = lst->next;
 	}
-	ft_putstr_fd("		END LIST\n", 2);
+	return (count);
 }

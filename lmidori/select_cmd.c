@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   select_cmd.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/03 22:29:05 by lmidori           #+#    #+#             */
+/*   Updated: 2020/10/03 22:29:08 by lmidori          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "parser.h"
-#include "minishell.h"
 
 void 		start_shell(t_all *all, t_head_struct *head_struct)
 {
@@ -11,7 +21,6 @@ void 		start_shell(t_all *all, t_head_struct *head_struct)
 	str = get_arg(&(all->args));
 	if (*str[0] == '\0' && all->spec == NULL) // leak
 	{
-		free(*str);
 		free(str);
 		return;
 	}
@@ -19,149 +28,28 @@ void 		start_shell(t_all *all, t_head_struct *head_struct)
 	free(str);
 }
 
-int			add_new_env(t_head_struct *head_struct, char **str)
-{
-	t_list_args *arg;
-	int			flag;
-	int			i;
-
-	i = 0;
-	flag = 1;
-	arg = head_struct->all.args;
-	while (arg && arg->spec_flag == 2)
-	{
-		if (!(flag = check_name(arg->content, '=')))
-			break;
-		arg = arg->next;
-		i++;
-	}
-	if (!arg && (head_struct->all.spec == NULL || *head_struct->all.spec != '|'))
-	{
-		arg = head_struct->all.args;
-		while (arg != NULL)
-		{
-			if (!(init_env(arg->content, &(head_struct->env))))
-				return (-1);
-			arg = arg->next;
-		}
-	}
-	else if (!flag || arg->spec_flag != 2)
-	{
-		head_struct->all.equal = 0;
-		select_cmd(head_struct, &str[i], arg);
-	}
-	return (1);
-}
-
-long long		ft_atol_exit(const char *str)
-{
-	int				i;
-	int				sign;
-	double		number;
-	long long	out;
-
-	out = 0;
-	i = 0;
-	sign = 1;
-	number = 0;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i++] == '-')
-			sign = -1;
-	}
-	while (str[i] <= '9' && str[i] >= '0')
-		number = number * 10 + (str[i++] - '0');
-	if (number > 9223372036854775807)
-	{
-		return (256);
-	}
-	out = (long long)(number);
-	if (sign == 1)
-		out %= 256;
-	else
-		out = -(out % 256) + 256;
-	return (out);
-}
-
-void		exit_cmd(char **str)
-{
-	int		i;
-	int		minus;
-	unsigned short code;
-	minus = 0;
-	i = 0;
-	while (str[i] != NULL)
-		i++;
-	if (i == 1)
-		exit(1);
-	if (i != 2)
-		ft_putstr_fd("exit\nminishell: exit: too many arguments\n", 1);
-	else
-	{
-		i = -1;
-		if (str[1][0] =='-')
-		{
-			minus = 1;
-			i++;
-		}
-		while (str[1][++i] != '\0')
-			if (!ft_isdigit(str[1][i]))
-			{
-				i = 0;
-				break;
-			}
-		if (i == 0)
-		{
-			ft_putstr_fd("exit\nminishell: exit: ", 1);
-			ft_putstr_fd(str[1], 1);
-			ft_putstr_fd(": numeric argument required\n", 1);
-			exit (255);
-		}
-		else
-		{
-			if ((code = (unsigned short)ft_atol_exit(str[1])) == 256)
-			{
-				ft_putstr_fd("exit\nminishell: exit: ", 1);
-				ft_putstr_fd(str[1], 1);
-				ft_putstr_fd(": numeric argument required\n", 1);
-				exit (255);
-			}
-			else
-				exit (code);
-		}
-	}
-	
-}
-
-void		select_cmd_two(t_head_struct *head_struct, char **str, t_list_args *args, int flag)
+void		select_cmd_two(t_head_struct *head_struct, char **str, t_list_args *args)
 {
 	int i;
-
+	
 	i = 0;
 	if (str[0] && (ft_strncmp(str[0], "cd", ft_strlen(str[0]) + 1) == 0))
 		cmd_cd(str, head_struct->env);
 	else if (str[0] && (ft_strncmp(str[0], "pwd", ft_strlen(str[0]) + 1)) == 0)
-		cmd_pwd(head_struct->env);
+		cmd_pwd();
 	else if (str[0] && (ft_strncmp(str[0], "env", ft_strlen(str[0]) + 1) == 0))
 		cmd_env(head_struct->env);
 	else if (str[0] && (ft_strncmp(str[0], "unset", ft_strlen(str[0]) + 1) == 0))
 	{
-		if (flag)
-		{
-			while (str[i])
-				cmd_unset(&(head_struct->env), str[i++]);
-		}
-		else
-			cmd_unset(&(head_struct->env), str[1]);
+		while (str[++i])
+			cmd_unset(&(head_struct->env), str[i]);
 	}
 	else if (str[0] && (ft_strncmp(str[0], "export", ft_strlen(str[0]) + 1) == 0))
 		cmd_export(&(head_struct->env), args);
 	else if (str[0] && (ft_strncmp(str[0], "echo", ft_strlen(str[0]) + 1) == 0))
 		cmd_echo(args);
 	else if (str[0] && (ft_strncmp(str[0], "exit", ft_strlen(str[0]) + 1) == 0))
-	{
 		exit_cmd(str);
-	}
 }
 
 
@@ -282,7 +170,7 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 			dup2(head_struct->fd[1], 1);
 			close(head_struct->fd[1]);
 			if (check_cond(str[0]) == 1)
-				select_cmd_two(head_struct, str, args, 0);
+				select_cmd_two(head_struct, str, args);
 			else
 				diff_cmd(head_struct, str);
 			exit(0);
@@ -307,7 +195,7 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 	else
 	{
 		if (check_cond(str[0]))
-			select_cmd_two(head_struct, str, args, 1);
+			select_cmd_two(head_struct, str, args);
 		else
 			diff_cmd(head_struct, str);
 	}

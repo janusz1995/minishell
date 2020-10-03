@@ -6,11 +6,11 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 18:31:40 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 22:57:33 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/03 22:29:30 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "parser.h"
 
 int			export_if_in_list(t_env **envp, char *name, t_list_args *tmp)
 {

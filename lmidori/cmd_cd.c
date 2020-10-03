@@ -6,12 +6,11 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 23:14:13 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 23:12:14 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/03 22:31:27 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
-#include "minishell.h"
 
 void		replace_pwd(t_env *tmp, char *oldpwd, char *str_cwd, int *flag)
 {

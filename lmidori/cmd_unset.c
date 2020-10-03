@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 20:58:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 23:04:07 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/03 15:58:20 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void			cmd_unset(t_env **head, char *del_str)
 
 	tmp = *head;
 	next_elem = *head;
+	error = 0;
 	if (!check_name(del_str, '='))
 	{
 		error_unset(del_str);
@@ -37,7 +38,6 @@ void			cmd_unset(t_env **head, char *del_str)
 		next_elem = next_elem->next;
 	if (next_elem == NULL)
 	{
-		error = 0;
 		return ;
 	}
 	while (tmp && ft_strncmp(tmp->next->key_value[0],

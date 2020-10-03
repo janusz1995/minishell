@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_arg.c                                   :+:      :+:    :+:   */
+/*   cmd_env.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/01 21:16:23 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 21:16:25 by lmidori          ###   ########.fr       */
+/*   Created: 2020/10/03 19:53:24 by lmidori           #+#    #+#             */
+/*   Updated: 2020/10/03 22:31:22 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int		ft_lstsize_arg(t_list_args *lst)
+void		cmd_env(t_env *head)
 {
-	int	count;
+	t_env *tmp;
 
-	count = 0;
-	while (lst != NULL)
+	tmp = head;
+	while (tmp != NULL)
 	{
-		count++;
-		lst = lst->next;
+		if (tmp->visible == 1)
+		{
+			ft_putstr_fd( tmp->key_value[0], 1);
+			write(1, "=" , 1);
+			ft_putstr_fd( tmp->key_value[1], 1);
+			write(1, "\n" , 1);
+		}
+		tmp = tmp->next;
 	}
-	return (count);
+	error = 0;
 }

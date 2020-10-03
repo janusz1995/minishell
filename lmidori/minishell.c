@@ -1,46 +1,16 @@
-#include "minishell.h"
-#include "../Drina/minishelldrina.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/03 22:27:57 by lmidori           #+#    #+#             */
+/*   Updated: 2020/10/03 22:27:58 by lmidori          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_env		*new_key_value(char *str, int visible)
-{
-	t_env	*new_elem;
-	int		count;
-
-	new_elem = (t_env*)malloc(sizeof(t_env));
-	if (!new_elem)
-		return (NULL);
-	count = 0;
-	while (str[count] != '\0' && str[count] != '=')
-		count++;
-	str[count] = '\0';
-	if (!(new_elem->key_value = (char **)malloc(sizeof(char *) * 3)))
-		return (NULL);
-	new_elem->key_value[0] = ft_strdup(str);
-	if (str[count + 1] == '\0')
-		new_elem->key_value[1] = ft_strdup("");
-	else
-		new_elem->key_value[1] = ft_strdup(&str[count + 1]);
-	new_elem->key_value[2] = NULL;
-	new_elem->visible = visible;
-	new_elem->next = NULL;
-	return (new_elem);
-}
-
-void		all_envp(t_env **env, char **envp)
-{
-	int i;
-	int	flag;
-
-	i = 0;
-	flag = 0;
-	while (envp[i] != NULL)
-	{
-		if (ft_strncmp("OLDPWD", envp[i], 6) == 0)
-			flag = 1;
-		add_back(env, new_key_value(envp[i], 1));
-		i++;
-	}
-}
+#include "parser.h"
 
 void	sigquit(int sig)
 {

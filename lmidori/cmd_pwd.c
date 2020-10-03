@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_back.c                                         :+:      :+:    :+:   */
+/*   cmd_pwd.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/01 17:45:33 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 17:45:53 by lmidori          ###   ########.fr       */
+/*   Created: 2020/10/03 19:52:51 by lmidori           #+#    #+#             */
+/*   Updated: 2020/10/03 22:31:11 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "parser.h"
 
-void	add_back(t_env **head, t_env *new)
+void 		cmd_pwd(void)
 {
-	t_env	*save_head;
+	char	*pwd;
 
-	save_head = (*head);
-	if (save_head == NULL)
-		(*head) = new;
-	else
-	{
-		while (save_head->next != NULL)
-			save_head = save_head->next;
-		save_head->next = new;
-	}
+	pwd = getcwd(NULL, 0);
+	ft_putstr_fd(pwd, 1);
+	write(1, "\n", 1);
+	free(pwd);
+	error = 0;
 }

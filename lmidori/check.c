@@ -6,28 +6,13 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 17:46:07 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/01 17:46:34 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/03 22:55:36 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int			check_name(char *var, char ch)
-{
-	int		i;
-
-	if (!ft_isalpha(var[0]) && var[0] != '_')
-		return (0);
-	i = -1;
-	while (var[++i] != ch && var[i] != '\0')
-	{
-		if (!ft_isdigit(var[i]) && !ft_isalpha(var[i]) && var[i] != '_')
-			return (0);
-	}
-	return (i);
-}
-
-int			check_cond(char *str)
+int		check_cond(char *str)
 {
 	return ((ft_strncmp(str, "cd", ft_strlen(str) + 1) == 0) ||
 			(ft_strncmp(str, "pwd", ft_strlen(str) + 1) == 0) ||

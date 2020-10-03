@@ -6,27 +6,11 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 21:46:02 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 23:12:50 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/03 21:14:58 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
-
-int			env_size(t_env *env)
-{
-	t_env	*tmp;
-	int		i;
-
-	i = 0;
-	tmp = env;
-	while (tmp != NULL)
-	{
-		if (tmp->visible != 0)
-			i++;
-		tmp = tmp->next;
-	}
-	return (i);
-}
 
 void		sort_array(char **str, int len)
 {
@@ -61,7 +45,7 @@ char		**creat_array(t_env **env)
 
 	i = 0;
 	tmp = *env;
-	len = env_size(tmp);
+	len = lstsize_env(tmp, 1);
 	str = (char **)xmalloc(sizeof(char *) * (len + 1));
 	str[len] = NULL;
 	i = 0;
