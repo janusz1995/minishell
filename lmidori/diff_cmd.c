@@ -6,19 +6,19 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:29:14 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/03 22:29:16 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/05 22:14:35 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-char		**init_envp(t_env *env)
+char				**init_envp(t_env *env)
 {
-	int		len;
-	char	**array;
-	int		i;
-	char	*tmp1;
-	char	*tmp2;
+	int				len;
+	char			**array;
+	int				i;
+	char			*tmp1;
+	char			*tmp2;
 
 	i = -1;
 	len = lstsize_env(env, 1);
@@ -30,7 +30,7 @@ char		**init_envp(t_env *env)
 		{
 			tmp1 = ft_strjoin(env->key_value[0], "=");
 			tmp2 = ft_strjoin(tmp1, env->key_value[1]);
-			free (tmp1);
+			free(tmp1);
 			array[++i] = tmp2;
 		}
 		env = env->next;
@@ -38,37 +38,66 @@ char		**init_envp(t_env *env)
 	return (array);
 }
 
-void				diff_cmd(t_head_struct *head_struct, char **str2)
+void				clear_double_array(char **str)
 {
+	int				i;
+
+	i = -1;
+	while (str[++i] != NULL)
+		free(str[i]);
+	free(str);
+	str = NULL;
+	return ;
+}
+
+int					diff_in_path(t_head_struct *head_struct,
+						char **envp, char **str2)
+{
+	int				i;
 	DIR				*dir;
 	struct dirent	*entry;
-	int				i;
-	int				flag;
-	char			**envp;
 
-	envp = init_envp(head_struct->env);
 	i = 0;
-	flag = 0;
-	while (head_struct->bin[i])
+	while (head_struct->bin && head_struct->bin[i])
 	{
 		dir = opendir(head_struct->bin[i]);
 		while ((entry = readdir(dir)) != NULL)
 		{
-			if ((ft_strncmp(str2[0], entry->d_name, ft_strlen(str2[0]) + 1)) == 0)
+			if ((ft_strncmp(str2[0], entry->d_name,
+				ft_strlen(str2[0]) + 1)) == 0)
 			{
 				if (head_struct->flag_pipe == 1)
 					start_programm_pipe(head_struct->bin[i], envp, str2);
 				else
 					start_programm(head_struct->bin[i], envp, str2);
-				flag = 1;
-				break ;
+				closedir(dir);
+				return (1);
 			}
 		}
 		closedir(dir);
 		i++;
-		if (flag)
-			break ;
 	}
+	return (0);
+}
+
+void				diff_cmd(t_head_struct *head_struct, char **str2)
+{
+	DIR				*dir;
+	struct dirent	*entry;
+	int				flag;
+	char			**envp;
+
+	envp = init_envp(head_struct->env);
+	if (head_struct->bin)
+		clear_double_array(head_struct->bin);
+	head_struct->bin = path_bin(&(head_struct->env));
+	flag = diff_in_path(head_struct, envp, str2);
+	clear_double_array(envp);
 	if (flag == 0)
-		start_programm(head_struct->bin[i], envp, str2);
+	{
+		if (ft_strchr(str2[0], '/') != NULL)
+			error_directory_diff(str2[0]);
+		else
+			error_command_diff(str2[0]);
+	}
 }

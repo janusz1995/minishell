@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 21:46:02 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/03 21:14:58 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/05 22:58:20 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,4 @@ void		print_export(t_env **env)
 		free(str[i]);
 	}
 	free(str);
-	error = 0;
 }

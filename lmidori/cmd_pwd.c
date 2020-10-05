@@ -6,13 +6,13 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 19:52:51 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/03 22:31:11 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/05 23:29:48 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-void 		cmd_pwd(void)
+void		cmd_pwd(void)
 {
 	char	*pwd;
 

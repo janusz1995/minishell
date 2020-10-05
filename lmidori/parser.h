@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/03 23:16:31 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/05 23:33:50 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@
 # include <dirent.h>
 # include <sys/stat.h>
 # include <signal.h>
+# include <errno.h>
+# include <string.h>
 
 char		*str1;
 pid_t		g_pid;
 int			error;
-
 
 typedef struct			s_list_args
 {
@@ -64,10 +65,9 @@ typedef struct			s_head_struct
 	t_all				copy_all;
 	t_all				*p_copy;
 	t_list_args			*list;
-	int 				fd[2];
+	int					fd[2];
 	int					flag_pipe;
-	int 				flag_redir;
-
+	int					flag_redir;
 }						t_head_struct;
 
 int						check_name(char *var, char ch);
@@ -78,7 +78,7 @@ void					error_cd(char *str, int fd);
 void					cmd_cd(char **args, t_env *head);
 void					cmd_echo(t_list_args *list);
 void					cmd_env(t_env *head);
-void					*xmalloc(size_t __size);
+void					*xmalloc(size_t len);
 int						init_struct(t_arg *arg, int len);
 int						fool_strcut(t_all *all, t_list_args **list);
 void					ft_init_struct(t_all *all);
@@ -144,5 +144,10 @@ char					*get_name_env(char *var, char ch);
 int						check_cond(char *str);
 void					error_directory_diff(char *dir);
 void					error_command_diff(char *cmd);
+void					error_fork(void);
+int						find_env(t_head_struct *head_struct);
+char					*init_full_path(char *path_bin, char *cmd_arg);
+void					clear_double_array(char **str);
+int						diff_in_path(t_head_struct *head_struct, char **envp, char **str2);
 
 #endif

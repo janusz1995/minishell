@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:27:57 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/03 22:27:58 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/05 16:09:37 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int		main(int argc, char **argv, char **envp)
 	head_struct.p_copy = NULL;
 	head_struct.flag_redir = 0;
 	int res;
+	error = 0;
 	while (21)
 	{
 		head_struct.flag_pipe = 0;

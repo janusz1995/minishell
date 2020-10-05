@@ -6,16 +6,16 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 21:19:40 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/03 22:29:01 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/05 23:27:10 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-t_env		*new_key_value(char *str, int visible)
+t_env				*new_key_value(char *str, int visible)
 {
-	t_env	*new_elem;
-	int		count;
+	t_env			*new_elem;
+	int				count;
 
 	new_elem = (t_env*)malloc(sizeof(t_env));
 	if (!new_elem)
@@ -37,10 +37,10 @@ t_env		*new_key_value(char *str, int visible)
 	return (new_elem);
 }
 
-void		all_envp(t_env **env, char **envp)
+void				all_envp(t_env **env, char **envp)
 {
-	int i;
-	int	flag;
+	int				i;
+	int				flag;
 
 	i = 0;
 	flag = 0;
@@ -53,9 +53,9 @@ void		all_envp(t_env **env, char **envp)
 	}
 }
 
-void	add_back(t_env **head, t_env *new)
+void				add_back(t_env **head, t_env *new)
 {
-	t_env	*save_head;
+	t_env			*save_head;
 
 	save_head = (*head);
 	if (save_head == NULL)
@@ -68,9 +68,9 @@ void	add_back(t_env **head, t_env *new)
 	}
 }
 
-int		lstsize_env(t_env *lst, int flag)
+int					lstsize_env(t_env *lst, int flag)
 {
-	int	len;
+	int				len;
 
 	len = 0;
 	if (!lst)
@@ -84,9 +84,9 @@ int		lstsize_env(t_env *lst, int flag)
 	return (len);
 }
 
-t_env		*lst_new_env(char *name, char *value, int visable)
+t_env				*lst_new_env(char *name, char *value, int visable)
 {
-	t_env	*tmp;
+	t_env			*tmp;
 
 	if (!(tmp = (t_env *)malloc(sizeof(t_env))))
 		return (NULL);
