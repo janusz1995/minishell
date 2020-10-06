@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 20:58:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/05 23:25:01 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/06 19:00:29 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void			error_unset(char *name)
 	ft_putstr_fd("minishell: unset: `", 1);
 	ft_putstr_fd(name, 1);
 	ft_putstr_fd("': not a valid identifier\n", 1);
-	error = 1;
+	g_error = 1;
 }
 
 void			cmd_unset(t_env **head, char *del_str)
@@ -27,7 +27,7 @@ void			cmd_unset(t_env **head, char *del_str)
 
 	tmp = *head;
 	next_elem = *head;
-	error = 0;
+	g_error = 0;
 	if (!check_name(del_str, '='))
 	{
 		error_unset(del_str);

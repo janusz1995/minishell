@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 21:16:35 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 22:23:30 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/06 19:20:52 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char			**get_arg(t_list_args **list)
 	str = (char**)xmalloc(sizeof(char*) * (len_list + i + 1));
 	if (len_list == 0)
 	{
-		str[len_list] = "";
+		str[len_list] = ft_strdup("");
 		str[i] = NULL;
 	}
 	else

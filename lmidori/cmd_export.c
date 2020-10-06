@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 18:31:40 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/05 23:21:00 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/06 19:01:08 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		error_export(char *name)
 	ft_putstr_fd("minishell: export: `", 1);
 	ft_putstr_fd(name, 1);
 	ft_putstr_fd("': not a valid identifier\n", 1);
-	error = 1;
+	g_error = 1;
 }
 
 void		cmd_export(t_env **envp, t_list_args *args)
@@ -64,7 +64,7 @@ void		cmd_export(t_env **envp, t_list_args *args)
 	char			*name;
 
 	tmp = args->next;
-	error = 0;
+	g_error = 0;
 	if (!args->next)
 		print_export(envp);
 	else

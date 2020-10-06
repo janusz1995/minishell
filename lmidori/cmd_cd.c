@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 23:14:13 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/03 22:31:27 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/06 18:59:39 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		error_cd(char *str, int fd)
 	ft_putstr_fd("minishell: cd: no such file or directory: ", fd);
 	ft_putstr_fd(str, fd);
 	ft_putstr_fd("\n", fd);
-	error = 1;
+	g_error = 1;
 }
 
 void		cmd_cd(char **args, t_env *head)
@@ -66,6 +66,7 @@ void		cmd_cd(char **args, t_env *head)
 	char	*oldpwd;
 
 	tmp = head;
+	g_error = 0;
 	if (args[1] == NULL)
 		dir = get_home_dir(head);
 	else
@@ -82,5 +83,4 @@ void		cmd_cd(char **args, t_env *head)
 	find_pwd(head, tmp, oldpwd, str_cwd);
 	free(oldpwd);
 	free(str_cwd);
-	error = 0;
 }

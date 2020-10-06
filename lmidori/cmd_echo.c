@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 17:46:57 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 22:41:30 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/06 19:00:57 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void				cmd_echo(t_list_args *list)
 	int				flag;
 
 	flag = 0;
+	g_error = 0;
 	tmp = list->next;
 	if (tmp && ft_strncmp(tmp->content, "-n", ft_strlen(tmp->content) + 1) == 0)
 	{
@@ -33,5 +34,4 @@ void				cmd_echo(t_list_args *list)
 	}
 	if (!flag)
 		write(1, "\n", 1);
-	error = 0;
 }

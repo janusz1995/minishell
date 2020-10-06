@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/05 23:33:50 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/06 21:37:00 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
 # include <errno.h>
 # include <string.h>
 
-char		*str1;
-pid_t		g_pid;
-int			error;
+char					*g_str1;
+pid_t					g_pid;
+int						g_error;
 
 typedef struct			s_list_args
 {
@@ -53,7 +53,7 @@ typedef struct			s_arg
 typedef struct			s_env
 {
 	char				**key_value;
-	int 				visible;
+	int					visible;
 	struct s_env		*next;
 }						t_env;
 
@@ -72,8 +72,10 @@ typedef struct			s_head_struct
 
 int						check_name(char *var, char ch);
 int						add_new_env(t_head_struct *head_struct, char **str);
-void					replace_pwd(t_env *tmp, char *oldpwd, char *str_cwd, int *flag);
-void					find_pwd(t_env *head, t_env *tmp, char *oldpwd, char *str_cwd);
+void					replace_pwd(t_env *tmp, char *oldpwd,
+									char *str_cwd, int *flag);
+void					find_pwd(t_env *head, t_env *tmp,
+									char *oldpwd, char *str_cwd);
 void					error_cd(char *str, int fd);
 void					cmd_cd(char **args, t_env *head);
 void					cmd_echo(t_list_args *list);
@@ -83,18 +85,26 @@ int						init_struct(t_arg *arg, int len);
 int						fool_strcut(t_all *all, t_list_args **list);
 void					ft_init_struct(t_all *all);
 void					ft_clear_strcut(t_all *all);
-void					start_programm_pipe(char *path_bin, char **env, char **cmd_arg);
-void 					start_programm(char *path_bin, char **env, char **cmd_arg);
-void 					start_shell(t_all *all, t_head_struct *head_struct);
-void					select_cmd_two(t_head_struct *head_struct, char **str, t_list_args *args);
-void					get_copy_all(t_all *all, t_all *copy_all, t_list_args *args);
-void 					redirect(t_head_struct *head_struct, char **str, t_list_args *args);
-void 					select_cmd(t_head_struct *head_struct, char **str, t_list_args *args);
+int						start_programm_pipe(char *path_bin,
+									char **env, char **cmd_arg);
+int						start_programm(char *path_bin, char **env,
+										char **cmd_arg);
+void					start_shell(t_all *all, t_head_struct *head_struct);
+void					select_cmd_two(t_head_struct *head_struct,
+										char **str, t_list_args *args);
+void					get_copy_all(t_all *all, t_all *copy_all,
+										t_list_args *args);
+void					redirect(t_head_struct *head_struct,
+									char **str, t_list_args *args);
+void					select_cmd(t_head_struct *head_struct,
+									char **str, t_list_args *args);
 int						redact_env(t_env **envp, char *name, char *value);
 int						init_arg_quotes(char *str, t_arg *arg, t_env *env);
 int						init_tilde(char *str, t_arg *arg, t_env *env);
-int						init_quotes_slash(char *str, int *i, t_arg *arg, t_env *env);
-int						read_arg(char *str, t_arg *arg, t_env *env, t_list_args **list);
+int						init_quotes_slash(char *str, int *i,
+									t_arg *arg, t_env *env);
+int						read_arg(char *str, t_arg *arg,
+									t_env *env, t_list_args **list);
 void					sort_array(char **str, int len);
 char					**creat_array(t_env **env);
 void					print_vatible(t_env *tmp);
@@ -102,7 +112,8 @@ void					print_export(t_env **env);
 char					**path_bin(t_env **head);
 int						read_special_char(char *str, t_list_args **list);
 void					init_head_struct(t_head_struct *head_struct);
-int						parser(char *str, t_arg *arg, t_head_struct *head_struct);
+int						parser(char *str, t_arg *arg,
+								t_head_struct *head_struct);
 void					sigquit(int sig);
 void					sigint(int sig);
 t_env					*new_key_value(char *str, int visible);
@@ -131,9 +142,11 @@ char					**init_envp(t_env *env);
 void					diff_cmd(t_head_struct *head_struct, char **str2);
 void					error_unset(char *name);
 void					cmd_unset(t_env **head, char *del_str);
-void 					cmd_pwd(void);
-int						export_if_in_list(t_env **envp, char *name, t_list_args *tmp);
-int						export_if_not_in_list(t_env **envp, char *name, t_list_args *tmp);
+void					cmd_pwd(void);
+int						export_if_in_list(t_env **envp, char *name,
+											t_list_args *tmp);
+int						export_if_not_in_list(t_env **envp, char *name,
+											t_list_args *tmp);
 void					error_export(char *name);
 void					cmd_export(t_env **envp, t_list_args *args);
 long long				ft_atol_exit(const char *str);
@@ -148,6 +161,8 @@ void					error_fork(void);
 int						find_env(t_head_struct *head_struct);
 char					*init_full_path(char *path_bin, char *cmd_arg);
 void					clear_double_array(char **str);
-int						diff_in_path(t_head_struct *head_struct, char **envp, char **str2);
+int						diff_in_path(t_head_struct *head_struct,
+									char **envp, char **str2);
+int						check_stat(char **cmd_arg, char *tmp);
 
 #endif

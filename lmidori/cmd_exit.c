@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 18:16:00 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/03 18:25:16 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/06 19:01:31 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int					check_args_exit(char **str)
 	if (i != 2)
 	{
 		ft_putstr_fd("exit\nminishell: exit: too many arguments\n", 1);
-		error = 1;
+		g_error = 1;
 		return (0);
 	}
 	return (1);
@@ -71,7 +71,7 @@ void				exit_cmd(char **str)
 	int				i;
 	unsigned short	code;
 
-	error = 0;
+	g_error = 0;
 	i = -1;
 	if (!check_args_exit(str))
 		return ;
@@ -84,7 +84,7 @@ void				exit_cmd(char **str)
 		error_exit(str);
 	else
 	{
-		error = code;
+		g_error = code;
 		exit(code);
 	}
 }
