@@ -8,11 +8,11 @@ SRC = minishell.c lst_args.c read_arg.c init_arg_env.c \
         start_programm.c select_cmd.c diff_cmd.c print_export.c redact_env.c \
         lst_env.c find_in_env.c check.c cmd_unset.c get_value_env.c get_name_env.c \
         cmd_echo.c get_arg.c cmd_export.c xmalloc.c cmd_exit.c \
-        add_new_env.c cmd_pwd.c cmd_env.c start_errors.c
+        add_new_env.c cmd_pwd.c cmd_env.c start_errors.c double_spec.c
 
 SRCO = $(SRC:.c=.o)
 
-CC = gcc
+CC = gcc -g
 
 LIBFT = $(LIBFTDIR)libft.a
 
@@ -20,7 +20,7 @@ LIBFTDIR = ../libft/
 
 HEADER = minishell.h
 
-FLAGS = -g -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 18:31:40 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/06 19:01:08 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/08 21:00:05 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,7 @@ void		cmd_export(t_env **envp, t_list_args *args)
 		while (tmp)
 		{
 			if (!(name = get_name_env(tmp->content, '=')))
-			{
 				error_export(tmp->content);
-				tmp = tmp->next;
-				continue;
-			}
 			else if (find_in_env(envp, name))
 			{
 				if (!export_if_in_list(envp, name, tmp))
@@ -83,7 +79,8 @@ void		cmd_export(t_env **envp, t_list_args *args)
 			}
 			else if (!export_if_not_in_list(envp, name, tmp))
 				return ;
-			free(name);
+			if (name != NULL)
+				free(name);
 			tmp = tmp->next;
 		}
 }

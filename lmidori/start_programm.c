@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:29:19 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/06 21:40:37 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/08 21:33:54 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ char		*init_full_path(char *path_bin, char *cmd_arg)
 int			check_stat(char **cmd_arg, char *tmp)
 {
 	struct stat st;
-	
+
 	stat(tmp, &st);
-	if (!(S_ISREG(st.st_mode) == 1 && (st.st_mode & S_IXUSR))) 
+	if (!(S_ISREG(st.st_mode) == 1 && (st.st_mode & S_IXUSR)))
 	{
 		if (!(S_ISREG(st.st_mode)))
 		{
@@ -52,6 +52,32 @@ int			check_stat(char **cmd_arg, char *tmp)
 		return (0);
 	}
 	return (-1);
+}
+
+int			exec_fork(char **cmd_arg, char **env, char *tmp)
+{
+	pid_t	wait_pid;
+	int		status;
+
+	if ((g_pid = fork()) < 0)
+		error_fork();
+	else if (g_pid == 0)
+	{
+		if ((status = execve(tmp, cmd_arg, env)) == -1)
+		{
+			if (ft_strchr(cmd_arg[0], '/') != NULL)
+				error_directory_diff(cmd_arg[0]);
+			else
+				error_command_diff(cmd_arg[0]);
+			exit(WEXITSTATUS(status));
+		}
+	}
+	else
+	{
+		wait_pid = waitpid(g_pid, &status, WUNTRACED);
+		g_error = WEXITSTATUS(status);
+	}
+	return (1);
 }
 
 int			start_programm_pipe(char *path_bin, char **env, char **cmd_arg)
@@ -75,36 +101,15 @@ int			start_programm_pipe(char *path_bin, char **env, char **cmd_arg)
 	return (WEXITSTATUS(status));
 }
 
-
 int			start_programm(char *path_bin, char **env, char **cmd_arg)
 {
-	pid_t	pid;
-	pid_t	wait_pid;
 	char	*tmp;
-	int		status;
 	int		flag;
 
 	tmp = init_full_path(path_bin, cmd_arg[0]);
 	if ((flag = check_stat(cmd_arg, tmp)) != -1)
 		return (flag);
-	if ((pid = fork()) < 0)
-		error_fork();
-	else if (pid == 0)
-	{
-		if ((status = execve(tmp, cmd_arg, env)) == -1)
-		{
-			if (ft_strchr(cmd_arg[0], '/') != NULL)
-				error_directory_diff(cmd_arg[0]);
-			else
-				error_command_diff(cmd_arg[0]);
-			exit(WEXITSTATUS(status));
-		}
-	}
-	else
-	{
-		wait_pid = waitpid(pid, &status, WUNTRACED);
-		g_error = WEXITSTATUS(status);
-	}
+	exec_fork(cmd_arg, env, tmp);
 	free(tmp);
 	return (1);
 }

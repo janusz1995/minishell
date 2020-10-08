@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/06 21:37:00 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/08 23:25:21 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,5 +164,16 @@ void					clear_double_array(char **str);
 int						diff_in_path(t_head_struct *head_struct,
 									char **envp, char **str2);
 int						check_stat(char **cmd_arg, char *tmp);
+
+int						check_double_spec(char *str);
+int						skip_only_spaces(char *str);
+int						exec_if_in_bin(t_head_struct *head_struct,
+							char **envp, char **str2);
+int						check_empty_right(char *spec, char ch2);
+int						check_empty_left(char *str,
+							char ch1, char ch2, char *spec);
+int						skip_all_without_spec(char *str, char *ch, char *spec);
+void					error_spec(char *spec);
+int						exec_fork(char **cmd_arg, char **env, char *tmp);
 
 #endif

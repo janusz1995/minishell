@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:49:35 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 19:05:16 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/08 17:11:43 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*skip_spaces(char *ptr)
 {
-	while (*ptr == ' ')
+	while (*ptr == ' ' || *ptr == '\t')
 		ptr++;
 	return (ptr);
 }

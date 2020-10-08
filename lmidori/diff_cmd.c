@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:29:14 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/06 21:04:50 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/08 20:48:40 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,12 @@ void				clear_double_array(char **str)
 	return ;
 }
 
-int					diff_in_path(t_head_struct *head_struct,
+int					exec_if_in_bin(t_head_struct *head_struct,
 						char **envp, char **str2)
 {
-	int				i;
 	DIR				*dir;
+	int				i;
 	struct dirent	*entry;
-	int				flag;
-	char			*tmp;
 
 	i = 0;
 	while (head_struct->bin && head_struct->bin[i])
@@ -79,6 +77,17 @@ int					diff_in_path(t_head_struct *head_struct,
 		closedir(dir);
 		i++;
 	}
+	return (0);
+}
+
+int					diff_in_path(t_head_struct *head_struct,
+						char **envp, char **str2)
+{
+	int				flag;
+	char			*tmp;
+
+	if (exec_if_in_bin(head_struct, envp, str2))
+		return (1);
 	tmp = str2[0][0] == '.' ? "." : "";
 	if (head_struct->flag_pipe == 1)
 		flag = start_programm_pipe(tmp, envp, str2);
