@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:27:57 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/08 16:47:09 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/09 23:07:55 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,20 @@
 
 void	sigquit(int sig)
 {
-	sig = 9;
 	g_str1[ft_strlen(g_str1) - 1] = '\0';
+	write(1, "\nshell > ", 8);
 	return ;
 }
 
 void	sigint(int sig)
 {
-	sig = 9;
-	if (g_pid != 0)
-		kill(g_pid, sig);
 	if (g_str1 && ft_strlen(g_str1))
 	{
 		free(g_str1);
 		g_str1 = (char *)malloc(sizeof(char));
 		g_str1[0] = '\0';
 	}
-	write(1, "\nshell > ", 9);
+	write(1, "\nshell > ", 8);
 }
 
 
@@ -47,7 +44,7 @@ int		main(int argc, char **argv, char **envp)
 
 	signal(SIGINT, sigint);
 	signal(SIGQUIT, sigquit);
-
+	// signal(SIGQUIT, SIG_IGN);
 	t_head_struct	head_struct;
 	str1 = NULL;
 	head_struct.env = NULL;

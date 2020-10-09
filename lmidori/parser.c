@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 12:03:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/08 20:00:01 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/09 20:15:13 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			parser(char *str, t_arg *arg, t_head_struct *head_struct)
 	int		len;
 
 	init_head_struct(head_struct);
-	if (!check_double_spec(str))
+	if (*str != '\0' && !check_double_spec(str))
 	{
 		return (-1);
 	}

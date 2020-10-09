@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:29:19 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/08 21:33:54 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/09 23:25:17 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,14 @@ int			exec_fork(char **cmd_arg, char **env, char *tmp)
 	pid_t	wait_pid;
 	int		status;
 
+	signal(SIGINT, SIG_IGN);
+	signal(SIGQUIT, SIG_IGN);
 	if ((g_pid = fork()) < 0)
 		error_fork();
 	else if (g_pid == 0)
 	{
+		signal(SIGINT, SIG_DFL);
+		signal(SIGQUIT, SIG_DFL);
 		if ((status = execve(tmp, cmd_arg, env)) == -1)
 		{
 			if (ft_strchr(cmd_arg[0], '/') != NULL)
@@ -75,6 +79,9 @@ int			exec_fork(char **cmd_arg, char **env, char *tmp)
 	else
 	{
 		wait_pid = waitpid(g_pid, &status, WUNTRACED);
+		printf("%d\n", WEXITSTATUS(status));
+		signal(SIGINT, sigint);
+		signal(SIGQUIT, sigquit);
 		g_error = WEXITSTATUS(status);
 	}
 	return (1);

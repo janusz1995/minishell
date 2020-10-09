@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 19:53:24 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/06 19:02:06 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/09 20:05:21 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		cmd_env(t_env *head)
 	g_error = 0;
 	while (tmp != NULL)
 	{
-		if (tmp->visible == 1)
+		if (tmp->visible == 1 && tmp->key_value[1] != NULL)
 		{
 			ft_putstr_fd(tmp->key_value[0], 1);
 			write(1, "=", 1);
