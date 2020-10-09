@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: pony <pony@student.21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
 /*   Updated: 2020/09/22 17:48:50 by lmidori          ###   ########.fr       */
