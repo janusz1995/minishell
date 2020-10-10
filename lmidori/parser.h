@@ -167,7 +167,7 @@ int						len_spaces(char *str);
 void					error_spec(char *spec);
 int						check_special(char *str, char *spec, int *i);
 int						check_double_spec(char *str);
-
+void					flows_change(t_head_struct *head_struct);
 
 
 int						check_cond(char *str);

@@ -33,10 +33,9 @@ void	sigint(int sig)
 void	init(t_head_struct *head_struct, char **envp)
 {
 	signal(SIGINT, sigint);
-	signal (SIGINT, SIG_DFL);
+	signal(SIGINT, SIG_DFL);
 	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, sigquit);
-
 	head_struct->env = NULL;
 	head_struct->list = NULL;
 	head_struct->new_args = NULL;
@@ -44,19 +43,41 @@ void	init(t_head_struct *head_struct, char **envp)
 	head_struct->envp = NULL;
 	head_struct->last_spec = NULL;
 	head_struct->flag_error = 0;
-
 	all_envp(&(head_struct->env), envp);
 	head_struct->bin = path_bin(&(head_struct->env));
-
 	head_struct->saveinput = dup(0);
 	head_struct->saveoutput = dup(1);
 	head_struct->flag_redir = 0;
 	g_error = 0;
 }
 
+void	gnl_and_parser(t_head_struct *head_struct, t_arg *arg)
+{
+	int res;
+
+	if ((res = get_next_line(0, &g_str1)) > 0)
+	{
+		if (parser(g_str1, arg, head_struct) != -1)
+		{
+			free(g_str1);
+			g_str1 = NULL;
+		}
+		else
+		{
+			if (g_str1)
+				free(g_str1);
+			g_str1 = NULL;
+		}
+	}
+	if (res == 0)
+	{
+		ft_putstr_fd("\n", 1);
+		exit(0);
+	}
+}
+
 int		main(int argc, char **argv, char **envp)
 {
-	char			*str1;
 	char			**arr;
 	int				num;
 	int				res;
@@ -65,43 +86,17 @@ int		main(int argc, char **argv, char **envp)
 
 	arr = argv;
 	num = argc;
-
-	str1 = NULL;
 	init(&head_struct, envp);
 	while (21)
 	{
 		head_struct.flag_pipe = 0;
-		dup2(head_struct.saveinput, 0);
-		dup2(head_struct.saveoutput, 1);
+		flows_change(&head_struct);
 		write(1, "shell > ", 8);
-		if ((res = get_next_line(0, &g_str1)) > 0)
-		{
-			if (parser(g_str1, &arg, &head_struct) != -1)
-			{
-				free(g_str1);
-				g_str1 = NULL;
-			}
-			else
-			{
-				if (g_str1)
-					free(g_str1);
-				g_str1 = NULL;
-			}
-		}
-		if (res == 0)
-		{
-			ft_putstr_fd("\n", 1);
-			exit (0);
-		}
+		gnl_and_parser(&head_struct, &arg);
 		ft_lstclear_args(&head_struct.list, free);
 		head_struct.list = NULL;
-<<<<<<< HEAD
-
-=======
->>>>>>> bda289e7d0a7afff83d3395abc81fa8742ab18f9
 	}
-	dup2(head_struct.saveinput, 0);
-	dup2(head_struct.saveoutput, 1);
+	flows_change(&head_struct);
 	close(head_struct.saveinput);
 	close(head_struct.saveoutput);
 	return (1);
