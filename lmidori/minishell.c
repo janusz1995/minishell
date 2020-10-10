@@ -30,57 +30,44 @@ void	sigint(int sig)
 	write(1, "\nshell > ", 8);
 }
 
-
-int		main(int argc, char **argv, char **envp)
+void	init(t_head_struct *head_struct, char **envp)
 {
-	char *str1;
-	char **arr;
-	int num;
-	t_arg arg;
-	
-	arr = argv;
-	num = argc;
-
-
 	signal(SIGINT, sigint);
 	signal (SIGINT, SIG_DFL);
 	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, sigquit);
-	// signal(SIGQUIT, SIG_IGN);
-	t_head_struct	head_struct;
-	str1 = NULL;
-	head_struct.env = NULL;
-	head_struct.list = NULL;
-	head_struct.new_args = NULL;
-	head_struct.copy_all = NULL;
-	head_struct.envp = NULL;
-	head_struct.last_spec = NULL;
-	head_struct.flag_error = 0;
-	// head_struct.list->next = NULL;
-	// head_struct.list->content = NULL;
 
-	//home = NULL;
+	head_struct->env = NULL;
+	head_struct->list = NULL;
+	head_struct->new_args = NULL;
+	head_struct->copy_all = NULL;
+	head_struct->envp = NULL;
+	head_struct->last_spec = NULL;
+	head_struct->flag_error = 0;
 
-	// t_all all;
+	all_envp(&(head_struct->env), envp);
+	head_struct->bin = path_bin(&(head_struct->env));
 
-	// all = NULL;
-
-	all_envp(&(head_struct.env), envp);
-	head_struct.bin = path_bin(&(head_struct.env));
-//	add_equal(&head_struct.env);
-
-	// get_home_dir(tmp, &home);
-	// ft_putstr_fd(home, 1);
-	// write(1, "\n" , 1);
-
-	int 	saveinput;
-	int 	saveoutput;
-
-	head_struct.saveinput = dup(0);
-	head_struct.saveoutput = dup(1);
-	head_struct.flag_redir = 0;
-	int res;
+	head_struct->saveinput = dup(0);
+	head_struct->saveoutput = dup(1);
+	head_struct->flag_redir = 0;
 	g_error = 0;
+}
+
+int		main(int argc, char **argv, char **envp)
+{
+	char			*str1;
+	char			**arr;
+	int				num;
+	int				res;
+	t_arg			arg;
+	t_head_struct	head_struct;
+
+	arr = argv;
+	num = argc;
+
+	str1 = NULL;
+	init(&head_struct, envp);
 	while (21)
 	{
 		head_struct.flag_pipe = 0;
@@ -91,7 +78,6 @@ int		main(int argc, char **argv, char **envp)
 		{
 			if (parser(g_str1, &arg, &head_struct) != -1)
 			{
-				// ft_lst_print(list);
 				free(g_str1);
 				g_str1 = NULL;
 			}
@@ -109,7 +95,10 @@ int		main(int argc, char **argv, char **envp)
 		}
 		ft_lstclear_args(&head_struct.list, free);
 		head_struct.list = NULL;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bda289e7d0a7afff83d3395abc81fa8742ab18f9
 	}
 	dup2(head_struct.saveinput, 0);
 	dup2(head_struct.saveoutput, 1);
