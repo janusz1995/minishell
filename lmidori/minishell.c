@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:27:57 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/10 14:18:37 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 16:29:55 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,9 @@ int		main(int argc, char **argv, char **envp)
 			ft_putstr_fd("\n", 1);
 			exit (0);
 		}
-		//ft_push_args(&all, &list);
 		ft_lstclear_args(&head_struct.list, free);
 		head_struct.list = NULL;
-//		dup2(saveinput, 0);
-//		dup2(saveoutput, 1);
+
 	}
 	dup2(head_struct.saveinput, 0);
 	dup2(head_struct.saveoutput, 1);
