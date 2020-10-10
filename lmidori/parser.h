@@ -168,6 +168,8 @@ void					error_spec(char *spec);
 int						check_special(char *str, char *spec, int *i);
 int						check_double_spec(char *str);
 
+
+
 int						check_cond(char *str);
 void					system_cmd(t_head_struct *head_struct, char **str2);
 char					**path_bin(t_env **head);

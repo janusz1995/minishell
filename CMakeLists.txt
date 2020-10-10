@@ -3,15 +3,10 @@ project(minishell C)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(Drina)
 include_directories(libft)
 include_directories(lmidori)
 
 add_executable(minishell
-        Drina/add_equal.c
-        Drina/cmd_env.c
-        Drina/cmd_pwd.c
-        Drina/sort_list.c
         libft/ft_atoi.c
         libft/ft_bzero.c
         libft/ft_calloc.c
@@ -59,35 +54,41 @@ add_executable(minishell
         libft/get_next_line.h
         libft/get_next_line_utils.c
         libft/libft.h
-        lmidori/add_back.c
+        lmidori/add_new_env.c
         lmidori/check.c
         lmidori/cmd_cd.c
         lmidori/cmd_echo.c
+        lmidori/cmd_env.c
+        lmidori/cmd_exit.c
         lmidori/cmd_export.c
+        lmidori/cmd_pipe.c
+        lmidori/cmd_pwd.c
         lmidori/cmd_unset.c
         lmidori/diff_cmd.c
-        lmidori/enter_cd.c
+        lmidori/double_spec.c
+        lmidori/error_and_free.c
         lmidori/find_in_env.c
         lmidori/find_len_arg.c
-        lmidori/ft_lstsize_arg.c
+        lmidori/free_list_copy.c
         lmidori/get_arg.c
         lmidori/get_env_args.c
         lmidori/get_name_env.c
         lmidori/get_value_env.c
         lmidori/init_arg_env.c
-        lmidori/init_env.c
+        lmidori/last_spec.c
         lmidori/lst_args.c
         lmidori/lst_env.c
-        lmidori/lst_new_env.c
-        lmidori/lstnew.c
         lmidori/minishell.c
-        lmidori/minishell.h
         lmidori/parser.c
         lmidori/parser.h
         lmidori/path_bin.c
         lmidori/print_export.c
         lmidori/read_arg.c
         lmidori/redact_env.c
+        lmidori/redirect.c
         lmidori/select_cmd.c
+        lmidori/special_parser.c
+        lmidori/start_errors.c
         lmidori/start_programm.c
-        lmidori/struct_funcs.c)
+        lmidori/struct_funcs.c
+        lmidori/xmalloc.c)

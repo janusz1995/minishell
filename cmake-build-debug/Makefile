@@ -143,114 +143,6 @@ minishell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/build
 .PHONY : minishell/fast
 
-Drina/add_equal.o: Drina/add_equal.c.o
-
-.PHONY : Drina/add_equal.o
-
-# target to build an object file
-Drina/add_equal.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/add_equal.c.o
-.PHONY : Drina/add_equal.c.o
-
-Drina/add_equal.i: Drina/add_equal.c.i
-
-.PHONY : Drina/add_equal.i
-
-# target to preprocess a source file
-Drina/add_equal.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/add_equal.c.i
-.PHONY : Drina/add_equal.c.i
-
-Drina/add_equal.s: Drina/add_equal.c.s
-
-.PHONY : Drina/add_equal.s
-
-# target to generate assembly for a file
-Drina/add_equal.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/add_equal.c.s
-.PHONY : Drina/add_equal.c.s
-
-Drina/cmd_env.o: Drina/cmd_env.c.o
-
-.PHONY : Drina/cmd_env.o
-
-# target to build an object file
-Drina/cmd_env.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_env.c.o
-.PHONY : Drina/cmd_env.c.o
-
-Drina/cmd_env.i: Drina/cmd_env.c.i
-
-.PHONY : Drina/cmd_env.i
-
-# target to preprocess a source file
-Drina/cmd_env.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_env.c.i
-.PHONY : Drina/cmd_env.c.i
-
-Drina/cmd_env.s: Drina/cmd_env.c.s
-
-.PHONY : Drina/cmd_env.s
-
-# target to generate assembly for a file
-Drina/cmd_env.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_env.c.s
-.PHONY : Drina/cmd_env.c.s
-
-Drina/cmd_pwd.o: Drina/cmd_pwd.c.o
-
-.PHONY : Drina/cmd_pwd.o
-
-# target to build an object file
-Drina/cmd_pwd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_pwd.c.o
-.PHONY : Drina/cmd_pwd.c.o
-
-Drina/cmd_pwd.i: Drina/cmd_pwd.c.i
-
-.PHONY : Drina/cmd_pwd.i
-
-# target to preprocess a source file
-Drina/cmd_pwd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_pwd.c.i
-.PHONY : Drina/cmd_pwd.c.i
-
-Drina/cmd_pwd.s: Drina/cmd_pwd.c.s
-
-.PHONY : Drina/cmd_pwd.s
-
-# target to generate assembly for a file
-Drina/cmd_pwd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/cmd_pwd.c.s
-.PHONY : Drina/cmd_pwd.c.s
-
-Drina/sort_list.o: Drina/sort_list.c.o
-
-.PHONY : Drina/sort_list.o
-
-# target to build an object file
-Drina/sort_list.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/sort_list.c.o
-.PHONY : Drina/sort_list.c.o
-
-Drina/sort_list.i: Drina/sort_list.c.i
-
-.PHONY : Drina/sort_list.i
-
-# target to preprocess a source file
-Drina/sort_list.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/sort_list.c.i
-.PHONY : Drina/sort_list.c.i
-
-Drina/sort_list.s: Drina/sort_list.c.s
-
-.PHONY : Drina/sort_list.s
-
-# target to generate assembly for a file
-Drina/sort_list.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/Drina/sort_list.c.s
-.PHONY : Drina/sort_list.c.s
-
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -1466,32 +1358,32 @@ libft/get_next_line_utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/libft/get_next_line_utils.c.s
 .PHONY : libft/get_next_line_utils.c.s
 
-lmidori/add_back.o: lmidori/add_back.c.o
+lmidori/add_new_env.o: lmidori/add_new_env.c.o
 
-.PHONY : lmidori/add_back.o
+.PHONY : lmidori/add_new_env.o
 
 # target to build an object file
-lmidori/add_back.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/add_back.c.o
-.PHONY : lmidori/add_back.c.o
+lmidori/add_new_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/add_new_env.c.o
+.PHONY : lmidori/add_new_env.c.o
 
-lmidori/add_back.i: lmidori/add_back.c.i
+lmidori/add_new_env.i: lmidori/add_new_env.c.i
 
-.PHONY : lmidori/add_back.i
+.PHONY : lmidori/add_new_env.i
 
 # target to preprocess a source file
-lmidori/add_back.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/add_back.c.i
-.PHONY : lmidori/add_back.c.i
+lmidori/add_new_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/add_new_env.c.i
+.PHONY : lmidori/add_new_env.c.i
 
-lmidori/add_back.s: lmidori/add_back.c.s
+lmidori/add_new_env.s: lmidori/add_new_env.c.s
 
-.PHONY : lmidori/add_back.s
+.PHONY : lmidori/add_new_env.s
 
 # target to generate assembly for a file
-lmidori/add_back.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/add_back.c.s
-.PHONY : lmidori/add_back.c.s
+lmidori/add_new_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/add_new_env.c.s
+.PHONY : lmidori/add_new_env.c.s
 
 lmidori/check.o: lmidori/check.c.o
 
@@ -1574,6 +1466,60 @@ lmidori/cmd_echo.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_echo.c.s
 .PHONY : lmidori/cmd_echo.c.s
 
+lmidori/cmd_env.o: lmidori/cmd_env.c.o
+
+.PHONY : lmidori/cmd_env.o
+
+# target to build an object file
+lmidori/cmd_env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_env.c.o
+.PHONY : lmidori/cmd_env.c.o
+
+lmidori/cmd_env.i: lmidori/cmd_env.c.i
+
+.PHONY : lmidori/cmd_env.i
+
+# target to preprocess a source file
+lmidori/cmd_env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_env.c.i
+.PHONY : lmidori/cmd_env.c.i
+
+lmidori/cmd_env.s: lmidori/cmd_env.c.s
+
+.PHONY : lmidori/cmd_env.s
+
+# target to generate assembly for a file
+lmidori/cmd_env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_env.c.s
+.PHONY : lmidori/cmd_env.c.s
+
+lmidori/cmd_exit.o: lmidori/cmd_exit.c.o
+
+.PHONY : lmidori/cmd_exit.o
+
+# target to build an object file
+lmidori/cmd_exit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_exit.c.o
+.PHONY : lmidori/cmd_exit.c.o
+
+lmidori/cmd_exit.i: lmidori/cmd_exit.c.i
+
+.PHONY : lmidori/cmd_exit.i
+
+# target to preprocess a source file
+lmidori/cmd_exit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_exit.c.i
+.PHONY : lmidori/cmd_exit.c.i
+
+lmidori/cmd_exit.s: lmidori/cmd_exit.c.s
+
+.PHONY : lmidori/cmd_exit.s
+
+# target to generate assembly for a file
+lmidori/cmd_exit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_exit.c.s
+.PHONY : lmidori/cmd_exit.c.s
+
 lmidori/cmd_export.o: lmidori/cmd_export.c.o
 
 .PHONY : lmidori/cmd_export.o
@@ -1600,6 +1546,60 @@ lmidori/cmd_export.s: lmidori/cmd_export.c.s
 lmidori/cmd_export.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_export.c.s
 .PHONY : lmidori/cmd_export.c.s
+
+lmidori/cmd_pipe.o: lmidori/cmd_pipe.c.o
+
+.PHONY : lmidori/cmd_pipe.o
+
+# target to build an object file
+lmidori/cmd_pipe.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_pipe.c.o
+.PHONY : lmidori/cmd_pipe.c.o
+
+lmidori/cmd_pipe.i: lmidori/cmd_pipe.c.i
+
+.PHONY : lmidori/cmd_pipe.i
+
+# target to preprocess a source file
+lmidori/cmd_pipe.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_pipe.c.i
+.PHONY : lmidori/cmd_pipe.c.i
+
+lmidori/cmd_pipe.s: lmidori/cmd_pipe.c.s
+
+.PHONY : lmidori/cmd_pipe.s
+
+# target to generate assembly for a file
+lmidori/cmd_pipe.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_pipe.c.s
+.PHONY : lmidori/cmd_pipe.c.s
+
+lmidori/cmd_pwd.o: lmidori/cmd_pwd.c.o
+
+.PHONY : lmidori/cmd_pwd.o
+
+# target to build an object file
+lmidori/cmd_pwd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_pwd.c.o
+.PHONY : lmidori/cmd_pwd.c.o
+
+lmidori/cmd_pwd.i: lmidori/cmd_pwd.c.i
+
+.PHONY : lmidori/cmd_pwd.i
+
+# target to preprocess a source file
+lmidori/cmd_pwd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_pwd.c.i
+.PHONY : lmidori/cmd_pwd.c.i
+
+lmidori/cmd_pwd.s: lmidori/cmd_pwd.c.s
+
+.PHONY : lmidori/cmd_pwd.s
+
+# target to generate assembly for a file
+lmidori/cmd_pwd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/cmd_pwd.c.s
+.PHONY : lmidori/cmd_pwd.c.s
 
 lmidori/cmd_unset.o: lmidori/cmd_unset.c.o
 
@@ -1655,32 +1655,59 @@ lmidori/diff_cmd.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/diff_cmd.c.s
 .PHONY : lmidori/diff_cmd.c.s
 
-lmidori/enter_cd.o: lmidori/enter_cd.c.o
+lmidori/double_spec.o: lmidori/double_spec.c.o
 
-.PHONY : lmidori/enter_cd.o
+.PHONY : lmidori/double_spec.o
 
 # target to build an object file
-lmidori/enter_cd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/enter_cd.c.o
-.PHONY : lmidori/enter_cd.c.o
+lmidori/double_spec.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/double_spec.c.o
+.PHONY : lmidori/double_spec.c.o
 
-lmidori/enter_cd.i: lmidori/enter_cd.c.i
+lmidori/double_spec.i: lmidori/double_spec.c.i
 
-.PHONY : lmidori/enter_cd.i
+.PHONY : lmidori/double_spec.i
 
 # target to preprocess a source file
-lmidori/enter_cd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/enter_cd.c.i
-.PHONY : lmidori/enter_cd.c.i
+lmidori/double_spec.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/double_spec.c.i
+.PHONY : lmidori/double_spec.c.i
 
-lmidori/enter_cd.s: lmidori/enter_cd.c.s
+lmidori/double_spec.s: lmidori/double_spec.c.s
 
-.PHONY : lmidori/enter_cd.s
+.PHONY : lmidori/double_spec.s
 
 # target to generate assembly for a file
-lmidori/enter_cd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/enter_cd.c.s
-.PHONY : lmidori/enter_cd.c.s
+lmidori/double_spec.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/double_spec.c.s
+.PHONY : lmidori/double_spec.c.s
+
+lmidori/error_and_free.o: lmidori/error_and_free.c.o
+
+.PHONY : lmidori/error_and_free.o
+
+# target to build an object file
+lmidori/error_and_free.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/error_and_free.c.o
+.PHONY : lmidori/error_and_free.c.o
+
+lmidori/error_and_free.i: lmidori/error_and_free.c.i
+
+.PHONY : lmidori/error_and_free.i
+
+# target to preprocess a source file
+lmidori/error_and_free.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/error_and_free.c.i
+.PHONY : lmidori/error_and_free.c.i
+
+lmidori/error_and_free.s: lmidori/error_and_free.c.s
+
+.PHONY : lmidori/error_and_free.s
+
+# target to generate assembly for a file
+lmidori/error_and_free.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/error_and_free.c.s
+.PHONY : lmidori/error_and_free.c.s
 
 lmidori/find_in_env.o: lmidori/find_in_env.c.o
 
@@ -1736,32 +1763,32 @@ lmidori/find_len_arg.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/find_len_arg.c.s
 .PHONY : lmidori/find_len_arg.c.s
 
-lmidori/ft_lstsize_arg.o: lmidori/ft_lstsize_arg.c.o
+lmidori/free_list_copy.o: lmidori/free_list_copy.c.o
 
-.PHONY : lmidori/ft_lstsize_arg.o
+.PHONY : lmidori/free_list_copy.o
 
 # target to build an object file
-lmidori/ft_lstsize_arg.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/ft_lstsize_arg.c.o
-.PHONY : lmidori/ft_lstsize_arg.c.o
+lmidori/free_list_copy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/free_list_copy.c.o
+.PHONY : lmidori/free_list_copy.c.o
 
-lmidori/ft_lstsize_arg.i: lmidori/ft_lstsize_arg.c.i
+lmidori/free_list_copy.i: lmidori/free_list_copy.c.i
 
-.PHONY : lmidori/ft_lstsize_arg.i
+.PHONY : lmidori/free_list_copy.i
 
 # target to preprocess a source file
-lmidori/ft_lstsize_arg.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/ft_lstsize_arg.c.i
-.PHONY : lmidori/ft_lstsize_arg.c.i
+lmidori/free_list_copy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/free_list_copy.c.i
+.PHONY : lmidori/free_list_copy.c.i
 
-lmidori/ft_lstsize_arg.s: lmidori/ft_lstsize_arg.c.s
+lmidori/free_list_copy.s: lmidori/free_list_copy.c.s
 
-.PHONY : lmidori/ft_lstsize_arg.s
+.PHONY : lmidori/free_list_copy.s
 
 # target to generate assembly for a file
-lmidori/ft_lstsize_arg.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/ft_lstsize_arg.c.s
-.PHONY : lmidori/ft_lstsize_arg.c.s
+lmidori/free_list_copy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/free_list_copy.c.s
+.PHONY : lmidori/free_list_copy.c.s
 
 lmidori/get_arg.o: lmidori/get_arg.c.o
 
@@ -1898,32 +1925,32 @@ lmidori/init_arg_env.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_arg_env.c.s
 .PHONY : lmidori/init_arg_env.c.s
 
-lmidori/init_env.o: lmidori/init_env.c.o
+lmidori/last_spec.o: lmidori/last_spec.c.o
 
-.PHONY : lmidori/init_env.o
+.PHONY : lmidori/last_spec.o
 
 # target to build an object file
-lmidori/init_env.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_env.c.o
-.PHONY : lmidori/init_env.c.o
+lmidori/last_spec.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/last_spec.c.o
+.PHONY : lmidori/last_spec.c.o
 
-lmidori/init_env.i: lmidori/init_env.c.i
+lmidori/last_spec.i: lmidori/last_spec.c.i
 
-.PHONY : lmidori/init_env.i
+.PHONY : lmidori/last_spec.i
 
 # target to preprocess a source file
-lmidori/init_env.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_env.c.i
-.PHONY : lmidori/init_env.c.i
+lmidori/last_spec.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/last_spec.c.i
+.PHONY : lmidori/last_spec.c.i
 
-lmidori/init_env.s: lmidori/init_env.c.s
+lmidori/last_spec.s: lmidori/last_spec.c.s
 
-.PHONY : lmidori/init_env.s
+.PHONY : lmidori/last_spec.s
 
 # target to generate assembly for a file
-lmidori/init_env.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/init_env.c.s
-.PHONY : lmidori/init_env.c.s
+lmidori/last_spec.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/last_spec.c.s
+.PHONY : lmidori/last_spec.c.s
 
 lmidori/lst_args.o: lmidori/lst_args.c.o
 
@@ -1978,60 +2005,6 @@ lmidori/lst_env.s: lmidori/lst_env.c.s
 lmidori/lst_env.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_env.c.s
 .PHONY : lmidori/lst_env.c.s
-
-lmidori/lst_new_env.o: lmidori/lst_new_env.c.o
-
-.PHONY : lmidori/lst_new_env.o
-
-# target to build an object file
-lmidori/lst_new_env.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_new_env.c.o
-.PHONY : lmidori/lst_new_env.c.o
-
-lmidori/lst_new_env.i: lmidori/lst_new_env.c.i
-
-.PHONY : lmidori/lst_new_env.i
-
-# target to preprocess a source file
-lmidori/lst_new_env.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_new_env.c.i
-.PHONY : lmidori/lst_new_env.c.i
-
-lmidori/lst_new_env.s: lmidori/lst_new_env.c.s
-
-.PHONY : lmidori/lst_new_env.s
-
-# target to generate assembly for a file
-lmidori/lst_new_env.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lst_new_env.c.s
-.PHONY : lmidori/lst_new_env.c.s
-
-lmidori/lstnew.o: lmidori/lstnew.c.o
-
-.PHONY : lmidori/lstnew.o
-
-# target to build an object file
-lmidori/lstnew.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lstnew.c.o
-.PHONY : lmidori/lstnew.c.o
-
-lmidori/lstnew.i: lmidori/lstnew.c.i
-
-.PHONY : lmidori/lstnew.i
-
-# target to preprocess a source file
-lmidori/lstnew.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lstnew.c.i
-.PHONY : lmidori/lstnew.c.i
-
-lmidori/lstnew.s: lmidori/lstnew.c.s
-
-.PHONY : lmidori/lstnew.s
-
-# target to generate assembly for a file
-lmidori/lstnew.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/lstnew.c.s
-.PHONY : lmidori/lstnew.c.s
 
 lmidori/minishell.o: lmidori/minishell.c.o
 
@@ -2195,6 +2168,33 @@ lmidori/redact_env.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/redact_env.c.s
 .PHONY : lmidori/redact_env.c.s
 
+lmidori/redirect.o: lmidori/redirect.c.o
+
+.PHONY : lmidori/redirect.o
+
+# target to build an object file
+lmidori/redirect.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/redirect.c.o
+.PHONY : lmidori/redirect.c.o
+
+lmidori/redirect.i: lmidori/redirect.c.i
+
+.PHONY : lmidori/redirect.i
+
+# target to preprocess a source file
+lmidori/redirect.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/redirect.c.i
+.PHONY : lmidori/redirect.c.i
+
+lmidori/redirect.s: lmidori/redirect.c.s
+
+.PHONY : lmidori/redirect.s
+
+# target to generate assembly for a file
+lmidori/redirect.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/redirect.c.s
+.PHONY : lmidori/redirect.c.s
+
 lmidori/select_cmd.o: lmidori/select_cmd.c.o
 
 .PHONY : lmidori/select_cmd.o
@@ -2221,6 +2221,60 @@ lmidori/select_cmd.s: lmidori/select_cmd.c.s
 lmidori/select_cmd.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/select_cmd.c.s
 .PHONY : lmidori/select_cmd.c.s
+
+lmidori/special_parser.o: lmidori/special_parser.c.o
+
+.PHONY : lmidori/special_parser.o
+
+# target to build an object file
+lmidori/special_parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/special_parser.c.o
+.PHONY : lmidori/special_parser.c.o
+
+lmidori/special_parser.i: lmidori/special_parser.c.i
+
+.PHONY : lmidori/special_parser.i
+
+# target to preprocess a source file
+lmidori/special_parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/special_parser.c.i
+.PHONY : lmidori/special_parser.c.i
+
+lmidori/special_parser.s: lmidori/special_parser.c.s
+
+.PHONY : lmidori/special_parser.s
+
+# target to generate assembly for a file
+lmidori/special_parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/special_parser.c.s
+.PHONY : lmidori/special_parser.c.s
+
+lmidori/start_errors.o: lmidori/start_errors.c.o
+
+.PHONY : lmidori/start_errors.o
+
+# target to build an object file
+lmidori/start_errors.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/start_errors.c.o
+.PHONY : lmidori/start_errors.c.o
+
+lmidori/start_errors.i: lmidori/start_errors.c.i
+
+.PHONY : lmidori/start_errors.i
+
+# target to preprocess a source file
+lmidori/start_errors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/start_errors.c.i
+.PHONY : lmidori/start_errors.c.i
+
+lmidori/start_errors.s: lmidori/start_errors.c.s
+
+.PHONY : lmidori/start_errors.s
+
+# target to generate assembly for a file
+lmidori/start_errors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/start_errors.c.s
+.PHONY : lmidori/start_errors.c.s
 
 lmidori/start_programm.o: lmidori/start_programm.c.o
 
@@ -2276,6 +2330,33 @@ lmidori/struct_funcs.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/struct_funcs.c.s
 .PHONY : lmidori/struct_funcs.c.s
 
+lmidori/xmalloc.o: lmidori/xmalloc.c.o
+
+.PHONY : lmidori/xmalloc.o
+
+# target to build an object file
+lmidori/xmalloc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/xmalloc.c.o
+.PHONY : lmidori/xmalloc.c.o
+
+lmidori/xmalloc.i: lmidori/xmalloc.c.i
+
+.PHONY : lmidori/xmalloc.i
+
+# target to preprocess a source file
+lmidori/xmalloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/xmalloc.c.i
+.PHONY : lmidori/xmalloc.c.i
+
+lmidori/xmalloc.s: lmidori/xmalloc.c.s
+
+.PHONY : lmidori/xmalloc.s
+
+# target to generate assembly for a file
+lmidori/xmalloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/lmidori/xmalloc.c.s
+.PHONY : lmidori/xmalloc.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2285,18 +2366,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... minishell"
-	@echo "... Drina/add_equal.o"
-	@echo "... Drina/add_equal.i"
-	@echo "... Drina/add_equal.s"
-	@echo "... Drina/cmd_env.o"
-	@echo "... Drina/cmd_env.i"
-	@echo "... Drina/cmd_env.s"
-	@echo "... Drina/cmd_pwd.o"
-	@echo "... Drina/cmd_pwd.i"
-	@echo "... Drina/cmd_pwd.s"
-	@echo "... Drina/sort_list.o"
-	@echo "... Drina/sort_list.i"
-	@echo "... Drina/sort_list.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
@@ -2432,9 +2501,9 @@ help:
 	@echo "... libft/get_next_line_utils.o"
 	@echo "... libft/get_next_line_utils.i"
 	@echo "... libft/get_next_line_utils.s"
-	@echo "... lmidori/add_back.o"
-	@echo "... lmidori/add_back.i"
-	@echo "... lmidori/add_back.s"
+	@echo "... lmidori/add_new_env.o"
+	@echo "... lmidori/add_new_env.i"
+	@echo "... lmidori/add_new_env.s"
 	@echo "... lmidori/check.o"
 	@echo "... lmidori/check.i"
 	@echo "... lmidori/check.s"
@@ -2444,27 +2513,42 @@ help:
 	@echo "... lmidori/cmd_echo.o"
 	@echo "... lmidori/cmd_echo.i"
 	@echo "... lmidori/cmd_echo.s"
+	@echo "... lmidori/cmd_env.o"
+	@echo "... lmidori/cmd_env.i"
+	@echo "... lmidori/cmd_env.s"
+	@echo "... lmidori/cmd_exit.o"
+	@echo "... lmidori/cmd_exit.i"
+	@echo "... lmidori/cmd_exit.s"
 	@echo "... lmidori/cmd_export.o"
 	@echo "... lmidori/cmd_export.i"
 	@echo "... lmidori/cmd_export.s"
+	@echo "... lmidori/cmd_pipe.o"
+	@echo "... lmidori/cmd_pipe.i"
+	@echo "... lmidori/cmd_pipe.s"
+	@echo "... lmidori/cmd_pwd.o"
+	@echo "... lmidori/cmd_pwd.i"
+	@echo "... lmidori/cmd_pwd.s"
 	@echo "... lmidori/cmd_unset.o"
 	@echo "... lmidori/cmd_unset.i"
 	@echo "... lmidori/cmd_unset.s"
 	@echo "... lmidori/diff_cmd.o"
 	@echo "... lmidori/diff_cmd.i"
 	@echo "... lmidori/diff_cmd.s"
-	@echo "... lmidori/enter_cd.o"
-	@echo "... lmidori/enter_cd.i"
-	@echo "... lmidori/enter_cd.s"
+	@echo "... lmidori/double_spec.o"
+	@echo "... lmidori/double_spec.i"
+	@echo "... lmidori/double_spec.s"
+	@echo "... lmidori/error_and_free.o"
+	@echo "... lmidori/error_and_free.i"
+	@echo "... lmidori/error_and_free.s"
 	@echo "... lmidori/find_in_env.o"
 	@echo "... lmidori/find_in_env.i"
 	@echo "... lmidori/find_in_env.s"
 	@echo "... lmidori/find_len_arg.o"
 	@echo "... lmidori/find_len_arg.i"
 	@echo "... lmidori/find_len_arg.s"
-	@echo "... lmidori/ft_lstsize_arg.o"
-	@echo "... lmidori/ft_lstsize_arg.i"
-	@echo "... lmidori/ft_lstsize_arg.s"
+	@echo "... lmidori/free_list_copy.o"
+	@echo "... lmidori/free_list_copy.i"
+	@echo "... lmidori/free_list_copy.s"
 	@echo "... lmidori/get_arg.o"
 	@echo "... lmidori/get_arg.i"
 	@echo "... lmidori/get_arg.s"
@@ -2480,21 +2564,15 @@ help:
 	@echo "... lmidori/init_arg_env.o"
 	@echo "... lmidori/init_arg_env.i"
 	@echo "... lmidori/init_arg_env.s"
-	@echo "... lmidori/init_env.o"
-	@echo "... lmidori/init_env.i"
-	@echo "... lmidori/init_env.s"
+	@echo "... lmidori/last_spec.o"
+	@echo "... lmidori/last_spec.i"
+	@echo "... lmidori/last_spec.s"
 	@echo "... lmidori/lst_args.o"
 	@echo "... lmidori/lst_args.i"
 	@echo "... lmidori/lst_args.s"
 	@echo "... lmidori/lst_env.o"
 	@echo "... lmidori/lst_env.i"
 	@echo "... lmidori/lst_env.s"
-	@echo "... lmidori/lst_new_env.o"
-	@echo "... lmidori/lst_new_env.i"
-	@echo "... lmidori/lst_new_env.s"
-	@echo "... lmidori/lstnew.o"
-	@echo "... lmidori/lstnew.i"
-	@echo "... lmidori/lstnew.s"
 	@echo "... lmidori/minishell.o"
 	@echo "... lmidori/minishell.i"
 	@echo "... lmidori/minishell.s"
@@ -2513,15 +2591,27 @@ help:
 	@echo "... lmidori/redact_env.o"
 	@echo "... lmidori/redact_env.i"
 	@echo "... lmidori/redact_env.s"
+	@echo "... lmidori/redirect.o"
+	@echo "... lmidori/redirect.i"
+	@echo "... lmidori/redirect.s"
 	@echo "... lmidori/select_cmd.o"
 	@echo "... lmidori/select_cmd.i"
 	@echo "... lmidori/select_cmd.s"
+	@echo "... lmidori/special_parser.o"
+	@echo "... lmidori/special_parser.i"
+	@echo "... lmidori/special_parser.s"
+	@echo "... lmidori/start_errors.o"
+	@echo "... lmidori/start_errors.i"
+	@echo "... lmidori/start_errors.s"
 	@echo "... lmidori/start_programm.o"
 	@echo "... lmidori/start_programm.i"
 	@echo "... lmidori/start_programm.s"
 	@echo "... lmidori/struct_funcs.o"
 	@echo "... lmidori/struct_funcs.i"
 	@echo "... lmidori/struct_funcs.s"
+	@echo "... lmidori/xmalloc.o"
+	@echo "... lmidori/xmalloc.i"
+	@echo "... lmidori/xmalloc.s"
 .PHONY : help
 
 
