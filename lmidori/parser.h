@@ -80,9 +80,9 @@ void					cmd_pwd(void);
 void					sigint(int sig);
 void					sigquit(int sig);
 void					error_fork(void);
-void					exit_cmd(char **str);
 void					cmd_env(t_env *head);
 void					*xmalloc(size_t len);
+void					exit_cmd(char **str);
 void					error_spec(char *spec);
 void					error_exit(char **str);
 void					error_unset(char *name);
@@ -97,22 +97,9 @@ void					error_command_diff(char *cmd);
 void					clear_double_array(char **str);
 void					error_directory_diff(char *dir);
 void					sort_array(char **str, int len);
-char					**creat_array(t_env **env);
-void					print_varible(t_env *tmp);
-void					print_export(t_env **env);
-int						read_special_char(char *str, t_list_args **list);
-void					init_head_struct(t_head_struct *head_struct);
-int						parser(char *str, t_arg *arg,
-								t_head_struct *head_struct);
-int						parse_and_do(char **str, t_arg *arg,
-										t_head_struct *head_struct);
-void					sigquit(int sig);
-void					sigint(int sig);
-t_env					*new_key_value(char *str, int visible);
-void					all_envp(t_env **env, char **envp);
 void					cmd_cd(char **args, t_env *head);
-void					add_back(t_env **head, t_env *new);
 void					all_envp(t_env **env, char **envp);
+void					add_back(t_env **head, t_env *new);
 void					cmd_unset(t_env **head, char *del_str);
 void					flows_change(t_head_struct *head_struct);
 void					cmd_export(t_env **envp, t_list_args *args);
@@ -136,8 +123,8 @@ int						init_struct(t_arg *arg, int len);
 int						lstsize_env(t_env *lst, int flag);
 int						ft_lstsize_arg(t_list_args *lst);
 int						init_env(char *var, t_env **env);
-int						find_in_env(t_env **env, char *name);
 int						find_env(t_head_struct *head_struct);
+int						find_in_env(t_env **env, char *name);
 int						check_stat(char **cmd_arg, char *tmp);
 int						len_marks(char *ptr, char ch, int *len);
 int						fool_strcut(t_all *all, t_list_args **list);
@@ -145,13 +132,17 @@ int						check_special(char *str, char *spec, int *i);
 int						check_right(char *str, char *spec, int *iter);
 int						init_tilde(char *str, t_arg *arg, t_env *env);
 int						init_arg_env(char *str, t_arg *arg, t_env *env);
-int						exec_fork(char **cmd_arg, char **env, char *tmp);
 int						read_special_char(char *str, t_list_args **list);
+int						exec_fork(char **cmd_arg, char **env, char *tmp);
 int						redact_env(t_env **envp, char *name, char *value);
 int						init_arg_quotes(char *str, t_arg *arg, t_env *env);
 int						add_new_env(t_head_struct *head_struct, char **str);
 int						check_len_quotes_slash(int *i, char *ptr, int *len);
 int						str_concatenated(t_arg *arg, char *tmp1, char *tmp2);
+int						parser(char *str, t_arg *arg,
+								  t_head_struct *head_struct);
+int						parse_and_do(char **str, t_arg *arg,
+										t_head_struct *head_struct);
 int						parser(char *str, t_arg *arg,
 											t_head_struct *head_struct);
 int						export_if_in_list(t_env **envp, char *name,
@@ -168,8 +159,8 @@ int						read_arg(char *str, t_arg *arg,
 											t_env *env, t_list_args **list);
 char					*skip_spaces(char *ptr);
 char					**init_envp(t_env *env);
-char					*get_home_dir(t_env *env);
 char					*get_value_env(char *var);
+char					*get_home_dir(t_env *env);
 char					**creat_array(t_env **env);
 char					**get_arg(t_list_args **list);
 char					*get_name_env(char *var, char ch);
