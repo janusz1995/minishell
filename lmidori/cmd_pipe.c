@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cmd_pipe.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/10 18:10:39 by lmidori           #+#    #+#             */
+/*   Updated: 2020/10/10 18:16:14 by lmidori          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "parser.h"
 
-void	cmd_pipe(t_head_struct *head_struct, char **str, t_list_args *args, int flag_dup)
+void	cmd_pipe(t_head_struct *head_struct,
+					char **str, t_list_args *args, int flag_dup)
 {
 	pid_t			pid;
 	pid_t			wait_pid;
 	int				status;
 
-	head_struct->flag_pipe = 1;
 	pipe(head_struct->fd);
 	pid = fork();
 	if (pid == 0)
@@ -21,7 +32,7 @@ void	cmd_pipe(t_head_struct *head_struct, char **str, t_list_args *args, int fla
 		exit(0);
 	}
 	else if (pid < 0)
-		perror("lsh");
+		error_fork();
 	else
 	{
 		close(head_struct->fd[1]);

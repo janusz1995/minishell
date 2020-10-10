@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:29:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/10 17:10:22 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 18:15:21 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ void		no_system_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 		exit_cmd(str);
 }
 
-
-
 void		get_copy_all(t_all *all, t_all *copy_all, t_list_args *args)
 {
 	t_list_args	*tmp;
@@ -74,133 +72,6 @@ void		get_copy_all(t_all *all, t_all *copy_all, t_list_args *args)
 	}
 }
 
-// void 		redirect(t_head_struct *head_struct, char **str, t_list_args *args)
-// {
-// 	int		fd;
-// //	int 	saveout;
-// 	char	**save_all;
-
-// 	save_all = NULL;
-// 	if (head_struct->p_copy == NULL)
-// 	{
-// 		get_copy_all(&head_struct->all, &head_struct->copy_all, args);
-// 		head_struct->p_copy = &head_struct->copy_all;
-// 		head_struct->flag_redir = 1;
-// 	}
-// 	else if (head_struct->all.spec && ft_strncmp(head_struct->all.spec, ">>", 3) == 0)
-// 	{
-// 		if ((fd = open(str[0], O_CREAT | O_APPEND | O_WRONLY , 0644)) < 0)  //O_CREAT
-// 		{
-
-// 		}
-// 		close(fd);
-// 	}
-// 	else if (head_struct->all.spec && *(head_struct->all.spec) == '>')
-// 	{
-// 		if ((fd = open(str[0], O_CREAT | O_WRONLY | O_TRUNC, 0644)) < 0)  //O_CREAT
-// 		{
-// 			// return error
-// 		}
-// 		close(fd);
-// 	}
-// 	else if (head_struct->all.spec && *(head_struct->all.spec) == '<')
-// 	{
-// 		if ((fd = open(str[0], O_RDONLY)) < 0)
-// 		{
-
-// 		}
-// 		close(fd);
-// 	}
-// 	else
-// 	{
-// 		head_struct->flag_redir = 0;
-
-// 		if (head_struct->copy_all.spec && *(head_struct->copy_all.spec) == '<')
-// 		{
-// 			if ((fd = open(str[0], O_RDONLY)) < 0)
-// 			{
-
-// 			}
-// 		}
-// 		else if (head_struct->copy_all.spec && ft_strncmp(head_struct->copy_all.spec, ">>", 3) == 0)
-// 		{
-// 			if ((fd = open(str[0], O_CREAT | O_APPEND | O_WRONLY , 0644)) < 0)	//O_CREAT;
-// 			{
-
-// 			}
-// 		}
-// 		else
-// 		{
-//  			if ((fd = open(str[0], O_CREAT | O_WRONLY | O_TRUNC, 0644)) < 0)  //O_CREAT
-// 			{
-// 				//return error
-// 			}
-// 		}
-// 		save_all = get_arg((&head_struct->copy_all.args));
-// 		//saveout = dup(1);
-// 		if (head_struct->copy_all.spec && *(head_struct->copy_all.spec) == '<')
-// 			dup2(fd, 0);
-// 		else
-// 			dup2(fd, 1);
-// 		if (head_struct->copy_all.args != NULL)
-// 			select_cmd(head_struct, save_all, head_struct->copy_all.args);
-// 		//dup2(saveout, 1);
-// 		head_struct->p_copy = NULL;
-// 		close(fd);
-// 		//close(saveout);
-// 	}
-// }
-
-// void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
-// {
-// 	pid_t	pid;
-// 	pid_t	wait_pid;
-// 	int		status;
-
-// 	head_struct->flag_pipe = 0;
-// 	if (head_struct->all.equal == 1)
-// 		add_new_env(head_struct, str);
-// 	else if (head_struct->all.spec && *(head_struct->all.spec) == '|')
-// 	{
-// 		head_struct->flag_pipe = 1;
-// 		pipe(head_struct->fd);
-// 		pid = fork();
-// 		if (pid == 0)
-// 		{
-// 			close(head_struct->fd[0]);
-// 			dup2(head_struct->fd[1], 1);
-// 			close(head_struct->fd[1]);
-// 			if (check_cond(str[0]) == 1)
-// 				select_cmd_two(head_struct, str, args);
-// 			else
-// 				diff_cmd(head_struct, str);
-// 			exit(0);
-// 		}
-// 		else if (pid < 0)
-// 			perror("lsh");
-// 		else
-// 		{
-// 			close(head_struct->fd[1]);
-// 			dup2(head_struct->fd[0], 0);
-// 			close(head_struct->fd[0]);
-// 			wait_pid = waitpid(pid, &status, WUNTRACED);
-// 		}
-// 	}
-// 	else if (head_struct->flag_redir || (head_struct->all.spec && (*(head_struct->all.spec) == '>' ||
-// 			(ft_strncmp(head_struct->all.spec, ">>", 3) == 0) || *(head_struct->all.spec) == '<')))
-// 	{
-// 		if (head_struct->p_copy != NULL)
-// 			ft_lstadd_back_arg(&head_struct->copy_all.args, args->next);
-// 		redirect(head_struct, str, args);
-// 	}
-// 	else
-// 	{
-// 		if (check_cond(str[0]))
-// 			select_cmd_two(head_struct, str, args);
-// 		else
-// 			diff_cmd(head_struct, str);
-// 	}
-// }
 
 void	commands(t_head_struct *head_struct,
 				 char **str, t_list_args *args)
@@ -239,7 +110,10 @@ void 		select_cmd(t_head_struct *head_struct, char **str, t_list_args *args)
 	else if (head_struct->all.spec && *(head_struct->all.spec) == '|')
 	{
 		if (args != NULL)
+		{
+			head_struct->flag_pipe = 1;
 			cmd_pipe(head_struct, str, args, 0);
+		}
 	}
 	else
 		commands(head_struct, str, args);

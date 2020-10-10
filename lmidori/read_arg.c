@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 22:52:29 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/09 21:11:48 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 18:09:23 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int			init_arg_quotes(char *str, t_arg *arg, t_env *env)
 		if (str[i] == '\\' && ch != '\'' &&
 			ft_strchr("\\\"$`", str[i + 1]) != NULL)
 			arg->arg[arg->j++] = str[++i];
-		else if (str[i] == '$' && ch != '\'' && (ft_isalpha(str[i + 1]) || str[i + 1] == '?'))
+		else if (str[i] == '$' && ch != '\''
+			&& (ft_isalpha(str[i + 1]) || str[i + 1] == '?'))
 		{
 			tmp = init_arg_env(&str[i], arg, env);
 			if (tmp == -2)
