@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 20:58:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/06 19:00:29 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 22:03:40 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ void			cmd_unset(t_env **head, char *del_str)
 		del_str, ft_strlen(tmp->next->key_value[0]) + 1) != 0)
 		tmp = tmp->next;
 	tmp->next = next_elem->next;
-	free(next_elem->key_value[0]);
-	free(next_elem->key_value[1]);
+	clear_double_array(next_elem->key_value);
 	free(next_elem);
 	next_elem = NULL;
 }

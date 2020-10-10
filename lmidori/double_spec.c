@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 16:48:25 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/09 20:14:39 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 18:55:55 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,10 @@ int			check_double_spec(char *str)
 		if ((tmp = check_special(str, spec, &i)) == 0)
 			break ;
 		if (tmp == 1)
+		{
+			free(spec);
 			return (1);
+		}
 	}
 	error_spec(spec);
 	return (0);

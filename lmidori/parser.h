@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/10 18:04:47 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 21:38:37 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,7 @@ int						init_quotes_slash(char *str, int *i,
 											t_arg *arg, t_env *env);
 int						read_arg(char *str, t_arg *arg,
 											t_env *env, t_list_args **list);
+int						len_numb(int c);
 char					*skip_spaces(char *ptr);
 char					**init_envp(t_env *env);
 char					*get_value_env(char *var);
@@ -171,6 +172,7 @@ t_env					*new_key_value(char *str, int visible);
 t_env					*lst_new_env(char *name, char *value, int visable);
 t_list_args				*ft_lstlast_arg(t_list_args *lst);
 t_list_args				*ft_lstnew_arg(void *content, int flag);
+t_list_args				*free_and_go_next(t_list_args *list);
 
 void					start_command(t_head_struct *head_struct);
 void					free_list_copy(t_head_struct *head_struct);
