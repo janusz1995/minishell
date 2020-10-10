@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:27:57 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/09 23:07:55 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 14:18:37 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,19 @@ int		main(int argc, char **argv, char **envp)
 
 
 	signal(SIGINT, sigint);
+	signal (SIGINT, SIG_DFL);
+	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, sigquit);
 	// signal(SIGQUIT, SIG_IGN);
 	t_head_struct	head_struct;
 	str1 = NULL;
 	head_struct.env = NULL;
 	head_struct.list = NULL;
+	head_struct.new_args = NULL;
+	head_struct.copy_all = NULL;
+	head_struct.envp = NULL;
+	head_struct.last_spec = NULL;
+	head_struct.flag_error = 0;
 	// head_struct.list->next = NULL;
 	// head_struct.list->content = NULL;
 
@@ -69,17 +76,16 @@ int		main(int argc, char **argv, char **envp)
 	int 	saveinput;
 	int 	saveoutput;
 
-	saveinput = dup(0);
-	saveoutput = dup(1);
-	head_struct.p_copy = NULL;
+	head_struct.saveinput = dup(0);
+	head_struct.saveoutput = dup(1);
 	head_struct.flag_redir = 0;
 	int res;
 	g_error = 0;
 	while (21)
 	{
 		head_struct.flag_pipe = 0;
-		dup2(saveinput, 0);
-		dup2(saveoutput, 1);
+		dup2(head_struct.saveinput, 0);
+		dup2(head_struct.saveoutput, 1);
 		write(1, "shell > ", 8);
 		if ((res = get_next_line(0, &g_str1)) > 0)
 		{
@@ -107,7 +113,9 @@ int		main(int argc, char **argv, char **envp)
 //		dup2(saveinput, 0);
 //		dup2(saveoutput, 1);
 	}
-	close(saveinput);
-	close(saveoutput);
+	dup2(head_struct.saveinput, 0);
+	dup2(head_struct.saveoutput, 1);
+	close(head_struct.saveinput);
+	close(head_struct.saveoutput);
 	return (1);
 }

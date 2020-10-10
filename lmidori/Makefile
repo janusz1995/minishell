@@ -9,7 +9,8 @@ SRC = minishell.c lst_args.c read_arg.c init_arg_env.c \
         lst_env.c find_in_env.c check.c cmd_unset.c get_value_env.c get_name_env.c \
         cmd_echo.c get_arg.c cmd_export.c xmalloc.c cmd_exit.c \
         add_new_env.c cmd_pwd.c cmd_env.c start_errors.c double_spec.c \
-        special_parser.c
+        special_parser.c free_list_copy.c redirect.c cmd_pipe.c error_and_free.c \
+        last_spec.c \
 
 SRCO = $(SRC:.c=.o)
 

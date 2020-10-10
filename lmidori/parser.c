@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 12:03:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/09 20:15:13 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 13:45:20 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ int			parser(char *str, t_arg *arg, t_head_struct *head_struct)
 			str += tmp;
 			fool_strcut(&(head_struct->all), &(head_struct->list));
 			start_shell(&(head_struct->all), head_struct);
+			if (head_struct->all.spec && *head_struct->all.spec == ';')
+			{
+				dup2(head_struct->saveinput, 0);
+				dup2(head_struct->saveoutput, 1);
+			}
 			ft_clear_strcut(&(head_struct->all));
 		}
 		if (*(str = skip_spaces(str)) == '\0')
@@ -76,5 +81,7 @@ int			parser(char *str, t_arg *arg, t_head_struct *head_struct)
 	fool_strcut(&(head_struct->all), &(head_struct->list));
 	start_shell(&(head_struct->all), head_struct);
 	ft_clear_strcut(&(head_struct->all));
+	head_struct->flag_error = 0;
+
 	return (1);
 }

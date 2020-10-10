@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 21:46:02 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/05 22:58:20 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 15:30:30 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char		**creat_array(t_env **env)
 	return (str);
 }
 
-void		print_vatible(t_env *tmp)
+void		print_varible(t_env *tmp)
 {
 	ft_putstr_fd("declare -x ", 1);
 	ft_putstr_fd(tmp->key_value[0], 1);
@@ -90,7 +90,7 @@ void		print_export(t_env **env)
 		{
 			if (ft_strncmp(str[i], tmp->key_value[0],
 				ft_strlen(str[i]) + 1) == 0)
-				print_vatible(tmp);
+				print_varible(tmp);
 			tmp = tmp->next;
 		}
 		free(str[i]);
