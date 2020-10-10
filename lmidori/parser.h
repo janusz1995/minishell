@@ -13,60 +13,52 @@
 #ifndef PARSER_H
 # define PARSER_H
 
-# include <unistd.h>
 # include <stdio.h>
+# include <errno.h>
 # include <fcntl.h>
+# include <unistd.h>
+# include <dirent.h>
+# include <signal.h>
+# include <string.h>
+# include <sys/stat.h>
+# include <sys/types.h>
 # include "../libft/libft.h"
 # include "../libft/get_next_line.h"
-# include <sys/types.h>
-# include <dirent.h>
-# include <sys/stat.h>
-# include <signal.h>
-# include <errno.h>
-# include <string.h>
 
+int						g_error;
 char					*g_str1;
 pid_t					g_pid;
-int						g_error;
 
 typedef struct			s_list_args
 {
-	char				*content;
 	int					spec_flag;
+	char				*content;
 	struct s_list_args	*next;
 }						t_list_args;
 
 typedef struct			s_all
 {
 	int					equal;
-	t_list_args			*args;
 	char				*spec;
+	t_list_args			*args;
 }						t_all;
 
 typedef struct			s_arg
 {
-	char				*arg;
-	int					len;
 	int					j;
+	int					len;
+	char				*arg;
 }						t_arg;
 
 typedef struct			s_env
 {
-	char				**key_value;
 	int					visible;
+	char				**key_value;
 	struct s_env		*next;
 }						t_env;
 
 typedef struct			s_head_struct
 {
-	char				**bin;
-	char				**new_args;
-	char				**envp;
-	char				*last_spec;
-	t_env				*env;
-	t_all				all;
-	t_all				*copy_all;
-	t_list_args			*list;
 	int					fd[2];
 	int					fd_redir;
 	int					flag_pipe;
@@ -74,6 +66,14 @@ typedef struct			s_head_struct
 	int					flag_redir;
 	int					saveinput;
 	int					saveoutput;
+	char				**bin;
+	char				**envp;
+	char				*last_spec;
+	char				**new_args;
+	t_all				all;
+	t_all				*copy_all;
+	t_env				*env;
+	t_list_args			*list;
 }						t_head_struct;
 
 void					cmd_pwd(void);
