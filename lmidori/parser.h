@@ -140,7 +140,7 @@ int						add_new_env(t_head_struct *head_struct, char **str);
 int						check_len_quotes_slash(int *i, char *ptr, int *len);
 int						str_concatenated(t_arg *arg, char *tmp1, char *tmp2);
 int						parser(char *str, t_arg *arg,
-								  t_head_struct *head_struct);
+										t_head_struct *head_struct);
 int						parse_and_do(char **str, t_arg *arg,
 										t_head_struct *head_struct);
 int						parser(char *str, t_arg *arg,
