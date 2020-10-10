@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 19:35:01 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/09 19:38:00 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 17:38:11 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int			skip_quote(char *str, char ch)
 			i++;
 	}
 	if (str[i] == '\0')
-		return (-1);
+		return (-2);
 	return (i);
 }
 

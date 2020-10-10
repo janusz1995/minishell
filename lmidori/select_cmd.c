@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:29:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/10 13:57:27 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 17:10:22 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void 		start_shell(t_all *all, t_head_struct *head_struct)
 
 	i = -1;
 	str = get_arg(&(all->args));
-	ft_putendl_fd(all->spec, 1);
 	if (*str[0] == '\0' && all->spec == NULL)
 	{
 		free(str);

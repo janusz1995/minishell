@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:39:11 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/10 15:42:12 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 17:26:54 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@ int						read_special_char(char *str, t_list_args **list);
 void					init_head_struct(t_head_struct *head_struct);
 int						parser(char *str, t_arg *arg,
 								t_head_struct *head_struct);
+int						parse_and_do(char **str, t_arg *arg,
+										t_head_struct *head_struct);
 void					sigquit(int sig);
 void					sigint(int sig);
 t_env					*new_key_value(char *str, int visible);
