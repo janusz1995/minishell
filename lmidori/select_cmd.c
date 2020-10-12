@@ -95,8 +95,11 @@ void	start_redirect(t_head_struct *head_struct, char **str,
 void	select_cmd(t_head_struct *head_struct, char **str,
 														t_list_args *args)
 {
+	int		flag;
+
+	flag = 0;
 	head_struct->flag_pipe = 0;
-	if (head_struct->all.equal == 1)
+	if ((flag = head_struct->all.equal) == 1)
 		add_new_env(head_struct, str);
 	if (head_struct->flag_redir || (head_struct->all.spec
 								&& (*(head_struct->all.spec) == '>'
@@ -112,5 +115,8 @@ void	select_cmd(t_head_struct *head_struct, char **str,
 		}
 	}
 	else
-		commands(head_struct, str, args);
+	{
+		if (!flag)
+			commands(head_struct, str, args);
+	}
 }

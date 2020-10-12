@@ -80,7 +80,6 @@ int			exec_fork(char **cmd_arg, char **env, char *tmp)
 	else
 	{
 		wait_pid = waitpid(g_pid, &status, WUNTRACED);
-<<<<<<< HEAD
 		if (WIFSIGNALED(status))
 		{
 			if (WTERMSIG(status) == 2)
@@ -91,8 +90,6 @@ int			exec_fork(char **cmd_arg, char **env, char *tmp)
 		}
 		else
 			g_error = WEXITSTATUS(status);
-=======
->>>>>>> bcab8d8d54d3879a3dc34768e82022ea856f8528
 		signal(SIGINT, sigint);
 		signal(SIGQUIT, sigquit);
 	}
