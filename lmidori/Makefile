@@ -39,7 +39,8 @@ clean:
 	rm -f $(SRCO) $(SRCDRINAO)
 	make clean -C $(LIBFTDIR)
 
-fclean: clean
+fclean:
+	rm -f $(SRCO) $(SRCDRINAO)
 	rm -f $(NAME)
 	make fclean -C $(LIBFTDIR)
 
