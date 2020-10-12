@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 21:10:38 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/05 23:31:29 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 20:51:15 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void				ft_lstclear_args(t_list_args **lst, void (*del)(void*))
 		(*lst) = (*lst)->next;
 		free(list);
 	}
+	free(*lst);
 }
 
 int					ft_lstsize_arg(t_list_args *lst)

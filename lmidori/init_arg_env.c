@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:55:02 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/06 18:59:04 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 21:28:55 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int			init_arg_env(char *str, t_arg *arg, t_env *env)
 	i = 1;
 	if (str[i] == '?')
 	{
+		if (arg->arg)
+			free(arg->arg);
 		arg->arg = ft_itoa(g_error);
 		return (1);
 	}

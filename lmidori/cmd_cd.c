@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 23:14:13 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/06 18:59:39 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 22:16:25 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void		cmd_cd(char **args, t_env *head)
 	oldpwd = getcwd(NULL, 0);
 	if (chdir(dir) == -1)
 	{
+		free(oldpwd);
 		error_cd(dir, 2);
 		return ;
 	}

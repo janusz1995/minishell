@@ -6,13 +6,13 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:46:25 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/02 19:09:12 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 21:39:07 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int			init_struct(t_arg *arg, int len)
+int				init_struct(t_arg *arg, int len)
 {
 	arg->len = len;
 	if ((arg->arg = (char *)ft_calloc(sizeof(char), (len + 1))) == NULL)
@@ -25,9 +25,20 @@ int			init_struct(t_arg *arg, int len)
 	return (1);
 }
 
-int			fool_strcut(t_all *all, t_list_args **list)
+t_list_args		*free_and_go_next(t_list_args *list)
 {
-	t_list_args *tmp;
+	t_list_args	*tmp;
+
+	tmp = list;
+	list = list->next;
+	free(tmp);
+	return (list);
+}
+
+int				fool_strcut(t_all *all, t_list_args **list)
+{
+	t_list_args	*tmp;
+	t_list_args	*tmp2;
 
 	tmp = *list;
 	ft_init_struct(all);
@@ -39,26 +50,26 @@ int			fool_strcut(t_all *all, t_list_args **list)
 		{
 			ft_lstadd_back_arg(&(all->args),
 				ft_lstnew_arg(tmp->content, tmp->spec_flag));
-			tmp = tmp->next;
+			tmp = free_and_go_next(tmp);
 		}
 		if (tmp && tmp->spec_flag)
 		{
 			all->spec = tmp->content;
-			tmp = tmp->next;
+			tmp = free_and_go_next(tmp);
 		}
 	}
 	*list = tmp;
 	return (1);
 }
 
-void		ft_init_struct(t_all *all)
+void			ft_init_struct(t_all *all)
 {
 	all->args = NULL;
 	all->spec = NULL;
 	all->equal = 0;
 }
 
-void		ft_clear_strcut(t_all *all)
+void			ft_clear_strcut(t_all *all)
 {
 	if (all->spec != NULL)
 		free(all->spec);

@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:29:19 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/09 23:25:17 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/10 23:08:00 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int			exec_fork(char **cmd_arg, char **env, char *tmp)
 	else
 	{
 		wait_pid = waitpid(g_pid, &status, WUNTRACED);
+<<<<<<< HEAD
 		if (WIFSIGNALED(status))
 		{
 			if (WTERMSIG(status) == 2)
@@ -90,6 +91,8 @@ int			exec_fork(char **cmd_arg, char **env, char *tmp)
 		}
 		else
 			g_error = WEXITSTATUS(status);
+=======
+>>>>>>> bcab8d8d54d3879a3dc34768e82022ea856f8528
 		signal(SIGINT, sigint);
 		signal(SIGQUIT, sigquit);
 	}
