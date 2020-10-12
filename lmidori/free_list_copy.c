@@ -22,7 +22,6 @@ void				free_list_copy(t_head_struct *head_struct)
 	{
 		tmp = head_struct->copy_all->args;
 		head_struct->copy_all->args = head_struct->copy_all->args->next;
-		//free(tmp->content);    // need free!!!!!
 		free(tmp);
 		tmp = NULL;
 	}

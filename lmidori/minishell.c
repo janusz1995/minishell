@@ -14,6 +14,11 @@
 
 void	sigquit(int sig)
 {
+	if (g_str1)
+	{
+		write(1, "\b\b", 2);
+		return ;
+	}
 	g_str1[ft_strlen(g_str1) - 1] = '\0';
 	write(1, "\nshell > ", 8);
 	return ;
@@ -27,14 +32,13 @@ void	sigint(int sig)
 		g_str1 = (char *)malloc(sizeof(char));
 		g_str1[0] = '\0';
 	}
+	g_error = 1;
 	write(1, "\nshell > ", 8);
 }
 
 void	init(t_head_struct *head_struct, char **envp)
 {
 	signal(SIGINT, sigint);
-	signal(SIGINT, SIG_DFL);
-	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, sigquit);
 	head_struct->env = NULL;
 	head_struct->list = NULL;

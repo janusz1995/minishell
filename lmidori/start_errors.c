@@ -40,6 +40,8 @@ void		error_fork(void)
 {
 	char	*str;
 
+	signal(SIGINT, sigint);
+	signal(SIGQUIT, sigquit);
 	g_error = errno;
 	str = strerror(errno);
 	ft_putstr_fd("minishell: ", 2);

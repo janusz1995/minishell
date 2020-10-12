@@ -54,58 +54,46 @@ int			check_stat(char **cmd_arg, char *tmp)
 	return (-1);
 }
 
-int			exec_fork(char **cmd_arg, char **env, char *tmp)
+void		exec_error(int *status, char **cmd_arg, char **env, char *tmp)
 {
-	pid_t	wait_pid;
-	int		status;
-
-	signal(SIGINT, SIG_IGN);
-	signal(SIGQUIT, SIG_IGN);
-	if ((g_pid = fork()) < 0)
-		error_fork();
-	else if (g_pid == 0)
-	{
-		signal(SIGINT, SIG_DFL);
-		signal(SIGQUIT, SIG_DFL);
-		if ((status = execve(tmp, cmd_arg, env)) == -1)
-		{
-			if (ft_strchr(cmd_arg[0], '/') != NULL)
-				error_directory_diff(cmd_arg[0]);
-			else
-				error_command_diff(cmd_arg[0]);
-			exit(WEXITSTATUS(status));
-		}
-	}
-	else
-	{
-		wait_pid = waitpid(g_pid, &status, WUNTRACED);
-		printf("%d\n", WEXITSTATUS(status));
-		signal(SIGINT, sigint);
-		signal(SIGQUIT, sigquit);
-		g_error = WEXITSTATUS(status);
-	}
-	return (1);
-}
-
-int			start_programm_pipe(char *path_bin, char **env, char **cmd_arg)
-{
-	char	*tmp;
-	int		status;
-	int		flag;
-
-	status = 0;
-	tmp = init_full_path(path_bin, cmd_arg[0]);
-	if ((flag = check_stat(cmd_arg, tmp)) != -1)
-		return (flag);
-	if (execve(tmp, cmd_arg, env) == -1)
+	signal(SIGINT, SIG_DFL);
+	signal(SIGQUIT, SIG_DFL);
+	if ((*status = execve(tmp, cmd_arg, env)) == -1)
 	{
 		if (ft_strchr(cmd_arg[0], '/') != NULL)
 			error_directory_diff(cmd_arg[0]);
 		else
 			error_command_diff(cmd_arg[0]);
-		exit(WEXITSTATUS(status));
+		exit(WTERMSIG(*status));
 	}
-	return (WEXITSTATUS(status));
+}
+
+int			exec_fork(char **cmd_arg, char **env, char *tmp)
+{
+	pid_t	wait_pid;
+	int		status;
+
+	if ((g_pid = fork()) < 0)
+		error_fork();
+	else if (g_pid == 0)
+		exec_error(&status, cmd_arg, env, tmp);
+	else
+	{
+		wait_pid = waitpid(g_pid, &status, WUNTRACED);
+		if (WIFSIGNALED(status))
+		{
+			if (WTERMSIG(status) == 2)
+				g_error = 130;
+			if (WTERMSIG(status) == 3)
+				g_error = 131;
+			write(1, "\n", 1);
+		}
+		else
+			g_error = WEXITSTATUS(status);
+		signal(SIGINT, sigint);
+		signal(SIGQUIT, sigquit);
+	}
+	return (1);
 }
 
 int			start_programm(char *path_bin, char **env, char **cmd_arg)
@@ -116,6 +104,8 @@ int			start_programm(char *path_bin, char **env, char **cmd_arg)
 	tmp = init_full_path(path_bin, cmd_arg[0]);
 	if ((flag = check_stat(cmd_arg, tmp)) != -1)
 		return (flag);
+	signal(SIGINT, SIG_IGN);
+	signal(SIGQUIT, SIG_IGN);
 	exec_fork(cmd_arg, env, tmp);
 	free(tmp);
 	return (1);
