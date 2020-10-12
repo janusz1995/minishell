@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 12:03:05 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/10 22:25:27 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/12 13:52:38 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,6 @@ int			parse_and_do(char **str, t_arg *arg, t_head_struct *head_struct)
 
 int			parser(char *str, t_arg *arg, t_head_struct *head_struct)
 {
-	int		tmp;
-	int		len;
 	int		ret;
 
 	init_head_struct(head_struct);

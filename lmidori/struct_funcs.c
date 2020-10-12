@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 21:46:25 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/10 21:39:07 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/12 13:52:14 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_list_args		*free_and_go_next(t_list_args *list)
 int				fool_strcut(t_all *all, t_list_args **list)
 {
 	t_list_args	*tmp;
-	t_list_args	*tmp2;
 
 	tmp = *list;
 	ft_init_struct(all);

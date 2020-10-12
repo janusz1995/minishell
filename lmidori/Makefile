@@ -14,7 +14,7 @@ SRC = minishell.c lst_args.c read_arg.c init_arg_env.c \
 
 SRCO = $(SRC:.c=.o)
 
-CC = gcc -g
+CC = gcc -Wall -Werror -Wextra
 
 LIBFT = $(LIBFTDIR)libft.a
 
@@ -27,7 +27,7 @@ FLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(SRCO) $(LIBFT)
-	$(CC) -g -L$(LIBFTDIR) -lft $(SRCO) -o $(NAME)
+	$(CC) -L$(LIBFTDIR) -lft $(SRCO) -o $(NAME)
 
 $(LIBFT):
 	make -C $(LIBFTDIR)

@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:27:57 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/10 17:06:19 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/12 13:51:32 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	sigquit(int sig)
 {
+	sig = 0;
 	if (g_str1)
 	{
 		write(1, "\b\b", 2);
@@ -26,6 +27,7 @@ void	sigquit(int sig)
 
 void	sigint(int sig)
 {
+	sig = 0;
 	if (g_str1 && ft_strlen(g_str1))
 	{
 		free(g_str1);
@@ -84,7 +86,6 @@ int		main(int argc, char **argv, char **envp)
 {
 	char			**arr;
 	int				num;
-	int				res;
 	t_arg			arg;
 	t_head_struct	head_struct;
 

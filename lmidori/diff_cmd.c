@@ -6,7 +6,7 @@
 /*   By: lmidori <lmidori@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 22:29:14 by lmidori           #+#    #+#             */
-/*   Updated: 2020/10/10 13:53:42 by lmidori          ###   ########.fr       */
+/*   Updated: 2020/10/12 13:53:00 by lmidori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,6 @@ int					diff_in_path(t_head_struct *head_struct,
 
 void				system_cmd(t_head_struct *head_struct, char **str2)
 {
-	DIR				*dir;
-	struct dirent	*entry;
 	int				flag;
 	char			**envp;
 
